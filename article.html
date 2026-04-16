@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Your Color Season – Lahjaro Languages Institute FZ-LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:   #03143a;
+      --blue:   #143d82;
+      --dark:   #031436;
+      --hd:     #0a1628;
+      --orange: #f4af85;
+      --peach:  #fff1e8;
+      --gm:     #64748b;
+      --muted:  #94a3b8;
+      --text:   #0b1220;
+      --w:      #fff;
+      --f:      'Inter', sans-serif;
+      --serif:  'Playfair Display', serif;
+    }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: var(--f); color: var(--text); background: #fff; overflow-x: hidden; }
+    img  { display: block; max-width: 100%; }
+    a    { text-decoration: none; color: inherit; }
+    button { border: none; background: none; font: inherit; cursor: pointer; }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--orange);
+      height: 36px;
+      display: flex;
+      align-items: center;
+      z-index: 101;
+    }
+    .topbar__in {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .topbar__contact {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .topbar__contact a {
+      color: rgba(255,255,255,.8);
+      font-size: 12.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s;
+    }
+    .topbar__contact a:hover { color: #fff; }
+    .topbar__socials {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .topbar__socials a {
+      color: rgba(255,255,255,.7);
+      display: inline-flex;
+      align-items: center;
+      transition: color .2s;
+    }
+    .topbar__socials a:hover { color: #fff; }
+
+    /* ── HEADER ── */
+    .header { background: var(--navy); height: 80px; position: sticky; top: 0; z-index: 100; }
+    .header__in {
+      max-width: 1440px; margin: 0 auto; padding: 0 80px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .header__left { display: flex; align-items: center; gap: 48px; }
+    .logo img { height: 129px; width: auto; }
+    .nav { display: flex; align-items: center; gap: 28px; }
+    .nav a { color: rgba(255,255,255,.82); font-size: 15px; font-weight: 500; transition: color .2s; }
+    .nav a:hover { color: #fff; }
+    .nav a.active { color: #fff; font-weight: 700; }
+    .header__right { display: flex; align-items: center; gap: 16px; }
+    .lang-select {
+      display: flex; align-items: center; gap: 6px;
+      color: rgba(255,255,255,.82); font-size: 14px; font-weight: 500;
+      cursor: pointer; padding: 6px 12px; border-radius: 8px;
+      border: 1px solid rgba(255,255,255,.15); transition: background .2s;
+    }
+    .lang-select:hover { background: rgba(255,255,255,.08); color: #fff; }
+    .lang-select svg { width: 14px; height: 14px; }
+    .btn-pill {
+      background: var(--orange); color: #fff; font-size: 15px; font-weight: 600;
+      padding: 13px 26px; border-radius: 100px;
+      display: inline-flex; align-items: center; gap: 8px; transition: background .2s;
+    }
+    .btn-pill:hover { background: #e89b6d; }
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; width: 40px; height: 40px; padding: 6px; cursor: pointer; border-radius: 8px;
+    }
+    .hamburger span { display: block; width: 22px; height: 2.5px; background: #fff; border-radius: 3px; transition: transform .3s, opacity .3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+    .mob-nav {
+      display: none; position: fixed; top: 80px; left: 0; right: 0;
+      background: var(--navy); padding: 8px 0 20px; z-index: 98;
+      border-top: 1px solid rgba(255,255,255,.1); flex-direction: column;
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+    }
+    .mob-nav.open { display: flex; }
+    .mob-nav a.mob-link {
+      color: rgba(255,255,255,.82); font-size: 16px; font-weight: 500;
+      padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,.07);
+      display: block; transition: color .2s, background .2s;
+    }
+    .mob-nav a.mob-link:hover, .mob-nav a.mob-link.active { color: #fff; background: rgba(255,255,255,.06); }
+    .mob-nav .mob-cta {
+      margin: 16px 24px 0; background: var(--orange); color: #fff;
+      font-size: 15px; font-weight: 700; padding: 14px 24px;
+      border-radius: 100px; text-align: center; display: block;
+    }
+
+    /* ── ARTICLE WRAP ── */
+    .article-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ── ARTICLE META BAR ── */
+    .art-meta-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0 20px;
+    }
+    .back-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gm);
+      transition: color .2s;
+    }
+    .back-link:hover { color: var(--blue); }
+    .back-link svg { width: 16px; height: 16px; }
+    .art-socials {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .art-socials button {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gm);
+      transition: all .2s;
+    }
+    .art-socials button:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      background: rgba(20,61,130,.06);
+    }
+    .art-socials button svg { width: 16px; height: 16px; }
+
+    /* ── ARTICLE HEADER ── */
+    .art-header { padding-bottom: 32px; }
+    .art-tag {
+      display: inline-block;
+      background: var(--navy);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .art-title {
+      font-family: var(--serif);
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--hd);
+      line-height: 60px;
+      letter-spacing: -.5px;
+      margin-bottom: 16px;
+    }
+    .art-subtitle {
+      font-size: 18px;
+      color: var(--gm);
+      line-height: 29px;
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+    .art-author-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .art-author-av {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .art-author-info { flex: 1; }
+    .art-author-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--hd);
+      margin-bottom: 2px;
+    }
+    .art-author-title {
+      font-size: 13px;
+      color: var(--gm);
+      margin-bottom: 2px;
+    }
+    .art-date-read {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .art-date-read span { margin-left: 6px; }
+
+    /* ── FEATURED IMAGE ── */
+    .art-featured-img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 48px;
+    }
+
+    /* ── ARTICLE BODY ── */
+    .art-body { font-size: 17px; line-height: 30px; color: #374151; }
+    .art-body p { margin-bottom: 24px; }
+    .art-body h2 {
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--hd);
+      margin: 40px 0 18px;
+      line-height: 40px;
+    }
+    .art-body ul {
+      margin: 0 0 24px 20px;
+    }
+    .art-body ul li {
+      margin-bottom: 10px;
+      line-height: 28px;
+    }
+    .art-body ul li::marker { color: var(--orange); }
+
+    /* Tip callout box */
+    .art-tip-box {
+      background: var(--peach);
+      border-left: 4px solid var(--orange);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 32px 0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .art-tip-box__icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .art-tip-box__icon svg { width: 18px; height: 18px; color: #fff; }
+    .art-tip-box__label {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--orange);
+      margin-bottom: 6px;
+    }
+    .art-tip-box p {
+      font-size: 15px;
+      line-height: 25px;
+      color: #5a3e2b;
+      margin: 0;
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: var(--orange);
+      border-radius: 16px;
+      padding: 52px 60px;
+      text-align: center;
+      margin: 56px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    .cta-banner h2 {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 46px;
+    }
+    .cta-banner .btn-white {
+      background: #fff;
+      color: var(--navy);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 36px;
+      border-radius: 100px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity .2s;
+    }
+    .cta-banner .btn-white:hover { opacity: .9; }
+
+    /* ── OTHER BLOGS ── */
+    .other-blogs { padding: 56px 0; border-top: 1px solid #e5e7eb; }
+    .other-blogs__hdr {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gm);
+      margin-bottom: 24px;
+    }
+    .other-blogs__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .ob-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e8edf5;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+      cursor: pointer;
+      transition: box-shadow .2s;
+    }
+    .ob-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,.1); }
+    .ob-card__img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+    .ob-card__body { padding: 14px; }
+    .ob-card__tag {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: var(--blue);
+      background: rgba(20,61,130,.08);
+      padding: 3px 10px;
+      border-radius: 100px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    .ob-card__title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--hd);
+      line-height: 20px;
+    }
+
+
+    /* ── FOOTER ── */
+    footer { background: var(--navy); padding: 60px 0 0; }
+    .footer__grid {
+      max-width: 1440px; margin: 0 auto; padding: 0 80px 48px;
+      display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 160px; gap: 40px;
+    }
+    .fc h4 { font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 24px; }
+    .fc a, .fc p { font-size: 14px; color: #9ca3af; display: block; line-height: 2.2; transition: color .2s; }
+    .fc a:hover { color: #fff; }
+    .fc .w { color: #fff; }
+    .nl-row {
+      display: flex; align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,.2); padding-bottom: 8px; margin-bottom: 12px;
+    }
+    .nl-row input { background: none; border: none; outline: none; color: #fff; font: inherit; font-size: 13px; flex: 1; }
+    .nl-row input::placeholder { color: #757575; }
+    .nl-row button { color: rgba(255,255,255,.5); font-size: 16px; }
+    .socials { display: flex; gap: 12px; }
+    .fc a.soc {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.2);
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color .2s, background .2s;
+    }
+    .fc a.soc:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+    .fc a.soc svg { display: block; }
+    .fc.logo-col img { width: 180px; height: auto; }
+    .footer__btm {
+      border-top: 1px solid rgba(255,255,255,.1);
+      max-width: 1440px; margin: 0 auto; padding: 18px 80px;
+      display: flex; justify-content: center;
+    }
+    .footer__btm p { font-size: 14px; color: #6b7280; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 767px) {
+      .topbar__in { padding: 0 20px; }
+      .topbar__contact { gap: 16px; }
+      .topbar__contact a span { display: none; }
+      .topbar__contact a svg, .topbar__socials a svg { width: 18px; height: 18px; }
+      .header__in { padding: 0 20px; }
+      .nav { display: none; }
+      .header__right .lang-select { display: none; }
+      .hamburger { display: flex; }
+      .header .btn-pill { display: none; }
+
+      .article-wrap { padding: 0 20px; }
+      .art-title { font-size: 30px; line-height: 40px; }
+      .art-subtitle { font-size: 16px; }
+      .art-featured-img { height: 240px; border-radius: 12px; }
+      .art-body h2 { font-size: 24px; line-height: 32px; }
+      .art-body { font-size: 16px; line-height: 27px; }
+      .cta-banner { padding: 36px 24px; }
+      .cta-banner h2 { font-size: 26px; line-height: 36px; }
+      .other-blogs__grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .ob-card__img { height: 100px; }
+      .footer__grid { padding: 0 20px 36px; grid-template-columns: 1fr 1fr; gap: 32px; }
+      .fc.logo-col { grid-column: 1/-1; display: flex; justify-content: center; }
+      .footer__btm { padding: 16px 20px; }
+      .footer__btm p { font-size: 12px; text-align: center; }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .topbar__in { padding: 0 32px; }
+      .header__in { padding: 0 32px; }
+      .other-blogs__grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .footer__grid { padding: 0 32px 36px; grid-template-columns: repeat(2,1fr); }
+      .fc.logo-col { grid-column: 1/-1; display: flex; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════ TOP BAR ════════ -->
+  <div class="topbar">
+    <div class="topbar__in">
+      <div class="topbar__contact">
+        <a href="mailto:info@lahjaro.com">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>info@lahjaro.com</span>
+        </a>
+        <a href="tel:+971505325083">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+971 50 532 5083</span>
+        </a>
+      </div>
+      <div class="topbar__socials">
+        <a href="#" aria-label="Facebook">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" aria-label="X / Twitter">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L2.25 2.25h6.918l4.243 5.622 5.833-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#143d82"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__in">
+      <div class="header__left">
+        <a href="index.html" class="logo">
+          <img src="images/logo-new.svg" alt="Lahjaro">
+        </a>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="courses.html">Courses</a>
+          <a href="articles.html" class="active">Articles</a>
+        </nav>
+      </div>
+      <div class="header__right">
+        <div class="lang-select">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span>English</span>
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
+        </div>
+        <a href="contact.html" class="btn-pill">
+          Contact Us
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mob-nav" id="mob-nav" aria-hidden="true">
+    <a href="index.html" class="mob-link">Home</a>
+    <a href="about.html" class="mob-link">About Us</a>
+    <a href="services.html" class="mob-link">Services</a>
+    <a href="courses.html" class="mob-link">Courses</a>
+    <a href="articles.html" class="mob-link active">Articles</a>
+    <a href="contact.html" class="mob-cta">Contact Us &rarr;</a>
+  </div>
+
+  <!-- ════════ ARTICLE ════════ -->
+  <div class="article-wrap">
+
+    <!-- Meta bar -->
+    <div class="art-meta-bar">
+      <a href="articles.html" class="back-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>
+        Back to Blog
+      </a>
+      <div class="art-socials">
+        <button aria-label="Like">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+        <button aria-label="Save">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        </button>
+        <button aria-label="Share">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Article header -->
+    <div class="art-header">
+      <span class="art-tag" id="art-tag"></span>
+      <h1 class="art-title" id="art-title"></h1>
+      <p class="art-subtitle" id="art-subtitle"></p>
+      <div class="art-author-row">
+        <div class="art-author-av" id="art-author-av"></div>
+        <div class="art-author-info">
+          <div class="art-author-name" id="art-author-name"></div>
+          <div class="art-author-title" id="art-author-title"></div>
+        </div>
+        <div class="art-date-read" id="art-date-read"></div>
+      </div>
+    </div>
+
+  </div><!-- /article-wrap -->
+
+  <!-- Featured image (full width) -->
+  <div class="article-wrap">
+    <img class="art-featured-img" id="art-featured-img" src="" alt="">
+  </div>
+
+  <!-- Article body -->
+  <div class="article-wrap">
+    <div class="art-body" id="art-body"></div>
+
+    <!-- CTA Banner -->
+    <div class="cta-banner">
+      <h2>Ready to Start Learning?</h2>
+      <a href="contact.html" class="btn-white">
+        Book a Free Trial
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M8 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+
+    <!-- Other Blogs -->
+    <div class="other-blogs">
+      <div class="other-blogs__hdr">More Articles</div>
+      <div class="other-blogs__grid" id="other-blogs-grid"></div>
+    </div>
+
+  </div><!-- /article-wrap -->
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer__grid">
+      <div class="fc">
+        <h4>Courses</h4>
+        <a href="courses.html">English Courses</a>
+        <a href="courses.html">German Courses</a>
+        <a href="courses.html">Spanish Courses</a>
+        <a href="courses.html">Other Languages</a>
+      </div>
+      <div class="fc">
+        <h4>Contacts</h4>
+        <p class="w">UAE</p>
+        <p>+971 50 532 5083</p>
+        <p><a href="https://wa.me/971505325083" target="_blank" style="color:inherit;text-decoration:none;">WhatsApp: +971 50 532 5083</a></p>
+        <p>info@lahjaro.com</p>
+      </div>
+      <div class="fc">
+        <h4>Subscribe</h4>
+        <div class="nl-row">
+          <input type="email" placeholder="Get news &amp; updates">
+          <button>&#10148;</button>
+        </div>
+        <p>Subscribe to our newsletter. Be in trends.</p>
+      </div>
+      <div class="fc">
+        <h4>In Socials</h4>
+        <div class="socials">
+          <a href="#" class="soc" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="soc" aria-label="X / Twitter">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L2.25 2.25h6.918l4.243 5.622 5.833-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg>
+          </a>
+          <a href="#" class="soc" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.9)" stroke="none"/></svg>
+          </a>
+          <a href="#" class="soc" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="#" class="soc" aria-label="YouTube">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#03143a"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="fc logo-col">
+        <img src="images/logo-new.svg" alt="Lahjaro">
+      </div>
+    </div>
+    <div class="footer__btm">
+      <p>Copyright &copy; 2024 Lahjaro Language School. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const mobNav = document.getElementById('mob-nav');
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      mobNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+      mobNav.setAttribute('aria-hidden', true);
+      document.body.style.overflow = '';
+    }
+    hamburger.addEventListener('click', () => {
+      const open = hamburger.classList.toggle('open');
+      mobNav.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open);
+      mobNav.setAttribute('aria-hidden', !open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    window.addEventListener('scroll', () => { if (mobNav.classList.contains('open')) closeMenu(); }, { passive: true });
+    document.addEventListener('click', (e) => {
+      if (mobNav.classList.contains('open') && !mobNav.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
+    });
+
+    // ─── Article Data ───
+    const articles = [
+      {
+        id: 1,
+        tag: 'English',
+        title: '5 Essential Tips for Beginner English Learners',
+        subtitle: 'Starting your English journey? Here are 5 proven strategies that will accelerate your learning from day one.',
+        authorInitials: 'HS',
+        authorName: 'Hafsa Saif',
+        authorTitle: 'English Language Instructor',
+        date: 'March 1, 2024',
+        readTime: '5 min read',
+        image: 'images/english-beginner.webp',
+        flag: 'https://flagcdn.com/w40/gb.png',
+        category: 'english',
+        content: `
+          <p>Learning English as a beginner can feel overwhelming, but with the right approach, you can make rapid progress. Here are five essential tips that will set you on the path to fluency.</p>
+
+          <h2>1. Start with the Basics</h2>
+          <p>Before diving into complex grammar, master the fundamentals: pronunciation, basic vocabulary, and common sentence structures. Spend time learning the 500 most frequently used words — they cover about 80% of everyday conversation.</p>
+
+          <p>Focus on high-frequency words first: "the", "be", "to", "of", "and", "a", "in", "that", "have", "I". These words appear constantly and will give you the building blocks to form sentences quickly.</p>
+
+          <div class="art-tip-box">
+            <div class="art-tip-box__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <div class="art-tip-box__label">Pro Tip</div>
+              <p>Use spaced repetition apps like Anki to memorize vocabulary. Reviewing words at increasing intervals helps you retain them long-term without forgetting.</p>
+            </div>
+          </div>
+
+          <h2>2. Practice Speaking Every Day</h2>
+          <p>Many learners focus on reading and writing but neglect speaking. However, speaking is crucial — it trains your mouth to produce English sounds and builds confidence. Even if you're alone, practice speaking English aloud every day.</p>
+
+          <p>Try shadowing: listen to native speakers and repeat what they say immediately, mimicking their intonation and rhythm. Record yourself and compare — over time, you'll notice significant improvement.</p>
+
+          <h2>3. Immerse Yourself in English</h2>
+          <p>Create an English environment around you. Change your phone language to English, watch English movies and TV shows with subtitles, listen to English podcasts, and follow English social media accounts. Every bit of exposure reinforces your learning.</p>
+
+          <p>Start with content aimed at learners — slow English podcasts, YouTube channels for English learners, and children's books are excellent starting points before moving to native-level content.</p>
+
+          <h2>4. Learn Grammar in Context</h2>
+          <p>Don't study grammar rules in isolation. Instead, learn grammar through sentences and real-world examples. When you encounter a new structure, note how it's used in context rather than just memorizing the rule.</p>
+
+          <p>For example, instead of memorizing "present perfect = have/has + past participle", notice how it's used: "I have lived here for five years" vs. "I lived here yesterday." Context reveals meaning.</p>
+
+          <h2>5. Be Consistent and Patient</h2>
+          <p>Language learning is a marathon, not a sprint. Consistent daily practice — even just 15-20 minutes — is far more effective than occasional marathon study sessions. Set realistic goals and track your progress.</p>
+
+          <p>Remember: every learner makes mistakes. Embrace them as part of the process. A beginner who speaks confidently will always progress faster than an advanced learner who's too afraid to try.</p>
+        `
+      },
+      {
+        id: 2,
+        tag: 'German',
+        title: 'Breaking Language Barriers: My Journey from Germany to Fluency',
+        subtitle: 'A personal account of overcoming the challenges of learning a new language and achieving fluency.',
+        authorInitials: 'EH',
+        authorName: 'Elena Hoffman',
+        authorTitle: 'German Language Instructor',
+        date: 'March 8, 2024',
+        readTime: '7 min read',
+        image: 'images/german-journey.webp',
+        flag: 'https://flagcdn.com/w40/de.png',
+        category: 'german',
+        content: `
+          <p>When I first arrived in a German-speaking country, I thought my years of classroom German would prepare me. I was wrong. Real conversations moved too fast, native speakers used vocabulary I'd never learned, and cultural nuances flew over my head. This is the story of how I went from textbook German to genuine fluency.</p>
+
+          <h2>The Gap Between Classroom and Reality</h2>
+          <p>My university German classes taught me grammar rules, vocabulary lists, and reading comprehension. But when I tried to order coffee or ask for directions, everything fell apart. The problem wasn't my knowledge — it was the gap between controlled practice and real communication.</p>
+
+          <div class="art-tip-box">
+            <div class="art-tip-box__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <div class="art-tip-box__label">Key Insight</div>
+              <p>Textbook German is like learning to drive in a parking lot. Real streets have traffic, unexpected obstacles, and constantly changing conditions. You need both — but only one truly prepares you.</p>
+            </div>
+          </div>
+
+          <h2>Step 1: Immersion and Comfort with Discomfort</h2>
+          <p>I forced myself into German-only situations. I cancelled my language-exchange apps and committed fully. The first weeks were painfully slow — I misunderstood constantly, often faked comprehension, and occasionally ordered things I didn't want. But discomfort is the price of growth.</p>
+
+          <h2>Step 2: Thinking in German</h2>
+          <p>The breakthrough came when I started thinking in German rather than translating. I'd describe my surroundings internally: "Der Himmel ist grau" (The sky is gray), "Ich muss Brot kaufen" (I need to buy bread). This mental shift eliminated the translation delay that makes you sound hesitant.</p>
+
+          <h2>Step 3: Embracing German Grammar</h2>
+          <p>German grammar intimidated me at first — cases, gendered nouns, verb conjugation. But I learned to see grammar as a puzzle rather than a burden. Once cases clicked, sentence formation became intuitive. I stopped thinking about grammatical rules and started feeling what was correct.</p>
+
+          <h2>Step 4: Building a German Network</h2>
+          <p>I made German friends, joined local clubs, and refused to switch to English even when people offered. Social situations became language classrooms. We discussed politics, told jokes, argued about football — and every conversation pushed my boundaries.</p>
+
+          <h2>Where I Am Now</h2>
+          <p>Two years later, German feels natural. I dream in German, make puns in German, and sometimes forget English words. Fluency didn't come from studying harder — it came from living the language, making mistakes, and refusing to give up when it was hard.</p>
+
+          <p>The journey is long, but every step is worth it.</p>
+        `
+      },
+      {
+        id: 3,
+        tag: 'Hebrew',
+        title: 'Hebrew Unveiled: The Top 5 Challenges Arabic Speakers Face',
+        subtitle: 'Arabic speakers have unique advantages and challenges when learning Hebrew. Discover what they are.',
+        authorInitials: 'SS',
+        authorName: 'Shehab Saber',
+        authorTitle: 'Hebrew & Arabic Instructor',
+        date: 'March 15, 2024',
+        readTime: '6 min read',
+        image: 'images/hebrew-arabic.webp',
+        flag: 'https://flagcdn.com/w40/il.png',
+        category: 'hebrew',
+        content: `
+          <p>As both an Arabic and Hebrew speaker, I've helped many Arabic speakers transition to Hebrew. The two languages share deep historical roots — they're both Semitic languages with similar structures, sounds, and even some vocabulary. But this relationship is a double-edged sword.</p>
+
+          <h2>Challenge 1: The Alphabet Switch</h2>
+          <p>Arabic and Hebrew both use abjad scripts (consonant-based alphabets), but they look entirely different. Arabic speakers must learn an entirely new alphabet from scratch, which can be frustrating when Hebrew letters don't look familiar at all.</p>
+
+          <p>However, the principle is the same: both are consonantal alphabets where vowels are often omitted in writing. Once you understand this shared concept, Hebrew letters become much easier to internalize.</p>
+
+          <h2>Challenge 2: Right-to-Left Reading</h2>
+          <p>Both languages read right-to-left, so there's no directional confusion. This is actually one area where Arabic speakers have an advantage over European-language speakers. But Hebrew has fewer connecting letters than Arabic, which changes how words look on the page.</p>
+
+          <div class="art-tip-box">
+            <div class="art-tip-box__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <div class="art-tip-box__label">Pro Tip</div>
+              <p>Hebrew has 22 letters, all consonants. Vowel points (nikkud) exist but are rarely used in everyday writing. Learn to read without them first — it's the norm in Israel.</p>
+            </div>
+          </div>
+
+          <h2>Challenge 3: False Friends and Deceptive Similarities</h2>
+          <p>Many Hebrew and Arabic words look or sound similar — "shalom" (peace) and "salam", "sefer" (book) and "sifr", "yad" (hand) and "yad". These similarities are helpful but dangerous. They can lead to false assumptions about meaning, pronunciation, or usage.</p>
+
+          <p>Always verify vocabulary in context rather than relying on apparent similarities. A word that looks the same in both languages may have completely different connotations.</p>
+
+          <h2>Challenge 4: Hebrew's Gender System</h2>
+          <p>Arabic speakers are already used to grammatical gender, but Hebrew's gender system works differently. Hebrew has only two genders (masculine/feminine) for both singular and plural, whereas Arabic has dual forms. Hebrew feminine plurals often confuse Arabic speakers.</p>
+
+          <h2>Challenge 5: The Pronunciation Barrier</h2>
+          <p>While some Hebrew and Arabic sounds are shared (like 'alef, bet, gimel, dalet), others are completely different. Hebrew's resh sounds like a French or Spanish "r", not the Arabic "gh" sound. The chet (ח) has no equivalent in most Arabic dialects. Training your ear to these new sounds takes dedicated practice.</p>
+
+          <h2>The Advantage Arabic Speakers Have</h2>
+          <p>Despite these challenges, Arabic speakers have a tremendous advantage: your brain already understands the logic of Semitic languages. Root-based vocabulary, sentence structure patterns, and even some cultural references translate surprisingly well. Your Semitic language intuition is your greatest asset — use it.</p>
+        `
+      },
+      {
+        id: 4,
+        tag: 'Korean',
+        title: 'Korean Grammar: The Key to Unlock Your Language Learning Potential',
+        subtitle: 'Understanding Korean grammar structure is essential for fluency. Learn the fundamentals that make all the difference.',
+        authorInitials: 'FA',
+        authorName: 'Fida Abo Hasson',
+        authorTitle: 'Korean Language Instructor',
+        date: 'March 22, 2024',
+        readTime: '8 min read',
+        image: 'images/korean-grammar.webp',
+        flag: 'https://flagcdn.com/w40/kr.png',
+        category: 'korean',
+        content: `
+          <p>Korean grammar intimidates many learners because it looks completely different from European languages. No verb conjugations by person, a completely different word order, and a hierarchy-based speech system — it all feels foreign. But once you understand the logic, Korean grammar becomes remarkably logical and even beautiful.</p>
+
+          <h2>The Foundation: SOV Word Order</h2>
+          <p>Korean follows Subject-Object-Verb (SOV) order. Unlike English, the verb always comes at the end of the sentence. "I coffee drink" becomes "나는 커피를 마신다" (I coffee drink). This structure takes adjustment, but it creates a predictable framework once you're used to it.</p>
+
+          <div class="art-tip-box">
+            <div class="art-tip-box__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <div class="art-tip-box__label">Grammar Secret</div>
+              <p>Korean particles (particles attached to words) tell you the grammatical role of each word. Learning particles like 이/가 (subject), 을/를 (object), 은/는 (topic) is the key to understanding Korean sentence structure.</p>
+            </div>
+          </div>
+
+          <h2>Particles: The Building Blocks</h2>
+          <p>Instead of relying on word order like English, Korean uses particles to mark grammatical roles. The particle 은/는 after a noun marks it as the topic, while 이/가 marks the subject. 이다 means "to be" but is attached to nouns directly rather than conjugated: 나는 학생이다 (I student am).</p>
+
+          <h2>Verb Conjugation: Systematic and Predictable</h2>
+          <p>While verbs conjugate, the system is remarkably regular. Most verb roots don't change — you add endings to the stem. The past tense? Add ㅆ어요. Future? 을 거예요. Negative? 지 않아요. Once you learn the patterns, conjugating any verb becomes straightforward.</p>
+
+          <h2>Politeness Levels: Speaking Korean the Right Way</h2>
+          <p>Korean has three main politeness levels: formal (합쇼체), polite casual (해요체), and informal (해체). Using the wrong level is not just rude — it signals disrespect. The -(스)ㅂ니다 and -입니다 forms are for formal situations; -(아/어)요 is everyday polite; -(아/어) is for friends and close family.</p>
+
+          <h2>Connected Speech: Words That Attach</h2>
+          <p>In Korean, verbs and particles often attach to create long, flowing words. Learning to parse these connected forms is essential. For example, "I didn't eat" is 먹지 않았어요 — 먹 (eat) + 지 (not) + 않았 (past negative) + 어요 (polite ending). Once you see the building blocks, these chains become readable.</p>
+
+          <h2>The Path Forward</h2>
+          <p>Korean grammar rewards patience. Don't try to memorize every rule at once — focus on one structure at a time, practice it in context, then move on. Within a few months of consistent study, you'll find yourself thinking in Korean sentence patterns naturally.</p>
+        `
+      },
+      {
+        id: 5,
+        tag: 'Chinese',
+        title: 'The Art of Chinese Characters: Understanding Hanzi, Zhuyin, and Pinyin',
+        subtitle: 'Master the writing systems of Chinese with this comprehensive guide to Hanzi, Zhuyin, and Pinyin.',
+        authorInitials: 'HK',
+        authorName: 'Halima Khona',
+        authorTitle: 'Chinese Language Instructor',
+        date: 'March 29, 2024',
+        readTime: '7 min read',
+        image: 'images/chinese-characters.webp',
+        flag: 'https://flagcdn.com/w40/cn.png',
+        category: 'chinese',
+        content: `
+          <p>One of the most intimidating aspects of learning Chinese is its writing system. With thousands of characters to learn, where do you even begin? The answer lies in understanding the three distinct components of Chinese writing: Hanzi, Pinyin, and Zhuyin — each serving a different purpose in reading and writing.</p>
+
+          <h2>Hanzi: The Written Characters</h2>
+          <p>Hanzi are the Chinese characters themselves — the logographic writing units that represent words or morphemes. Each character contains meaning, and many contain phonetic clues as well. Characters are composed of strokes, with a minimum of 1 stroke and a maximum of around 30 for complex characters.</p>
+
+          <p>There are three levels of character learning: high-frequency characters (the top 1,000 cover about 90% of common text), medium-frequency characters (1,001-3,000), and low-frequency characters (3,000+). Start with high-frequency characters and build from there.</p>
+
+          <div class="art-tip-box">
+            <div class="art-tip-box__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <div class="art-tip-box__label">Learning Strategy</div>
+              <p>Learn characters in context — in words and sentences — rather than in isolation. This helps you remember meaning and usage simultaneously, rather than memorizing disconnected characters.</p>
+            </div>
+          </div>
+
+          <h2>Pinyin: The Romanization System</h2>
+          <p>Pinyin is the official romanization system for Mandarin Chinese, using Latin letters to represent Chinese sounds. It's an essential tool for beginners — it helps you learn pronunciation, look up words in dictionaries, and type Chinese on a keyboard.</p>
+
+          <p>However, Pinyin is a tool, not a writing system. You should transition away from relying on Pinyin as quickly as possible. Characters are the real writing system, and native speakers read and write in characters, not Pinyin.</p>
+
+          <h2>Zhuyin: Taiwan's Alternative</h2>
+          <p>Zhuyin (注音) is an alternative phonetic system used primarily in Taiwan. It uses symbols derived from Chinese characters to represent sounds. Some learners find Zhuyin easier than Pinyin because the symbols map more precisely to Chinese tones. You'll often see it on Taiwanese restaurant menus and children's materials.</p>
+
+          <h2>The Four Tones: Essential Pronunciation</h2>
+          <p>Mandarin Chinese is a tonal language — the same syllable pronounced with different tones means completely different things. The four tones (plus a neutral tone) must be mastered early. "Ma" with tone 1 means "mother", tone 2 means "hemp", tone 3 means "horse", and tone 4 means "scold". This is not optional — mispronouncing tones changes the meaning of everything you say.</p>
+
+          <h2>Stroke Order: The Rules</h2>
+          <p>Characters must be written in a specific stroke order: top to bottom, left to right, outside to inside, and closed spaces last. Proper stroke order makes characters legible, aesthetically pleasing, and easier to remember. It also prepares you for reading handwritten Chinese, which often has simplified stroke forms.</p>
+
+          <h2>Taking the Long View</h2>
+          <p>Learning Hanzi is a years-long journey, but it becomes increasingly rewarding. Each character you learn unlocks new words, signs, and texts. The key is consistency — learning even 5-10 new characters daily adds up to thousands over a year. Characters connect to form compound words, and the more you know, the faster the rest becomes.</p>
+        `
+      },
+      {
+        id: 6,
+        tag: 'English',
+        title: 'English Language for IT Professionals: The Key to Global Success',
+        subtitle: 'Technical English skills are essential for IT professionals in today\'s global workplace. Here\'s how to excel.',
+        authorInitials: 'HS',
+        authorName: 'Hafsa Saif',
+        authorTitle: 'English Language Instructor',
+        date: 'April 5, 2024',
+        readTime: '6 min read',
+        image: 'images/english-it.webp',
+        flag: 'https://flagcdn.com/w40/gb.png',
+        category: 'english',
+        content: `
+          <p>In the world of IT, English is not just a communication tool — it's the operating language of the industry. From programming documentation and technical specifications to international team collaboration and client communication, English permeates every aspect of an IT professional's daily work.</p>
+
+          <h2>Why IT English Is Different</h2>
+          <p>Technical English isn't about grammar perfection — it's about precision and clarity. In IT, a misunderstood instruction can cause hours of debugging. A vague requirement can lead to the wrong feature being built. Technical English values economy of words, unambiguous phrasing, and clear hierarchical structure.</p>
+
+          <div class="art-tip-box">
+            <div class="art-tip-box__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <div class="art-tip-box__label">IT English Principle</div>
+              <p>Always prefer the simplest, clearest way to express a technical idea. "The function returns null" beats "The aforementioned function shall return a null value indicative of the absence of a valid result."</p>
+            </div>
+          </div>
+
+          <h2>Writing Technical Documentation</h2>
+          <p>Good technical documentation follows specific patterns: active voice, present tense, short sentences, and consistent terminology. When documenting code, explain the "why" not just the "what". README files, API documentation, and inline comments all follow these principles.</p>
+
+          <p>Practice writing bug reports: a good bug report describes steps to reproduce, expected behavior, and actual behavior — all in clear, concise English. Being able to write an effective bug report is a superpower in any engineering team.</p>
+
+          <h2>Spoken English in Meetings</h2>
+          <p>Global teams mean conference calls with accented English from every continent. Focus on speaking clearly and at a moderate pace. Use standard English phrases for common IT situations: "Could you clarify?", "I suggest we...", "The bottleneck is...", "Let's scope this."</p>
+
+          <h2>Email and Chat Communication</h2>
+          <p>IT professionals spend significant time in Slack, Teams, and email. Written communication skills matter enormously here. Learn standard phrases: "Please review at your earliest convenience," "LGTM" (looks good to me) in code reviews, "PTAL" (please take another look). Understand that tone is hard to convey in text — be explicit about intentions.</p>
+
+          <h2>Reading Technical Content</h2>
+          <p>The vast majority of technical documentation, Stack Overflow answers, GitHub issues, and programming tutorials are in English. The faster you can read and understand technical English, the faster you'll solve problems and learn new technologies. Read daily — even 15 minutes of technical English reading keeps your skills sharp.</p>
+        `
+      },
+      {
+        id: 7,
+        tag: 'General',
+        title: 'How to Learn a New Language: 5 Common Mistakes to Avoid',
+        subtitle: 'Don\'t let these common pitfalls slow down your language learning journey. Learn what to avoid.',
+        authorInitials: 'JG',
+        authorName: 'Jeremy Gray',
+        authorTitle: 'Language Learning Consultant',
+        date: 'April 12, 2024',
+        readTime: '5 min read',
+        image: 'images/language-mistakes.webp',
+        flag: 'https://flagcdn.com/w40/gb.png',
+        category: 'general',
+        content: `
+          <p>Everyone who learns a language makes mistakes. But some mistakes are so common they slow down almost every learner. By identifying these traps early, you can avoid them and make faster progress. Here are the five most damaging language learning mistakes and how to avoid them.</p>
+
+          <h2>Mistake 1: Focusing Only on Input</h2>
+          <p>Many learners think that watching movies and reading books is enough. But language is a skill — it requires active production, not just passive consumption. You can understand 10,000 hours of Spanish podcasts and still struggle to order food. You must speak, write, and actively use the language.</p>
+
+          <div class="art-tip-box">
+            <div class="art-tip-box__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <div class="art-tip-box__label">The 50/50 Rule</div>
+              <p>Spend equal time on input (reading, listening) and output (speaking, writing). Input shows you what's possible; output makes it yours.</p>
+            </div>
+          </div>
+
+          <h2>Mistake 2: Studying Grammar Before Context</h2>
+          <p>Grammar rules without context are forgettable. You might memorize that verbs go at the end in Korean, but unless you've seen it in real sentences, it won't stick. Learn grammar through sentences and texts, not from rule books. When you encounter a rule in context, the rule becomes meaningful.</p>
+
+          <h2>Mistake 3: Waiting to Speak</h2>
+          <p>Many learners don't speak until they feel "ready." They never feel ready. The truth is: you'll always make mistakes when speaking — that's the point. Start speaking from day one, even if it's just自我介绍 (self-introduction). Mistakes are data, not failures.</p>
+
+          <h2>Mistake 4: Studying Many Things Superficially</h2>
+          <p>The learner who studies 30 minutes of Spanish, then switches to French, then tries Korean for 10 minutes before returning to Spanish — this learner will never reach fluency in any language. Depth beats breadth. Master one language at a time. Learn a language to conversational fluency first, then add another.</p>
+
+          <h2>Mistake 5: Not Tracking Progress</h2>
+          <p>If you don't measure your progress, you won't notice it. Language learning is gradual — you improve so slowly day-to-day that it feels like nothing changes. Keep a learning journal, take monthly video recordings of yourself speaking, or use standardized tests. Celebrate small wins and recognize how far you've come.</p>
+
+          <h2>The Takeaway</h2>
+          <p>Language learning is hard, but it's not complicated. Be consistent, speak early, study in context, go deep before going wide, and track your progress. These aren't glamorous secrets, but they work.</p>
+        `
+      },
+      {
+        id: 8,
+        tag: 'General',
+        title: 'Exploring Language Schools in the UAE',
+        subtitle: 'A guide to the best language learning institutions and programs available across the UAE.',
+        authorInitials: 'FA',
+        authorName: 'Fida Abo Hasson',
+        authorTitle: 'Language Education Consultant',
+        date: 'April 19, 2024',
+        readTime: '6 min read',
+        image: 'images/uae-schools.webp',
+        flag: 'https://flagcdn.com/w40/ae.png',
+        category: 'general',
+        content: `
+          <p>The UAE is one of the most linguistically diverse countries in the world. With expatriates making up over 85% of the population, language schools across Dubai, Abu Dhabi, and Sharjah serve a vast and varied clientele — from corporate professionals seeking business English to residents learning Arabic, and students preparing for international exams.</p>
+
+          <h2>What to Look for in a Language School</h2>
+          <p>Not all language schools are equal. Before enrolling, consider: teacher qualifications (native speakers with teaching credentials are ideal), class sizes (smaller groups mean more speaking time), curriculum structure (does it align with CEFR or other standards?), and flexibility (online options, weekend classes).</p>
+
+          <p>Accreditation matters too. Look for schools affiliated with recognized bodies — British Council, Cambridge, Goethe-Institut, Alliance Française — or accredited by the UAE's Knowledge and Human Development Authority (KHDA).</p>
+
+          <div class="art-tip-box">
+            <div class="art-tip-box__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <div class="art-tip-box__label">KHDA Tip</div>
+              <p>Dubai schools regulated by KHDA receive quality ratings. Look for schools rated "Good" or "Very Good" — these meet international teaching standards and will give you recognized certificates.</p>
+            </div>
+          </div>
+
+          <h2>Popular Languages in UAE Schools</h2>
+          <p>English dominates — virtually every school offers English courses, from General English to IELTS and TOEFL preparation. Arabic is the second most sought-after language, with both Modern Standard Arabic (MSA) and Emirati dialect courses available. German, French, and Spanish are also widely taught for business and travel purposes.</p>
+
+          <h2>Online vs. In-Person Learning</h2>
+          <p>Post-pandemic, most UAE language schools offer hybrid models. In-person classes provide immersion benefits and networking opportunities. Online courses offer flexibility for working professionals. Many learners opt for a blend — in-person for conversation practice, online for grammar and vocabulary study.</p>
+
+          <h2>Corporate Language Training</h2>
+          <p>Large multinationals in the UAE invest heavily in language training for employees. Companies like Emirates, ADNOC, and major banks offer subsidized or free language courses. If you're employed, check whether your company has partnerships with language schools — this can significantly reduce costs.</p>
+
+          <h2>Making the Right Choice</h2>
+          <p>Before committing to a course, attend a trial class if possible. Assess whether the teaching style suits you, whether the pace is appropriate, and whether you feel comfortable with the instructor. Language learning is a commitment — invest the time to find the right school, and your progress will thank you for it.</p>
+        `
+      },
+      {
+        id: 9,
+        tag: 'Arabic',
+        title: 'Arabic Language Learning: A Comprehensive Guide for Non-Native Speakers',
+        subtitle: 'Everything you need to know about starting your Arabic learning journey as a non-native speaker.',
+        authorInitials: 'KA',
+        authorName: 'Khalid Ali',
+        authorTitle: 'Arabic Language Instructor',
+        date: 'April 26, 2024',
+        readTime: '9 min read',
+        image: 'images/arabic-guide.webp',
+        flag: 'https://flagcdn.com/w40/sa.png',
+        category: 'arabic',
+        content: `
+          <p>Arabic is one of the world's most important languages — it's the fifth most spoken language globally, the language of the Quran, and a key language in business, politics, and culture across the Middle East and North Africa. But it's also one of the most challenging languages for non-native speakers to learn. This guide will help you understand what you're getting into and how to succeed.</p>
+
+          <h2>Understanding Arabic's Three Forms</h2>
+          <p>Before you start, you need to understand that "Arabic" isn't one thing. Modern Standard Arabic (MSA, or فصحى) is the formal language used in writing, news broadcasts, and formal speech. Colloquial Arabic varies enormously by region — Egyptian Arabic, Levantine Arabic, Gulf Arabic, Moroccan Arabic, and dozens more. Each is a distinct dialect with its own vocabulary and pronunciation.</p>
+
+          <p>Most learners start with MSA for reading ability, then add a colloquial dialect for speaking. Some start with a specific dialect for conversation. There's no single right path — your goals determine the best approach.</p>
+
+          <div class="art-tip-box">
+            <div class="art-tip-box__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <div class="art-tip-box__label">Starting Strategy</div>
+              <p>Start with MSA for reading and formal situations, and choose one colloquial dialect (Egyptian is the most widely understood) for spoken communication. This two-track approach gives you both dimensions of the language.</p>
+            </div>
+          </div>
+
+          <h2>The Arabic Alphabet and Script</h2>
+          <p>Arabic uses the Arabic script, written right-to-left. The script has 28 letters, all consonants and long vowels. Short vowels (harakat) are typically omitted in writing, which is one of the biggest challenges for beginners — the same written word can have multiple possible pronunciations.</p>
+
+          <p>Learning to read Arabic without vowels (scriptio defectiva) is the norm and requires practice. Don't rely on vowel marks in the beginning — learn to read and infer vowelization from context. This is how native speakers learn to read too.</p>
+
+          <h2>Arabic Sounds That Don't Exist Elsewhere</h2>
+          <p>Arabic has sounds unfamiliar to most non-native speakers: the emphatic consonants (ص، ض، ط، ظ) produced with raised tongue roots; the guttural sounds (ع، ح، خ، غ); and the distinctive pronunciation of the qaf (ق). These sounds take months of practice to master. Listen extensively to native speakers and practice with a teacher who can correct your pronunciation from the start.</p>
+
+          <h2>Root-Based Vocabulary</h2>
+          <p>Most Arabic vocabulary derives from three-letter roots. The root ك-ت-ب (k-t-b) relates to writing: كتاب (kitab, book), كاتب (katib, writer), مكتبة (maktaba, library), كتابة (kitaba, writing). Understanding this system helps you guess the meaning of unfamiliar words and build vocabulary faster.</p>
+
+          <h2>The Case System</h2>
+          <p>Arabic nouns and adjectives have three cases (nominative, accusative, genitive) indicated by short vowel marks in formal writing but usually omitted in everyday text. The case system affects article and adjective agreement. In MSA, mastering cases matters for reading and formal writing; in colloquial speech, it's largely simplified.</p>
+
+          <h2>Patience and Persistence</h2>
+          <p>Arabic is a long-term investment. Reaching basic conversational level takes 6-12 months of consistent study. Reading proficiency requires 1-2 years. But every step forward opens new doors — to literature, music, cinema, conversation with 400 million speakers, and a civilization spanning millennia. It's worth the journey.</p>
+        `
+      }
+    ];
+
+    // ─── Render Article ───
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get('id')) || 1;
+    const article = articles.find(a => a.id === id) || articles[0];
+
+    document.getElementById('art-tag').textContent = article.tag;
+    document.getElementById('art-title').textContent = article.title;
+    document.getElementById('art-subtitle').textContent = article.subtitle;
+    document.getElementById('art-author-av').textContent = article.authorInitials;
+    document.getElementById('art-author-name').textContent = article.authorName;
+    document.getElementById('art-author-title').textContent = article.authorTitle;
+    document.getElementById('art-date-read').innerHTML = `${article.date}<span>•</span>${article.readTime}`;
+    document.getElementById('art-featured-img').src = article.image;
+    document.getElementById('art-featured-img').alt = article.title;
+    document.getElementById('art-body').innerHTML = article.content;
+    document.title = `${article.title} – Lahjaro Languages Institute FZ-LLC`;
+
+    // ─── Render Related Articles ───
+    const related = articles.filter(a => a.id !== id).slice(0, 4);
+    const grid = document.getElementById('other-blogs-grid');
+    grid.innerHTML = related.map(a => `
+      <div class="ob-card" onclick="location.href='article.html?id=${a.id}'" style="cursor:pointer;">
+        <img class="ob-card__img" src="${a.image.replace('w=1200','w=400')}" alt="${a.tag}">
+        <div class="ob-card__body">
+          <span class="ob-card__tag">${a.tag}</span>
+          <div class="ob-card__title">${a.title}</div>
+        </div>
+      </div>
+    `).join('');
+  </script>
+
+</body>
+</html>

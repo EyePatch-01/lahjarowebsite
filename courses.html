@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Languages – Lahjaro Languages Institute FZ-LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:   #03143a;
+      --blue:   #143d82;
+      --dark:   #031436;
+      --hd:     #0a1628;
+      --orange: #f4af85;
+      --gm:     #64748b;
+      --muted:  #94a3b8;
+      --text:   #0b1220;
+      --w:      #fff;
+      --f:      'Inter', sans-serif;
+    }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: var(--f); color: var(--text); background: #fff; overflow-x: hidden; }
+    img  { display: block; max-width: 100%; }
+    a    { text-decoration: none; color: inherit; }
+    button { border: none; background: none; font: inherit; cursor: pointer; }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--orange);
+      height: 36px;
+      display: flex;
+      align-items: center;
+      z-index: 101;
+    }
+
+    .topbar__in {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .topbar__contact {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .topbar__contact a {
+      color: rgba(255,255,255,.8);
+      font-size: 12.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s;
+    }
+
+    .topbar__contact a:hover {
+      color: #fff;
+    }
+
+    .topbar__socials {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .topbar__socials a {
+      color: rgba(255,255,255,.7);
+      display: inline-flex;
+      align-items: center;
+      transition: color .2s;
+    }
+
+    .topbar__socials a:hover {
+      color: #fff;
+    }
+
+    /* ── HEADER ── */
+    .header { background: var(--navy); height: 80px; position: sticky; top: 0; z-index: 100; }
+    .header__in {
+      max-width: 1440px; margin: 0 auto; padding: 0 80px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .header__left { display: flex; align-items: center; gap: 48px; }
+    .logo img { height: 129px; width: auto; }
+    .nav { display: flex; align-items: center; gap: 28px; }
+    .nav a { color: rgba(255,255,255,.82); font-size: 15px; font-weight: 500; transition: color .2s; }
+    .nav a:hover { color: #fff; }
+    .nav a.active { color: #fff; font-weight: 700; }
+    .btn-pill {
+      background: var(--orange); color: #fff; font-size: 15px; font-weight: 600;
+      padding: 13px 26px; border-radius: 100px;
+      display: inline-flex; align-items: center; gap: 8px; transition: background .2s;
+    }
+    .btn-pill:hover { background: #e89b6d; }
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; width: 40px; height: 40px; padding: 6px; cursor: pointer; border-radius: 8px;
+    }
+    .hamburger span { display: block; width: 22px; height: 2.5px; background: #fff; border-radius: 3px; transition: transform .3s, opacity .3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+    .mob-nav {
+      display: none; position: fixed; top: 80px; left: 0; right: 0;
+      background: var(--navy); padding: 8px 0 20px; z-index: 98;
+      border-top: 1px solid rgba(255,255,255,.1); flex-direction: column;
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+    }
+    .mob-nav.open { display: flex; }
+    .mob-nav a.mob-link {
+      color: rgba(255,255,255,.82); font-size: 16px; font-weight: 500;
+      padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,.07);
+      display: block; transition: color .2s, background .2s;
+    }
+    .mob-nav a.mob-link:hover, .mob-nav a.mob-link.active { color: #fff; background: rgba(255,255,255,.06); }
+    .mob-nav .mob-cta {
+      margin: 16px 24px 0; background: var(--orange); color: #fff;
+      font-size: 15px; font-weight: 700; padding: 14px 24px;
+      border-radius: 100px; text-align: center; display: block;
+    }
+
+    /* ── HERO ── */
+    .cr-hero {
+      background: linear-gradient(to bottom, rgba(20,61,130,.45) 0%, rgba(255,255,255,0) 100%);
+      padding: 80px 60px 70px; text-align: center;
+    }
+    .cr-breadcrumb {
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      font-size: 13px; color: var(--gm); margin-bottom: 20px;
+    }
+    .cr-breadcrumb a { color: var(--gm); }
+    .cr-breadcrumb .cur { color: var(--hd); font-weight: 500; }
+    .cr-hero h1 {
+      font-size: 64px; font-weight: 800; color: var(--hd);
+      line-height: 74px; letter-spacing: -1.5px;
+    }
+    .cr-hero__sub {
+      font-size: 17px; color: var(--gm); max-width: 420px;
+      margin: 16px auto 0; line-height: 27px;
+    }
+
+    /* ── COURSES SECTION ── */
+    .cr-section { background: #fff; padding: 80px 0 90px; }
+    .cr-section__in { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+
+    .cr-section__hdr { text-align: center; margin-bottom: 36px; }
+    .cr-label {
+      font-size: 12px; font-weight: 600; color: var(--orange);
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; display: block;
+    }
+    .cr-section__hdr h2 {
+      font-size: 40px; font-weight: 800; color: var(--hd);
+      line-height: 50px; letter-spacing: -.8px;
+    }
+
+    /* Filter tabs */
+    .cr-filters { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 48px; flex-wrap: wrap; }
+    .cr-filter {
+      padding: 9px 22px; border-radius: 100px; font-size: 14px; font-weight: 600;
+      border: 1.5px solid #e2e8f0; color: var(--hd); background: #fff;
+      cursor: pointer; transition: all .2s;
+    }
+    .cr-filter:hover { border-color: var(--blue); color: var(--blue); }
+    .cr-filter.active { background: var(--hd); color: #fff; border-color: var(--hd); }
+
+    /* Course grid */
+    .cr-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    /* Course card */
+    .cr-card {
+      background: #fff; border-radius: 14px;
+      border: 1px solid #e8edf5;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      overflow: hidden; position: relative;
+      display: flex; flex-direction: column;
+    }
+
+    /* Card header (blue) */
+    .cr-card__hdr {
+      background: var(--blue); padding: 18px 16px 16px;
+      display: flex; align-items: center; justify-content: space-between; min-height: 90px;
+    }
+    .cr-card__lang { display: flex; align-items: center; gap: 10px; }
+    .cr-card__flag {
+      width: 32px; height: 32px; border-radius: 6px; overflow: hidden; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .cr-card__flag img { width: 100%; height: 100%; object-fit: cover; }
+    .cr-card__lang-name { font-size: 18px; font-weight: 700; color: #fff; }
+    .cr-card__level {
+      background: rgba(255,255,255,.92); border-radius: 100px;
+      padding: 4px 12px; font-size: 11px; font-weight: 700;
+      color: var(--blue); white-space: nowrap; flex-shrink: 0;
+    }
+    .cr-card__level--dark { color: var(--hd); }
+
+    /* Card body */
+    .cr-card__body { padding: 16px 16px 0; display: flex; align-items: center; gap: 12px; flex: 1; }
+    .cr-card__avatar {
+      width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+      overflow: hidden; background: #e2e8f0;
+    }
+    .cr-card__avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .cr-card__instructor { font-size: 13px; font-weight: 500; color: var(--blue); }
+    .cr-card__instructor--dark { color: var(--hd); }
+
+    /* Card footer */
+    .cr-card__ftr { padding: 16px; }
+    .cr-card__price { font-size: 14px; font-weight: 700; color: var(--blue); margin-bottom: 10px; }
+    .cr-card__price--dark { color: var(--hd); }
+    .cr-card__btn {
+      width: 100%; background: var(--orange); color: #fff; border-radius: 8px;
+      padding: 10px; font-size: 14px; font-weight: 600; text-align: center;
+      display: block; transition: opacity .2s; margin-bottom: 10px;
+    }
+    .cr-card__btn:hover { opacity: .88; }
+    .cr-card__booked { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--gm); }
+    .cr-card__booked svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* Coming Soon overlay */
+    .cr-card--soon .cr-card__hdr { opacity: .6; }
+    .cr-card__soon-overlay {
+      position: absolute; inset: 0; background: rgba(10,22,40,.8);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+      border-radius: 14px;
+    }
+    .cr-card__soon-overlay h3 { font-size: 20px; font-weight: 800; color: #fff; }
+    .cr-card__soon-overlay p { font-size: 13px; color: var(--orange); }
+    .cr-card__notify {
+      background: var(--blue); color: #fff; font-size: 11px; font-weight: 700;
+      padding: 6px 16px; border-radius: 100px; border: none; cursor: pointer;
+      transition: opacity .2s; margin-top: 4px;
+    }
+    .cr-card__notify:hover { opacity: .85; }
+
+    /* Soon available tag */
+    .cr-card__soon-tag { font-size: 13px; color: var(--gm); padding: 16px 16px 0; flex: 1; }
+
+    /* ── EXPANDING SOON ── */
+    .cr-expand { background: #fff7ed; padding: 80px 0; }
+    .cr-expand__in { max-width: 860px; margin: 0 auto; padding: 0 40px; text-align: center; }
+    .cr-expand .cr-label { color: #f97316; }
+    .cr-expand h2 { font-size: 40px; font-weight: 800; color: var(--hd); line-height: 50px; letter-spacing: -.8px; margin-bottom: 32px; }
+    .cr-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 24px; }
+    .cr-tag {
+      padding: 8px 20px; border-radius: 100px; font-size: 14px; font-weight: 600;
+      color: var(--hd); background: #fff; border: 1.5px solid #e2e8f0;
+    }
+    .cr-expand__sub { font-size: 15px; color: var(--gm); line-height: 25px; margin-bottom: 28px; }
+    .cr-waitlist { display: flex; gap: 0; max-width: 440px; margin: 0 auto; border-radius: 100px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
+    .cr-waitlist input {
+      flex: 1; border: none; outline: none; padding: 14px 20px;
+      font: inherit; font-size: 14px; color: var(--hd); background: #fff;
+    }
+    .cr-waitlist input::placeholder { color: #adb5bd; }
+    .cr-waitlist button {
+      background: var(--hd); color: #fff; font-size: 14px; font-weight: 600;
+      padding: 14px 24px; white-space: nowrap; border: none; cursor: pointer; transition: opacity .2s;
+    }
+    .cr-waitlist button:hover { opacity: .85; }
+
+    /* ── TICKER ── */
+    @keyframes mar { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .ticker { overflow: hidden; background: #fff; padding: 40px 0; }
+    .ticker__track {
+      display: flex; gap: 48px; align-items: center;
+      animation: mar 35s linear infinite; width: max-content;
+    }
+    .ticker__track span {
+      font-size: 72px; font-weight: 700; white-space: nowrap;
+      background: linear-gradient(180deg, #143d82 0%, #f4af85 100%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .ticker__dot { font-size: 48px; font-weight: 400; opacity: .35; }
+
+    /* ── FAQ ── */
+    .cr-faq { background: #fff; padding: 80px 0; }
+    .cr-faq__in { max-width: 860px; margin: 0 auto; padding: 0 60px; }
+    .cr-faq-item { border-bottom: 1px solid #e5e7eb; }
+    .cr-faq-item:first-child { border-top: 1px solid #e5e7eb; }
+    .cr-faq-trigger {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 0; cursor: pointer; width: 100%;
+      background: none; border: none; font: inherit; text-align: left;
+    }
+    .cr-faq-q { font-size: 17px; font-weight: 600; color: var(--hd); line-height: 26px; flex: 1; }
+    .cr-faq-icon {
+      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; margin-left: 16px;
+      border: 1.5px solid #e5e7eb; display: flex; align-items: center; justify-content: center;
+      transition: background .2s, border-color .2s;
+    }
+    .cr-faq-item--open .cr-faq-icon { background: var(--dark); border-color: var(--dark); }
+    .cr-faq-icon svg { width: 12px; height: 12px; }
+    .cr-faq-item:not(.cr-faq-item--open) .cr-faq-icon svg { color: var(--gm); }
+    .cr-faq-item--open .cr-faq-icon svg { color: #fff; }
+    .cr-faq-body { display: none; padding-bottom: 20px; }
+    .cr-faq-item--open .cr-faq-body { display: block; }
+    .cr-faq-body p { font-size: 15px; color: var(--gm); line-height: 26px; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--navy); padding: 60px 0 0; }
+    .footer__grid {
+      max-width: 1440px; margin: 0 auto; padding: 0 80px 48px;
+      display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 160px; gap: 40px;
+    }
+    .fc h4 { font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 24px; }
+    .fc a, .fc p { font-size: 14px; color: #9ca3af; display: block; line-height: 2.2; transition: color .2s; }
+    .fc a:hover { color: #fff; }
+    .fc .w { color: #fff; }
+    .nl-row {
+      display: flex; align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,.2); padding-bottom: 8px; margin-bottom: 12px;
+    }
+    .nl-row input { background: none; border: none; outline: none; color: #fff; font: inherit; font-size: 13px; flex: 1; }
+    .nl-row input::placeholder { color: #757575; }
+    .nl-row button { color: rgba(255,255,255,.5); font-size: 16px; }
+    .socials { display: flex; gap: 12px; }
+    .fc a.soc {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.2);
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color .2s, background .2s;
+    }
+    .fc a.soc:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+    .fc a.soc svg { display: block; }
+    .fc.logo-col img { width: 180px; height: auto; }
+    .footer__btm {
+      border-top: 1px solid rgba(255,255,255,.1);
+      max-width: 1440px; margin: 0 auto; padding: 18px 80px;
+      display: flex; justify-content: center;
+    }
+    .footer__btm p { font-size: 14px; color: #6b7280; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 767px) {
+      /* TOP BAR */
+      .topbar__in {
+        padding: 0 20px;
+      }
+
+      .topbar__contact {
+        gap: 16px;
+      }
+
+      .topbar__contact a span {
+        display: none;
+      }
+
+      .topbar__contact a svg,
+      .topbar__socials a svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .header__in { padding: 0 20px; }
+      .nav { display: none; }
+      .hamburger { display: flex; }
+      .header .btn-pill { display: none; }
+
+      .cr-hero { padding: 48px 20px 56px; }
+      .cr-hero h1 { font-size: 36px; line-height: 46px; }
+
+      .cr-section { padding: 48px 0; }
+      .cr-section__in { padding: 0 16px; }
+      .cr-section__hdr h2 { font-size: 26px; line-height: 36px; }
+      .cr-grid { grid-template-columns: 1fr; gap: 16px; }
+
+      .cr-expand { padding: 48px 0; }
+      .cr-expand__in { padding: 0 16px; }
+      .cr-expand h2 { font-size: 28px; }
+      .cr-waitlist { flex-direction: column; border-radius: 12px; }
+      .cr-waitlist button { border-radius: 0 0 12px 12px; }
+
+      .cr-faq__in { padding: 0 16px; }
+      .cr-faq { padding: 48px 0; }
+
+      .footer__grid { padding: 0 20px 36px; grid-template-columns: 1fr 1fr; gap: 32px; }
+      .fc.logo-col { grid-column: 1/-1; display: flex; justify-content: center; }
+      .footer__btm { padding: 16px 20px; }
+      .footer__btm p { font-size: 12px; text-align: center; }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .topbar__in {
+        padding: 0 32px;
+      }
+
+      .header__in { padding: 0 32px; }
+      .cr-section__in { padding: 0 32px; }
+      .cr-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .footer__grid { padding: 0 32px 36px; grid-template-columns: repeat(2,1fr); }
+      .fc.logo-col { grid-column: 1/-1; display: flex; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════ TOP BAR ════════ -->
+  <div class="topbar">
+    <div class="topbar__in">
+      <div class="topbar__contact">
+        <a href="mailto:info@lahjaro.com">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>info@lahjaro.com</span>
+        </a>
+        <a href="tel:+971505325083">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+971 50 532 5083</span>
+        </a>
+      </div>
+      <div class="topbar__socials">
+        <a href="#" aria-label="Facebook">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" aria-label="X / Twitter">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L2.25 2.25h6.918l4.243 5.622 5.833-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#143d82"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__in">
+      <div class="header__left">
+        <a href="index.html" class="logo">
+          <img src="images/logo-new.svg" alt="Lahjaro">
+        </a>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="courses.html" class="active">Courses</a>
+          <a href="articles.html">Articles</a>
+        </nav>
+      </div>
+      <a href="contact.html" class="btn-pill">
+        Contact Us
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mob-nav" id="mob-nav" aria-hidden="true">
+    <a href="index.html" class="mob-link">Home</a>
+    <a href="about.html" class="mob-link">About Us</a>
+    <a href="services.html" class="mob-link">Services</a>
+    <a href="courses.html" class="mob-link active">Courses</a>
+    <a href="articles.html" class="mob-link">Articles</a>
+    <a href="contact.html" class="mob-cta">Contact Us &rarr;</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="cr-hero">
+    <div class="cr-breadcrumb">
+      <a href="index.html">Home</a>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="cur">Languages</span>
+    </div>
+    <h1>Explore Our Languages</h1>
+    <p class="cr-hero__sub">18 languages. Expert instructors. Flexible schedules.<br>Start with a free class.</p>
+  </section>
+
+  <!-- COURSES -->
+  <section class="cr-section">
+    <div class="cr-section__in">
+
+      <div class="cr-section__hdr">
+        <span class="cr-label">available languages</span>
+        <h2>Learn Fast, Speak Fluently. Explore Our Courses</h2>
+      </div>
+
+      <!-- Filters -->
+      <div class="cr-filters">
+        <button class="cr-filter active" data-filter="all">All</button>
+        <button class="cr-filter" data-filter="arabic">Arabic</button>
+        <button class="cr-filter" data-filter="european">European</button>
+        <button class="cr-filter" data-filter="asian">Asian</button>
+        <button class="cr-filter" data-filter="special">Special</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="cr-grid" id="crGrid">
+
+        <!-- 1 — Arabic -->
+        <div class="cr-card" data-cat="arabic">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/sa.png" alt="Arabic"></div>
+              <span class="cr-card__lang-name">Arabic</span>
+            </div>
+            <span class="cr-card__level">All Levels</span>
+          </div>
+          <div class="cr-card__body">
+            <div class="cr-card__avatar"><img src="staff/heidi-spanish.webp" alt="Heidi"></div>
+            <span class="cr-card__instructor">Heidi</span>
+          </div>
+          <div class="cr-card__ftr">
+                        <a href="contact.html" class="cr-card__btn">Book Free Trial →</a>
+            <div class="cr-card__booked">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              0% Booked
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 — English -->
+        <div class="cr-card" data-cat="european">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/gb.png" alt="English"></div>
+              <span class="cr-card__lang-name">English</span>
+            </div>
+            <span class="cr-card__level">All Levels</span>
+          </div>
+          <div class="cr-card__body">
+            <div class="cr-card__avatar"><img src="staff/fida-abo-hasson.webp" alt="Fida Abo Hasson"></div>
+            <span class="cr-card__instructor">Fida Abo Hasson</span>
+          </div>
+          <div class="cr-card__ftr">
+                        <a href="contact.html" class="cr-card__btn">Book Free Trial →</a>
+            <div class="cr-card__booked">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              0% Booked
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 — Hebrew -->
+        <div class="cr-card" data-cat="special">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/il.png" alt="Hebrew"></div>
+              <span class="cr-card__lang-name">Hebrew</span>
+            </div>
+            <span class="cr-card__level">All Levels</span>
+          </div>
+          <div class="cr-card__body">
+            <div class="cr-card__avatar"><img src="staff/shehab-saber.webp" alt="Shehab Saber"></div>
+            <span class="cr-card__instructor">Shehab Saber</span>
+          </div>
+          <div class="cr-card__ftr">
+                        <a href="contact.html" class="cr-card__btn">Book Free Trial →</a>
+            <div class="cr-card__booked">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              0% Booked
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 — German -->
+        <div class="cr-card" data-cat="european">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/de.png" alt="German"></div>
+              <span class="cr-card__lang-name">German</span>
+            </div>
+            <span class="cr-card__level cr-card__level--dark">All Levels</span>
+          </div>
+          <div class="cr-card__body">
+            <div class="cr-card__avatar"><img src="images/trainer-ahmad.jpg" alt="Ahmad Hegazy"></div>
+            <span class="cr-card__instructor cr-card__instructor--dark">Ahmad Hegazy</span>
+          </div>
+          <div class="cr-card__ftr">
+                        <a href="contact.html" class="cr-card__btn">Book Free Trial →</a>
+            <div class="cr-card__booked">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              0% Booked
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 — Turkish -->
+        <div class="cr-card" data-cat="asian">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/tr.png" alt="Turkish"></div>
+              <span class="cr-card__lang-name">Turkish</span>
+            </div>
+            <span class="cr-card__level cr-card__level--dark">Beginner</span>
+          </div>
+          <div class="cr-card__body">
+            <div class="cr-card__avatar"><img src="staff/khalima-khona.webp" alt="Halima"></div>
+            <span class="cr-card__instructor cr-card__instructor--dark">Halima</span>
+          </div>
+          <div class="cr-card__ftr">
+                        <a href="contact.html" class="cr-card__btn">Book Free Trial →</a>
+            <div class="cr-card__booked">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              0% Booked
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 — Uzbek -->
+        <div class="cr-card" data-cat="asian">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/uz.png" alt="Uzbek"></div>
+              <span class="cr-card__lang-name">Uzbek</span>
+            </div>
+            <span class="cr-card__level cr-card__level--dark">Beginner</span>
+          </div>
+          <div class="cr-card__body">
+            <div class="cr-card__avatar"><img src="staff/khalima-khona.webp" alt="Halima"></div>
+            <span class="cr-card__instructor cr-card__instructor--dark">Halima</span>
+          </div>
+          <div class="cr-card__ftr">
+                        <a href="contact.html" class="cr-card__btn">Book Free Trial →</a>
+            <div class="cr-card__booked">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              0% Booked
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 — Kyrgyz -->
+        <div class="cr-card" data-cat="asian">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/kg.png" alt="Kyrgyz"></div>
+              <span class="cr-card__lang-name">Kyrgyz</span>
+            </div>
+            <span class="cr-card__level cr-card__level--dark">Beginner</span>
+          </div>
+          <div class="cr-card__body">
+            <div class="cr-card__avatar"><img src="staff/khalima-khona.webp" alt="Halima"></div>
+            <span class="cr-card__instructor cr-card__instructor--dark">Halima</span>
+          </div>
+          <div class="cr-card__ftr">
+                        <a href="contact.html" class="cr-card__btn">Book Free Trial →</a>
+            <div class="cr-card__booked">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              0% Booked
+            </div>
+          </div>
+        </div>
+
+        <!-- 8 — Russian (Coming Soon) -->
+        <div class="cr-card cr-card--soon" data-cat="european">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/ru.png" alt="Russian"></div>
+              <span class="cr-card__lang-name">Russian</span>
+            </div>
+            <span class="cr-card__level cr-card__level--dark">Expert</span>
+          </div>
+          <p class="cr-card__soon-tag">Available Soon</p>
+          <div class="cr-card__ftr">
+                        <a href="#" class="cr-card__btn">Available Soon</a>
+          </div>
+          <div class="cr-card__soon-overlay">
+            <h3>Coming Soon</h3>
+            <p>We're preparing this course</p>
+            <button class="cr-card__notify">Notify Me</button>
+          </div>
+        </div>
+
+        <!-- 9 — Spanish -->
+        <div class="cr-card" data-cat="european">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/es.png" alt="Spanish"></div>
+              <span class="cr-card__lang-name">Spanish</span>
+            </div>
+            <span class="cr-card__level cr-card__level--dark">Beginner</span>
+          </div>
+          <div class="cr-card__body">
+            <div class="cr-card__avatar"><img src="staff/heidi-spanish.webp" alt="Heidi"></div>
+            <span class="cr-card__instructor cr-card__instructor--dark">Heidi</span>
+          </div>
+          <div class="cr-card__ftr">
+                        <a href="contact.html" class="cr-card__btn">Book Free Trial →</a>
+            <div class="cr-card__booked">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              0% Booked
+            </div>
+          </div>
+        </div>
+
+        <!-- 10 — French (Coming Soon) -->
+        <div class="cr-card cr-card--soon" data-cat="european">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/fr.png" alt="French"></div>
+              <span class="cr-card__lang-name">French</span>
+            </div>
+            <span class="cr-card__level cr-card__level--dark">Expert</span>
+          </div>
+          <p class="cr-card__soon-tag">Available Soon</p>
+          <div class="cr-card__ftr">
+                        <a href="#" class="cr-card__btn">Available Soon</a>
+          </div>
+          <div class="cr-card__soon-overlay">
+            <h3>Coming Soon</h3>
+            <p>We're preparing this course</p>
+            <button class="cr-card__notify">Notify Me</button>
+          </div>
+        </div>
+
+        <!-- 11 — Italian -->
+        <div class="cr-card" data-cat="european">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/it.png" alt="Italian"></div>
+              <span class="cr-card__lang-name">Italian</span>
+            </div>
+            <span class="cr-card__level cr-card__level--dark">All Levels</span>
+          </div>
+          <div class="cr-card__body">
+            <div class="cr-card__avatar"><img src="staff/ibrahim-esawi.webp" alt="Ibrahim Esawi"></div>
+            <span class="cr-card__instructor cr-card__instructor--dark">Ibrahim Esawi</span>
+          </div>
+          <div class="cr-card__ftr">
+                        <a href="contact.html" class="cr-card__btn">Book Free Trial →</a>
+            <div class="cr-card__booked">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              0% Booked
+            </div>
+          </div>
+        </div>
+
+        <!-- 12 — Chinese (Coming Soon) -->
+        <div class="cr-card cr-card--soon" data-cat="asian">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/cn.png" alt="Chinese"></div>
+              <span class="cr-card__lang-name">Chinese</span>
+            </div>
+            <span class="cr-card__level cr-card__level--dark">All Levels</span>
+          </div>
+          <p class="cr-card__soon-tag">Available Soon</p>
+          <div class="cr-card__ftr">
+                        <a href="#" class="cr-card__btn">Available Soon</a>
+          </div>
+          <div class="cr-card__soon-overlay">
+            <h3>Coming Soon</h3>
+            <p>We're preparing this course</p>
+            <button class="cr-card__notify">Notify Me</button>
+          </div>
+        </div>
+
+      </div><!-- /grid -->
+    </div>
+  </section>
+
+  <!-- EXPANDING SOON -->
+  <section class="cr-expand">
+    <div class="cr-expand__in">
+      <span class="cr-label">expanding soon</span>
+      <h2>Expanding Soon</h2>
+      <div class="cr-tags">
+        <span class="cr-tag">IELTS</span>
+        <span class="cr-tag">TOEFL</span>
+        <span class="cr-tag">PTE</span>
+        <span class="cr-tag">Dutch</span>
+        <span class="cr-tag">Korean</span>
+        <span class="cr-tag">Japanese</span>
+        <span class="cr-tag">Hindi</span>
+        <span class="cr-tag">Urdu</span>
+      </div>
+      <p class="cr-expand__sub">We're constantly growing our course offerings.<br>Join our waitlist to be the first to know.</p>
+      <div class="cr-waitlist">
+        <input type="email" placeholder="Enter your email address">
+        <button>Join Waitlist</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker__track">
+      <span>Spanish</span><span class="ticker__dot">+</span><span>Polish</span><span class="ticker__dot">+</span>
+      <span>English</span><span class="ticker__dot">+</span>
+      <span>Italian</span><span class="ticker__dot">+</span>
+      <span>Arabic</span><span class="ticker__dot">+</span>
+      <span>German</span><span class="ticker__dot">+</span>
+      <span>French</span><span class="ticker__dot">+</span>
+      <span>Spanish</span><span class="ticker__dot">+</span><span>Polish</span><span class="ticker__dot">+</span>
+      <span>English</span><span class="ticker__dot">+</span>
+      <span>Italian</span><span class="ticker__dot">+</span>
+      <span>Arabic</span><span class="ticker__dot">+</span>
+      <span>German</span><span class="ticker__dot">+</span>
+      <span>French</span><span class="ticker__dot">+</span>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <section class="cr-faq">
+    <div class="cr-faq__in">
+
+      <div class="cr-section__hdr" style="margin-bottom:32px;">
+        <span class="cr-label">why choose us</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="cr-faq-item cr-faq-item--open">
+        <button class="cr-faq-trigger" onclick="toggleFaq(this)">
+          <span class="cr-faq-q">Are your classes online or in person?</span>
+          <span class="cr-faq-icon">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 4l4 4 4-4"/></svg>
+          </span>
+        </button>
+        <div class="cr-faq-body">
+          <p>All our courses are 100% online, allowing you to learn from anywhere with flexible scheduling.</p>
+        </div>
+      </div>
+
+      <div class="cr-faq-item">
+        <button class="cr-faq-trigger" onclick="toggleFaq(this)">
+          <span class="cr-faq-q">Who are the instructors?</span>
+          <span class="cr-faq-icon">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg>
+          </span>
+        </button>
+        <div class="cr-faq-body">
+          <p>We begin with instructors who speak your native language, then transition to native speakers for advanced levels.</p>
+        </div>
+      </div>
+
+      <div class="cr-faq-item">
+        <button class="cr-faq-trigger" onclick="toggleFaq(this)">
+          <span class="cr-faq-q">How long does it take to learn a language?</span>
+          <span class="cr-faq-icon">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg>
+          </span>
+        </button>
+        <div class="cr-faq-body">
+          <p>Most students notice progress within 2–3 months, depending on consistency and level.</p>
+        </div>
+      </div>
+
+      <div class="cr-faq-item">
+        <button class="cr-faq-trigger" onclick="toggleFaq(this)">
+          <span class="cr-faq-q">Are online courses effective compared to in-person learning?</span>
+          <span class="cr-faq-icon">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg>
+          </span>
+        </button>
+        <div class="cr-faq-body">
+          <p>Yes, with live interaction, structured materials, and continuous feedback, online learning is highly effective.</p>
+        </div>
+      </div>
+
+      <div class="cr-faq-item">
+        <button class="cr-faq-trigger" onclick="toggleFaq(this)">
+          <span class="cr-faq-q">How flexible are the schedules?</span>
+          <span class="cr-faq-icon">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg>
+          </span>
+        </button>
+        <div class="cr-faq-body">
+          <p>We offer flexible timings, including evening and weekend classes.</p>
+        </div>
+      </div>
+
+      <div class="cr-faq-item">
+        <button class="cr-faq-trigger" onclick="toggleFaq(this)">
+          <span class="cr-faq-q">Is there a trial class?</span>
+          <span class="cr-faq-icon">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg>
+          </span>
+        </button>
+        <div class="cr-faq-body">
+          <p>Yes, you can attend a trial online session before enrolling.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer__grid">
+      <div class="fc">
+        <h4>Courses</h4>
+        <a href="#">English Courses</a>
+        <a href="#">German Courses</a>
+        <a href="#">Spanish Courses</a>
+        <a href="#">Other Languages</a>
+      </div>
+      <div class="fc">
+        <h4>Contacts</h4>
+        <p class="w">UAE</p>
+        <p>+971 50 532 5083</p>
+        <p><a href="https://wa.me/971505325083" target="_blank" style="color:inherit;text-decoration:none;">WhatsApp: +971 50 532 5083</a></p>
+        <p>info@lahjaro.com</p>
+      </div>
+      <div class="fc">
+        <h4>Subscribe</h4>
+        <div class="nl-row">
+          <input type="email" placeholder="Get news &amp; updates">
+          <button>&#10148;</button>
+        </div>
+        <p>Subscribe to our newsletter. Be in trends.</p>
+      </div>
+      <div class="fc">
+        <h4>In Socials</h4>
+        <div class="socials">
+          <a href="#" class="soc" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="soc" aria-label="X / Twitter">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L2.25 2.25h6.918l4.243 5.622 5.833-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg>
+          </a>
+          <a href="#" class="soc" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.9)" stroke="none"/></svg>
+          </a>
+          <a href="#" class="soc" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="#" class="soc" aria-label="YouTube">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#03143a"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="fc logo-col">
+        <img src="images/logo-new.svg" alt="Lahjaro">
+      </div>
+    </div>
+    <div class="footer__btm">
+      <p>Copyright &copy; 2026 Lahjaro Languages Institute FZ-LLC. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const mobNav = document.getElementById('mob-nav');
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      mobNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+      mobNav.setAttribute('aria-hidden', true);
+      document.body.style.overflow = '';
+    }
+    hamburger.addEventListener('click', () => {
+      const open = hamburger.classList.toggle('open');
+      mobNav.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open);
+      mobNav.setAttribute('aria-hidden', !open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    window.addEventListener('scroll', () => { if (mobNav.classList.contains('open')) closeMenu(); }, { passive: true });
+    document.addEventListener('click', (e) => {
+      if (mobNav.classList.contains('open') && !mobNav.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
+    });
+
+    // Filter
+    document.querySelectorAll('.cr-filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.cr-filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        document.querySelectorAll('.cr-card').forEach(card => {
+          card.style.display = (f === 'all' || card.dataset.cat === f) ? '' : 'none';
+        });
+      });
+    });
+
+    // FAQ
+    function toggleFaq(btn) {
+      const item = btn.closest('.cr-faq-item');
+      const isOpen = item.classList.contains('cr-faq-item--open');
+      document.querySelectorAll('.cr-faq-item').forEach(i => {
+        i.classList.remove('cr-faq-item--open');
+        const icon = i.querySelector('.cr-faq-icon svg');
+        if (icon) icon.innerHTML = '<path d="M6 2v8M2 6h8"/>';
+      });
+      if (!isOpen) {
+        item.classList.add('cr-faq-item--open');
+        const icon = item.querySelector('.cr-faq-icon svg');
+        if (icon) icon.innerHTML = '<path d="M2 4l4 4 4-4"/>';
+      }
+    }
+  </script>
+
+</body>
+</html>

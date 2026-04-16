@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"c:/Users/manga/Downloads/lahjaro/lahjaro/staff\")",
+      "Bash(curl -L -o \"c:/Users/manga/Downloads/lahjaro/lahjaro/staff/adrian.webp\" \"https://minimax-algeng-chat-tts-us.oss-us-east-1.aliyuncs.com/ccv2%2F2026-04-15%2FMiniMax-M2.7%2F1987566662223663458%2Fd1b2174b1aaa535defae3da8650b64af76c6a4769494504e2e321d7245d7640b..jpeg?Expires=1776286291&OSSAccessKeyId=LTAI5tCpJNKCf5EkQHSuL9xg&Signature=B%2B0x%2BhQO1IWVuzQXSm8TRrQ2FQc%3D\")",
+      "Bash(python3 -m http.server 8080 --directory \"c:/Users/manga/Downloads/lahjaro/\")",
+      "Bash(start http://localhost:8080)"
+    ]
+  }
+}

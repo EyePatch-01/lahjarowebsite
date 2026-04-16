@@ -1,0 +1,1952 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us – Lahjaro Languages Institute FZ-LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy: #03143a;
+      --blue: #143d82;
+      --dark: #031436;
+      --orange: #f4af85;
+      --text: #0b1220;
+      --hd: #020e22;
+      --gm: #6b7280;
+      --muted: #94a3b4;
+      --w: #fff;
+      --f: 'Inter', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--f);
+      color: var(--text);
+      background: var(--w);
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      border: none;
+      background: none;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--orange);
+      height: 36px;
+      display: flex;
+      align-items: center;
+      z-index: 101;
+    }
+
+    .topbar__in {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .topbar__contact {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .topbar__contact a {
+      color: rgba(255, 255, 255, .8);
+      font-size: 12.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s;
+    }
+
+    .topbar__contact a:hover {
+      color: #fff;
+    }
+
+    .topbar__socials {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .topbar__socials a {
+      color: rgba(255, 255, 255, .7);
+      display: inline-flex;
+      align-items: center;
+      transition: color .2s;
+    }
+
+    .topbar__socials a:hover {
+      color: #fff;
+    }
+
+    /* ══════════════════════════
+       HEADER
+    ══════════════════════════ */
+    .header {
+      background: var(--navy);
+      height: 80px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header__in {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header__left {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .logo img {
+      height: 129px;
+      width: auto;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav a {
+      color: rgba(255, 255, 255, .82);
+      font-size: 15px;
+      font-weight: 500;
+      transition: color .2s;
+    }
+
+    .nav a:hover {
+      color: #fff;
+    }
+
+    .nav a.active {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .btn-pill {
+      background: var(--navy);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 13px 26px;
+      border-radius: 100px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background .2s;
+    }
+
+    .btn-pill:hover {
+      background: var(--blue);
+    }
+
+    .header .btn-pill {
+      background: var(--orange);
+    }
+
+    .header .btn-pill:hover {
+      background: #e89b6d;
+    }
+
+    /* hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      padding: 6px;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2.5px;
+      background: #fff;
+      border-radius: 3px;
+      transition: transform .3s, opacity .3s;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
+    }
+
+    .mob-nav {
+      display: none;
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      background: var(--navy);
+      padding: 8px 0 20px;
+      z-index: 98;
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      flex-direction: column;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+    }
+
+    .mob-nav.open {
+      display: flex;
+    }
+
+    .mob-nav a.mob-link {
+      color: rgba(255, 255, 255, .82);
+      font-size: 16px;
+      font-weight: 500;
+      padding: 14px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, .07);
+      display: block;
+      transition: color .2s, background .2s;
+    }
+
+    .mob-nav a.mob-link:hover,
+    .mob-nav a.mob-link.active {
+      color: #fff;
+      background: rgba(255, 255, 255, .06);
+    }
+
+    .mob-nav .mob-cta {
+      margin: 16px 24px 0;
+      background: var(--orange);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 24px;
+      border-radius: 100px;
+      text-align: center;
+      display: block;
+    }
+
+    /* ══════════════════════════
+       HERO
+    ══════════════════════════ */
+    .au-hero {
+      background: linear-gradient(to bottom, rgba(20, 61, 130, .45) 0%, rgba(255, 255, 255, .45) 100%);
+      padding: 80px 60px 100px;
+      text-align: center;
+    }
+
+    .au-hero h1 {
+      font-size: 64px;
+      font-weight: 800;
+      color: var(--hd);
+      line-height: 74px;
+      letter-spacing: -1.5px;
+      margin-bottom: 16px;
+    }
+
+    .au-breadcrumb {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #98a0b3;
+    }
+
+    .au-breadcrumb a {
+      color: #98a0b3;
+      transition: color .2s;
+    }
+
+    .au-breadcrumb a:hover {
+      color: var(--blue);
+    }
+
+    .au-breadcrumb .cur {
+      color: var(--hd);
+      text-decoration: underline;
+    }
+
+    /* ══════════════════════════
+       DOT LABEL
+    ══════════════════════════ */
+    .dot-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .dot-label .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .dot-label .dot--blue {
+      background: var(--blue);
+    }
+
+    .dot-label .dot--orange {
+      background: var(--orange);
+    }
+
+    .dot-label .lbl {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .dot-label .lbl--blue {
+      color: var(--blue);
+    }
+
+    .dot-label .lbl--orange {
+      color: var(--orange);
+    }
+
+    /* ══════════════════════════
+       WHO WE ARE
+    ══════════════════════════ */
+    .au-who {
+      padding: 80px 0;
+    }
+
+    .au-who__in {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .au-who__text h2 {
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--hd);
+      line-height: 48px;
+      letter-spacing: -0.8px;
+      margin-bottom: 20px;
+    }
+
+    .au-who__text>p {
+      font-size: 16px;
+      color: #98a0b3;
+      line-height: 26px;
+      margin-bottom: 24px;
+    }
+
+    .au-who__list {
+      list-style: none;
+      margin-bottom: 36px;
+      max-width: 420px;
+    }
+
+    .au-who__list li {
+      font-size: 16px;
+      color: #98a0b3;
+      line-height: 20px;
+      padding: 4px 0 4px 22px;
+      position: relative;
+    }
+
+    .au-who__list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      top: 4px;
+      color: #98a0b3;
+    }
+
+    .au-who__list li.intro {
+      font-weight: 600;
+      padding-left: 0;
+      margin-bottom: 6px;
+    }
+
+    .au-who__list li.intro::before {
+      display: none;
+    }
+
+    .au-who__img {
+      position: relative;
+    }
+
+    .au-who__img>img {
+      width: 100%;
+      height: 580px;
+      object-fit: cover;
+      object-position: center 15%;
+      border-radius: 24px;
+      display: block;
+    }
+
+    .au-flag-card {
+      position: absolute;
+      top: 20px;
+      right: -20px;
+      background: #fff;
+      border-radius: 14px;
+      padding: 20px 11px;
+      gap: 10px;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .au-flag-card img,
+    .au-flag-card svg {
+      width: 78px;
+      height: 40px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    /* ══════════════════════════
+       WHAT WE OFFER (dark)
+    ══════════════════════════ */
+    .au-offer {
+      background: var(--dark);
+      padding: 80px 0;
+    }
+
+    .au-offer__in {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+    }
+
+    .au-offer__hdr {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: flex-end;
+      margin-bottom: 64px;
+    }
+
+    .au-offer__hdr h2 {
+      font-size: 40px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 48px;
+      letter-spacing: -0.8px;
+      margin-top: 16px;
+    }
+
+    .au-offer__desc {
+      font-size: 15px;
+      color: #94a3b8;
+      line-height: 24px;
+      align-self: flex-end;
+    }
+
+    .au-offer__items {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px 60px;
+      margin-bottom: 64px;
+    }
+
+    .au-offer__icon {
+      width: 48px;
+      height: 48px;
+      opacity: .8;
+      margin-bottom: 28px;
+    }
+
+    .au-offer__item h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 24px;
+      margin-bottom: 14px;
+    }
+
+    .au-offer__item p {
+      font-size: 14px;
+      color: #94a3b8;
+      line-height: 22px;
+      margin-bottom: 32px;
+    }
+
+    .au-arrow-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      background: var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: opacity .2s;
+    }
+
+    .au-arrow-btn:hover {
+      opacity: .85;
+    }
+
+    .au-offer__divider {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      margin-bottom: 64px;
+    }
+
+    .au-offer__cta {
+      text-align: center;
+    }
+
+    .btn-orange-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--blue);
+      background: var(--orange);
+      padding: 16px 32px;
+      border-radius: 100px;
+      transition: opacity .2s;
+    }
+
+    .btn-orange-pill:hover {
+      opacity: .88;
+    }
+
+    /* ══════════════════════════
+       FLAG MARQUEE
+    ══════════════════════════ */
+    .flg-marquee {
+      overflow: hidden;
+      background: #fff;
+      padding: 14px 0;
+    }
+
+    .flg-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+    }
+
+    .flg-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      border-radius: 200px;
+      padding: 10px 20px;
+      margin-right: 20px;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, .07);
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    .flg-pill img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .flg-pill span {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* ══════════════════════════
+       OUR INSTRUCTORS
+    ══════════════════════════ */
+    .au-instructors {
+      padding: 80px 0 0;
+    }
+
+    .au-instructors__wrap {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+    }
+
+    /* top 2-col: left=text, right=apart */
+    .au-instructors__top {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 80px;
+      margin-bottom: 64px;
+      align-items: start;
+    }
+
+    .au-instructors__left h2 {
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--hd);
+      line-height: 48px;
+      letter-spacing: -0.8px;
+      margin-bottom: 24px;
+    }
+
+    .au-instructors__left p {
+      font-size: 15px;
+      color: #000;
+      line-height: 24px;
+      margin-bottom: 12px;
+    }
+
+    .au-apart h4 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--blue);
+      line-height: 24px;
+      margin-bottom: 16px;
+    }
+
+    .au-apart ul {
+      list-style: none;
+    }
+
+    .au-apart li {
+      font-size: 14px;
+      color: #000;
+      line-height: 22px;
+      padding: 5px 0 5px 22px;
+      position: relative;
+    }
+
+    .au-apart li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+
+    /* instructor card rows */
+    .au-trow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .au-tcard {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      cursor: pointer;
+    }
+
+    .au-tcard__photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .au-tcard__overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 103px;
+      background: linear-gradient(0deg, rgba(0, 0, 0, .8) 0%, rgba(0, 0, 0, 0) 100%);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 4px;
+    }
+
+    .au-tcard__name {
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 30px;
+    }
+
+    .au-tcard__role {
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, .8);
+      line-height: 21px;
+    }
+
+    /* join cta */
+    .au-join {
+      text-align: center;
+      padding: 56px 0 80px;
+    }
+
+    .btn-blue-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      background: var(--blue);
+      padding: 16px 32px;
+      border-radius: 100px;
+      transition: opacity .2s;
+    }
+
+    .btn-blue-pill:hover {
+      opacity: .88;
+    }
+
+    /* ══════════════════════════
+       TICKER
+    ══════════════════════════ */
+    @keyframes mar {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .ticker {
+      overflow: hidden;
+      background: #fff;
+      padding: 40px 0;
+    }
+
+    .ticker__track {
+      display: flex;
+      gap: 48px;
+      align-items: center;
+      animation: mar 35s linear infinite;
+      width: max-content;
+    }
+
+    .ticker__track span {
+      font-size: 72px;
+      font-weight: 700;
+      white-space: nowrap;
+      background: linear-gradient(180deg, #143d82 0%, #f4af85 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .ticker__dot {
+      font-size: 48px;
+      font-weight: 400;
+      opacity: .35;
+    }
+
+    /* ══════════════════════════
+       FOOTER
+    ══════════════════════════ */
+    footer {
+      background: var(--navy);
+      padding: 60px 0 0;
+    }
+
+    .footer__grid {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 160px;
+      gap: 40px;
+    }
+
+    .fc h4 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+
+    .fc a,
+    .fc p {
+      font-size: 14px;
+      color: #9ca3af;
+      display: block;
+      line-height: 2.2;
+      transition: color .2s;
+    }
+
+    .fc a:hover {
+      color: #fff;
+    }
+
+    .fc .w {
+      color: #fff;
+    }
+
+    .nl-row {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, .2);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .nl-row input {
+      background: none;
+      border: none;
+      outline: none;
+      color: #fff;
+      font: inherit;
+      font-size: 13px;
+      flex: 1;
+    }
+
+    .nl-row input::placeholder {
+      color: #757575;
+    }
+
+    .nl-row button {
+      color: rgba(255, 255, 255, .5);
+      font-size: 16px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 12px;
+    }
+
+    .fc a.soc {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, .2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      transition: border-color .2s, background .2s;
+    }
+
+    .fc a.soc:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .fc a.soc svg {
+      display: block;
+    }
+
+    .fc.logo-col img {
+      width: 180px;
+      height: auto;
+    }
+
+    .footer__btm {
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 18px 80px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .footer__btm p {
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    /* ══════════════════════════
+       MOBILE ≤ 767px
+    ══════════════════════════ */
+    @media (max-width: 767px) {
+
+      /* TOP BAR */
+      .topbar__in {
+        padding: 0 20px;
+      }
+
+      .topbar__contact {
+        gap: 16px;
+      }
+
+      .topbar__contact a span {
+        display: none;
+      }
+
+      .topbar__contact a svg,
+      .topbar__socials a svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .header__in {
+        padding: 0 20px;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .header .btn-pill {
+        display: none;
+      }
+
+      .au-hero {
+        padding: 40px 20px 60px;
+      }
+
+      .au-hero h1 {
+        font-size: 36px;
+        line-height: 46px;
+        font-weight: 800;
+      }
+
+      .au-who {
+        padding: 40px 0;
+      }
+
+      .au-who__in {
+        padding: 0 20px;
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .au-who__text h2 {
+        font-size: 26px;
+      }
+
+      .au-who__img>img {
+        height: 380px;
+      }
+
+      .au-flag-card {
+        top: 16px;
+        bottom: auto;
+        right: 16px;
+        padding: 10px 8px;
+      }
+
+      .au-flag-card img,
+      .au-flag-card svg {
+        width: 52px;
+        height: 26px;
+      }
+
+      .au-offer {
+        padding: 40px 0;
+      }
+
+      .au-offer__in {
+        padding: 0 20px;
+      }
+
+      .au-offer__hdr {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+
+      .au-offer__hdr h2 {
+        font-size: 26px;
+        margin-top: 8px;
+      }
+
+      .au-offer__items {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-bottom: 32px;
+      }
+
+      .au-offer__divider {
+        margin-bottom: 32px;
+      }
+
+      .au-instructors {
+        padding: 40px 0 0;
+      }
+
+      .au-instructors__wrap {
+        padding: 0 20px;
+      }
+
+      .au-instructors__top {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-bottom: 40px;
+      }
+
+      .au-instructors__left h2 {
+        font-size: 26px;
+      }
+
+      .au-trow {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .au-join {
+        padding: 36px 20px 48px;
+      }
+
+      .ticker__track {
+        gap: 28px;
+        animation: mar 20s linear infinite;
+      }
+
+      .ticker__track span {
+        font-size: 36px;
+      }
+
+      .ticker__dot {
+        font-size: 28px;
+      }
+
+      .footer__grid {
+        padding: 0 20px 32px;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 16px;
+      }
+
+      .fc.logo-col {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: center;
+      }
+
+      .footer__btm {
+        padding: 14px 20px;
+      }
+
+      .footer__btm p {
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+
+    /* Tablet 768–1023px */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .topbar__in {
+        padding: 0 32px;
+      }
+
+      .header__in {
+        padding: 0 32px;
+      }
+
+      .au-who__in {
+        padding: 0 32px;
+        gap: 40px;
+      }
+
+      .au-who__img>img {
+        height: 440px;
+      }
+
+      .au-offer__in {
+        padding: 0 32px;
+      }
+
+      .au-offer__hdr {
+        gap: 40px;
+      }
+
+      .au-offer__items {
+        gap: 24px 32px;
+      }
+
+      .au-instructors__wrap {
+        padding: 0 32px;
+      }
+
+      .au-instructors__top {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .au-trow {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+      }
+
+      .au-join {
+        padding: 40px 32px 60px;
+      }
+
+      .footer__grid {
+        padding: 0 32px 36px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .fc.logo-col {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    /* ── TEAM MODAL ── */
+    .tm-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 20, 58, .7);
+      backdrop-filter: blur(4px);
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .tm-backdrop.open {
+      display: flex;
+    }
+
+    .tm-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      max-width: 680px;
+      width: 100%;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .3);
+      animation: tmIn .25s ease;
+    }
+
+    @keyframes tmIn {
+      from {
+        opacity: 0;
+        transform: scale(.94);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .tm-card__img {
+      width: 220px;
+      flex-shrink: 0;
+      object-fit: cover;
+      display: block;
+    }
+
+    .tm-card__body {
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .tm-card__role {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--orange);
+    }
+
+    .tm-card__name {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--hd);
+      line-height: 34px;
+    }
+
+    .tm-card__bio {
+      font-size: 14px;
+      color: #64748b;
+      line-height: 24px;
+    }
+
+    .tm-card__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 22px;
+      border-radius: 100px;
+      width: fit-content;
+      margin-top: 4px;
+      transition: opacity .2s;
+    }
+
+    .tm-card__cta:hover {
+      opacity: .85;
+    }
+
+    .tm-close {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .15);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s;
+    }
+
+    .tm-close:hover {
+      background: rgba(255, 255, 255, .28);
+    }
+
+    .tm-backdrop {
+      position: fixed;
+    }
+
+    @media (max-width: 600px) {
+      .tm-card {
+        flex-direction: column;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+
+      .tm-card__img {
+        width: 100%;
+        height: 240px;
+      }
+
+      .tm-card__body {
+        padding: 22px 20px;
+      }
+
+      .tm-card__name {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ════════ TOP BAR ════════ -->
+  <div class="topbar">
+    <div class="topbar__in">
+      <div class="topbar__contact">
+        <a href="mailto:info@lahjaro.com">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
+          <span>info@lahjaro.com</span>
+        </a>
+        <a href="tel:+971505325083">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          <span>+971 50 532 5083</span>
+        </a>
+      </div>
+      <div class="topbar__socials">
+        <a href="#" aria-label="Facebook">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+          </svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+        <a href="#" aria-label="X / Twitter">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L2.25 2.25h6.918l4.243 5.622 5.833-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117Z" />
+          </svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#143d82" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ HEADER ════ -->
+  <header class="header">
+    <div class="header__in">
+      <div class="header__left">
+        <a href="index.html" class="logo">
+          <img src="images/logo-new.svg" alt="Lahjaro">
+        </a>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="about.html" class="active">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="courses.html">Courses</a>
+          <a href="articles.html">Articles</a>
+        </nav>
+      </div>
+      <a href="contact.html" class="btn-pill">
+        Contact Us
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mob-nav" id="mob-nav" aria-hidden="true">
+    <a href="index.html" class="mob-link">Home</a>
+    <a href="about.html" class="mob-link active">About Us</a>
+    <a href="services.html" class="mob-link">Services</a>
+    <a href="courses.html" class="mob-link">Courses</a>
+    <a href="articles.html" class="mob-link">Articles</a>
+    <a href="contact.html" class="mob-cta">Contact Us &rarr;</a>
+  </div>
+
+  <!-- ════ HERO ════ -->
+  <section class="au-hero">
+    <div class="au-breadcrumb">
+      <a href="index.html">Home</a>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+      <span class="cur">About Us</span>
+    </div>
+    <h1>About Us</h1>
+  </section>
+
+  <!-- ════ WHO WE ARE ════ -->
+  <section class="au-who">
+    <div class="au-who__in">
+
+      <div class="au-who__text">
+        <div class="dot-label">
+          <span class="dot dot--blue"></span>
+          <span class="lbl lbl--blue">who we are</span>
+        </div>
+        <h2>Learn &amp; Practice with<br>Professionals</h2>
+        <p>We are more than a language platform — we are a learning experience.<br>
+          Our programs are carefully designed to develop the four essential language skills: listening, reading,
+          writing, and speaking.</p>
+        <ul class="au-who__list">
+          <li class="intro">We believe learning a language should be:</li>
+          <li>Practical, not theoretical</li>
+          <li>Flexible, not restrictive</li>
+          <li>Affordable, not overwhelming</li>
+          <li>That's why we offer a free trial to assess the level, needs, and the preferred instructing method that
+            suits the learner</li>
+        </ul>
+        <a href="index.html#courses" class="btn-pill">
+          Explore Languages
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="au-who__img">
+        <img src="images/ee6891a5828aae4a086f7f1854e150d4dc55c390.jpg" alt="Student learning with a professional tutor">
+        <div class="au-flag-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="60" height="40"
+            style="border-radius:4px; display:block;">
+            <clipPath id="s">
+              <path d="M0,0 v30 h60 v-30 z" />
+            </clipPath>
+            <clipPath id="t">
+              <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
+            </clipPath>
+            <g clip-path="url(#s)">
+              <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+              <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" />
+              <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4" clip-path="url(#t)" />
+              <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10" />
+              <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6" />
+            </g>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════ VISION & MISSION ════ -->
+  <section class="au-who" style="padding-top:0;">
+    <div class="au-who__in" style="gap:40px;align-items:start;">
+
+      <div class="au-who__text">
+        <h2>Our Vision</h2>
+        <p>To build the most trusted language education ecosystem in the UAE and beyond, where success enables us to
+          support underprivileged students striving to learn despite financial barriers through the profit that is
+          generated from this company.</p>
+      </div>
+
+      <div class="au-who__text">
+        <h2>Our Mission</h2>
+        <p>To make language learning accessible, affordable, and highly effective for learners across the UAE by
+          delivering accurate, learner-centered approaches and assisted learning with qualified instructors — offering
+          maximum flexibility to fit each learner's schedule, goals, and interests and to empower learners of all ages
+          by delivering live, instructor-led language education that builds real-world communication skills through
+          practical, structured learning.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════ WHAT WE OFFER ════ -->
+  <section class="au-offer">
+    <div class="au-offer__in">
+
+      <div class="au-offer__hdr">
+        <div>
+          <div class="dot-label">
+            <span class="dot dot--orange"></span>
+            <span class="lbl lbl--orange">what we offer</span>
+          </div>
+          <h2>Unlock the World with<br>Language Learning</h2>
+        </div>
+        <p class="au-offer__desc">At Lahjaro, we offer more than individual courses — we provide a complete language
+          learning ecosystem designed to help you achieve real, measurable progress.<br><br>Whether you are learning for
+          personal growth, academic goals, or professional advancement, our programs are built to support you at every
+          stage.</p>
+      </div>
+
+      <div class="au-offer__items">
+
+        <!-- Live Online Courses -->
+        <div class="au-offer__item">
+          <div class="au-offer__icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <rect x="4" y="6" width="40" height="28" rx="2" stroke="#fff" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M17 42h14M24 34v8" stroke="#fff" stroke-width="4" stroke-linecap="round" />
+              <path d="M20 22l8-4v8l-8-4z" fill="rgba(255,255,255,.3)" stroke="#fff" stroke-width="2.5"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Live Online Language Courses</h3>
+          <p>Interactive, instructor-led sessions designed to build strong foundations and practical communication
+            skills.
+          </p>
+          <div class="au-arrow-btn">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Private Coaching -->
+        <div class="au-offer__item">
+          <div class="au-offer__icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <path d="M40 42v-4a8 8 0 0 0-8-8H16a8 8 0 0 0-8 8v4" stroke="#fff" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <circle cx="24" cy="16" r="8" stroke="#fff" stroke-width="4" />
+            </svg>
+          </div>
+          <h3>Private One-to-One Coaching</h3>
+          <p>Personalized learning tailored to your level, pace, and specific goals.</p>
+          <div class="au-arrow-btn">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Curricula -->
+        <div class="au-offer__item">
+          <div class="au-offer__icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <path d="M24 6L4 16l20 10 20-10L24 6z" stroke="#fff" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M4 34l20 10 20-10" stroke="#fff" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M4 25l20 10 20-10" stroke="#fff" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Professionally Designed Curricula</h3>
+          <p>Structured programs that develop listening, reading, writing, and speaking in a balanced and progressive
+            way.</p>
+          <div class="au-arrow-btn">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="au-offer__divider">
+
+      <div class="au-offer__cta">
+        <a href="services.html" class="btn-orange-pill">
+          Explore All Services
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════ FLAG MARQUEE ════ -->
+  <div class="flg-marquee">
+    <div class="flg-track" id="auFlgTrack">
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/sa.png" alt=""><span>Arabic</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/gb.png" alt=""><span>English</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/il.png" alt=""><span>Hebrew</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/tr.png" alt=""><span>Turkish</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/ir.png" alt=""><span>Persian</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/uz.png" alt=""><span>Uzbek</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/kg.png" alt=""><span>Kyrgyz</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/ru.png" alt=""><span>Russian</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/de.png" alt=""><span>German</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/pt.png" alt=""><span>Portuguese</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/fr.png" alt=""><span>French</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/it.png" alt=""><span>Italian</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/nl.png" alt=""><span>Dutch</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/es.png" alt=""><span>Spanish</span></div><div class="flg-pill"><img src="https://flagcdn.com/w40/pl.png" alt=""><span>Polish</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/kr.png" alt=""><span>Korean</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/jp.png" alt=""><span>Japanese</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/cn.png" alt=""><span>Chinese</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/in.png" alt=""><span>Hindi</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/pk.png" alt=""><span>Urdu</span></div>
+      <!-- duplicate set for seamless loop -->
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/sa.png" alt=""><span>Arabic</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/gb.png" alt=""><span>English</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/il.png" alt=""><span>Hebrew</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/tr.png" alt=""><span>Turkish</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/ir.png" alt=""><span>Persian</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/uz.png" alt=""><span>Uzbek</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/kg.png" alt=""><span>Kyrgyz</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/ru.png" alt=""><span>Russian</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/de.png" alt=""><span>German</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/pt.png" alt=""><span>Portuguese</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/fr.png" alt=""><span>French</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/it.png" alt=""><span>Italian</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/nl.png" alt=""><span>Dutch</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/es.png" alt=""><span>Spanish</span></div><div class="flg-pill"><img src="https://flagcdn.com/w40/pl.png" alt=""><span>Polish</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/kr.png" alt=""><span>Korean</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/jp.png" alt=""><span>Japanese</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/cn.png" alt=""><span>Chinese</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/in.png" alt=""><span>Hindi</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/pk.png" alt=""><span>Urdu</span></div>
+    </div>
+  </div>
+
+  <!-- ════ OUR INSTRUCTORS ════ -->
+  <section class="au-instructors">
+    <div class="au-instructors__wrap">
+
+      <!-- top: label+heading+desc on left / apart on right -->
+      <div class="au-instructors__top">
+
+        <div class="au-instructors__left">
+          <div class="dot-label">
+            <span class="dot dot--blue"></span>
+            <span class="lbl lbl--blue">our instructors</span>
+          </div>
+          <h2>Master the Language<br>with Expert Instructors</h2>
+          <p>At Lahjaro, our instructors are more than teachers — they are mentors who guide, support, and motivate.</p>
+          <p>Each member of our team is carefully selected based on academic qualifications, real classroom experience,
+            and the ability to connect with learners from different cultures and backgrounds.</p>
+          <p>They understand that every student learns differently. That's why they focus on clarity, patience, and
+            practical communication — helping you build confidence step by step.</p>
+        </div>
+
+        <div class="au-apart">
+          <h4>What Sets Our Team Apart</h4>
+          <ul>
+            <li>Proven instructing expertise</li>
+            <li>Clear and engaging communication</li>
+            <li>Student-centered learning approach</li>
+            <li>Cultural awareness and international experience</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- instructor card rows -->
+      <div class="au-trow">
+        <div class="au-tcard" data-name="Fida Abo Hasson" data-role="English & IELTS Instructor"
+          data-img="staff/fida-abo-hasson.webp"
+          data-bio="Fida is an experienced English and IELTS instructor dedicated to helping students achieve fluency and excel in their language exams with structured, student-focused lessons.">
+          <img class="au-tcard__photo" src="staff/fida-abo-hasson.webp" alt="Fida Abo Hasson">
+          <div class="au-tcard__overlay">
+            <p class="au-tcard__name">Fida Abo Hasson</p>
+            <p class="au-tcard__role">English & IELTS Instructor</p>
+          </div>
+        </div>
+        <div class="au-tcard" data-name="Heidi" data-role="Spanish Instructor" data-img="staff/heidi-spanish.webp"
+          data-bio="Heidi is a passionate Spanish instructor who brings cultural immersion and conversational fluency to every lesson, making learning enjoyable and practical.">
+          <img class="au-tcard__photo" src="staff/heidi-spanish.webp" alt="Heidi">
+          <div class="au-tcard__overlay">
+            <p class="au-tcard__name">Heidi</p>
+            <p class="au-tcard__role">Spanish Instructor</p>
+          </div>
+        </div>
+        <div class="au-tcard" data-name="Ibrahim Esawi" data-role="Italian Instructor"
+          data-img="staff/ibrahim-esawi.webp"
+          data-bio="Ibrahim is a skilled Italian instructor with a deep understanding of the language and culture. He helps students build confidence through engaging and practical lessons.">
+          <img class="au-tcard__photo" src="staff/ibrahim-esawi.webp" alt="Ibrahim Esawi">
+          <div class="au-tcard__overlay">
+            <p class="au-tcard__name">Ibrahim Esawi</p>
+            <p class="au-tcard__role">Italian Instructor</p>
+          </div>
+        </div>
+        <div class="au-tcard" data-name="Halima" data-role="Uzbek & Kyrgyz Instructor"
+          data-img="staff/khalima-khona.webp"
+          data-bio="Khalima specialises in instructing Uzbek and Kyrgyz, bringing native fluency and cultural insight to help students master these Central Asian languages.">
+          <img class="au-tcard__photo" src="staff/khalima-khona.webp" alt="Halima">
+          <div class="au-tcard__overlay">
+            <p class="au-tcard__name">Halima</p>
+            <p class="au-tcard__role">Uzbek & Kyrgyz Instructor</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="au-trow">
+        <div class="au-tcard" data-name="Shehab Saber" data-role="Hebrew & Arabic Instructor"
+          data-img="staff/shehab-saber.webp"
+          data-bio="Shehab is a dedicated Hebrew and Arabic instructor who combines linguistic expertise with cultural awareness to deliver clear, engaging, and effective language lessons.">
+          <img class="au-tcard__photo" src="staff/shehab-saber.webp" alt="Shehab Saber">
+          <div class="au-tcard__overlay">
+            <p class="au-tcard__name">Shehab Saber</p>
+            <p class="au-tcard__role">Hebrew & Arabic Instructor</p>
+          </div>
+        </div>
+        <div class="au-tcard" data-name="Adrian" data-role="Polish Instructor" data-img="staff/adrian.webp"
+          data-bio="Adrian is a dedicated Polish instructor who brings enthusiasm and practical language skills to help students confidently communicate in Polish.">
+          <img class="au-tcard__photo" src="staff/adrian.webp" alt="Adrian">
+          <div class="au-tcard__overlay">
+            <p class="au-tcard__name">Adrian</p>
+            <p class="au-tcard__role">Polish Instructor</p>
+          </div>
+        </div>
+        <div class="au-tcard" data-name="Dina" data-role="French Instructor" data-img="staff/dina.webp"
+          data-bio="Dina is a passionate French instructor who brings cultural immersion and conversational fluency to every lesson, making learning enjoyable and practical.">
+          <img class="au-tcard__photo" src="staff/dina.webp" alt="Dina">
+          <div class="au-tcard__overlay">
+            <p class="au-tcard__name">Dina</p>
+            <p class="au-tcard__role">French Instructor</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Join Our Team -->
+    <div class="au-join">
+      <a href="#footer-contact" class="btn-blue-pill">
+        Join Our Team
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ════ TICKER ════ -->
+  <div class="ticker">
+    <div class="ticker__track">
+      <span>Arabic</span><span class="ticker__dot">+</span>
+      <span>English</span><span class="ticker__dot">+</span>
+      <span>Hebrew</span><span class="ticker__dot">+</span>
+      <span>Turkish</span><span class="ticker__dot">+</span>
+      <span>Persian</span><span class="ticker__dot">+</span>
+      <span>Uzbek</span><span class="ticker__dot">+</span>
+      <span>Kyrgyz</span><span class="ticker__dot">+</span>
+      <span>Russian</span><span class="ticker__dot">+</span>
+      <span>German</span><span class="ticker__dot">+</span>
+      <span>Portuguese</span><span class="ticker__dot">+</span>
+      <span>French</span><span class="ticker__dot">+</span>
+      <span>Italian</span><span class="ticker__dot">+</span>
+      <span>Dutch</span><span class="ticker__dot">+</span>
+      <span>Spanish</span><span class="ticker__dot">+</span><span>Polish</span><span class="ticker__dot">+</span>
+      <span>Korean</span><span class="ticker__dot">+</span>
+      <span>Japanese</span><span class="ticker__dot">+</span>
+      <span>Chinese</span><span class="ticker__dot">+</span>
+      <span>Hindi</span><span class="ticker__dot">+</span>
+      <span>Urdu</span><span class="ticker__dot">+</span>
+      <span>Arabic</span><span class="ticker__dot">+</span>
+      <span>English</span><span class="ticker__dot">+</span>
+      <span>Hebrew</span><span class="ticker__dot">+</span>
+      <span>Turkish</span><span class="ticker__dot">+</span>
+      <span>Persian</span><span class="ticker__dot">+</span>
+      <span>Uzbek</span><span class="ticker__dot">+</span>
+      <span>Kyrgyz</span><span class="ticker__dot">+</span>
+      <span>Russian</span><span class="ticker__dot">+</span>
+      <span>German</span><span class="ticker__dot">+</span>
+      <span>Portuguese</span><span class="ticker__dot">+</span>
+      <span>French</span><span class="ticker__dot">+</span>
+      <span>Italian</span><span class="ticker__dot">+</span>
+      <span>Dutch</span><span class="ticker__dot">+</span>
+      <span>Spanish</span><span class="ticker__dot">+</span><span>Polish</span><span class="ticker__dot">+</span>
+      <span>Korean</span><span class="ticker__dot">+</span>
+      <span>Japanese</span><span class="ticker__dot">+</span>
+      <span>Chinese</span><span class="ticker__dot">+</span>
+      <span>Hindi</span><span class="ticker__dot">+</span>
+      <span>Urdu</span><span class="ticker__dot">+</span>
+    </div>
+  </div>
+
+  <!-- ════ FOOTER ════ -->
+  <footer id="footer-contact">
+    <div class="footer__grid">
+      <div class="fc">
+        <h4>Courses</h4>
+        <a href="#">English Courses</a>
+        <a href="#">German Courses</a>
+        <a href="#">Spanish Courses</a>
+        <a href="#">Other Languages</a>
+      </div>
+      <div class="fc">
+        <h4>Contacts</h4>
+        <p class="w">UAE</p>
+        <p>+971 50 532 5083</p>
+        <p><a href="https://wa.me/971505325083" target="_blank" style="color:inherit;text-decoration:none;">WhatsApp:
+            +971 50 532 5083</a></p>
+        <p>info@lahjaro.com</p>
+      </div>
+      <div class="fc">
+        <h4>Subscribe</h4>
+        <div class="nl-row">
+          <input type="email" placeholder="Get news &amp; updates">
+          <button>&#10148;</button>
+        </div>
+        <p>Subscribe to our newsletter. Be in trends.</p>
+      </div>
+      <div class="fc">
+        <h4>In Socials</h4>
+        <div class="socials">
+          <a href="#" class="soc" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
+          <a href="#" class="soc" aria-label="X / Twitter">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L2.25 2.25h6.918l4.243 5.622 5.833-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117Z" />
+            </svg>
+          </a>
+          <a href="#" class="soc" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.9)" stroke="none" />
+            </svg>
+          </a>
+          <a href="#" class="soc" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
+          <a href="#" class="soc" aria-label="YouTube">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#03143a" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="fc logo-col">
+        <img src="images/logo-new.svg" alt="Lahjaro">
+      </div>
+    </div>
+    <div class="footer__btm">
+      <p>Copyright &copy; 2026 Lahjaro Languages Institute FZ-LLC. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ════ SCRIPTS ════ -->
+  <script>
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const mobNav = document.getElementById('mob-nav');
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      mobNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+      mobNav.setAttribute('aria-hidden', true);
+      document.body.style.overflow = '';
+    }
+    hamburger.addEventListener('click', () => {
+      const open = hamburger.classList.toggle('open');
+      mobNav.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open);
+      mobNav.setAttribute('aria-hidden', !open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    window.addEventListener('scroll', () => { if (mobNav.classList.contains('open')) closeMenu(); }, { passive: true });
+    document.addEventListener('click', (e) => {
+      if (mobNav.classList.contains('open') && !mobNav.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
+    });
+  </script>
+
+  <!-- Flag marquee: measures exact pixel offset for seamless loop -->
+  <script>
+    (function () {
+      function startFlgMarquee() {
+        var track = document.getElementById('auFlgTrack');
+        if (!track) return;
+        var pills = track.querySelectorAll('.flg-pill');
+        if (pills.length < 34) return;
+        var w = pills[17].getBoundingClientRect().left - pills[0].getBoundingClientRect().left;
+        track.animate([
+          { transform: 'translateX(0)' },
+          { transform: 'translateX(-' + w + 'px)' }
+        ], { duration: 25000, iterations: Infinity, easing: 'linear' });
+      }
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(startFlgMarquee);
+      } else {
+        window.addEventListener('load', startFlgMarquee);
+      }
+    })();
+
+  </script>
+
+  <!-- TEAM MODAL -->
+  <div class="tm-backdrop" id="tmBackdrop">
+    <div style="position:relative;display:flex;max-width:680px;width:100%;">
+      <button class="tm-close" id="tmClose" aria-label="Close">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.2"
+          stroke-linecap="round">
+          <path d="M1 1l12 12M13 1L1 13" />
+        </svg>
+      </button>
+      <div class="tm-card">
+        <img class="tm-card__img" id="tmImg" src="" alt="">
+        <div class="tm-card__body">
+          <p class="tm-card__role" id="tmRole"></p>
+          <h3 class="tm-card__name" id="tmName"></h3>
+          <p class="tm-card__bio" id="tmBio"></p>
+          <a href="contact.html" class="tm-card__cta">
+            Book a Trial Class
+            <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+              <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Team card modal
+    const tmBackdrop = document.getElementById('tmBackdrop');
+    const tmClose = document.getElementById('tmClose');
+    document.querySelectorAll('.au-tcard').forEach(card => {
+      card.addEventListener('click', () => {
+        document.getElementById('tmImg').src = card.dataset.img;
+        document.getElementById('tmImg').alt = card.dataset.name;
+        document.getElementById('tmName').textContent = card.dataset.name;
+        document.getElementById('tmRole').textContent = card.dataset.role;
+        document.getElementById('tmBio').textContent = card.dataset.bio;
+        tmBackdrop.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    function closeModal() {
+      tmBackdrop.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    tmClose.addEventListener('click', closeModal);
+    tmBackdrop.addEventListener('click', e => { if (e.target === tmBackdrop) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us – Lahjaro Languages Institute FZ-LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #03143a;
+      --blue:   #143d82;
+      --dark:   #031436;
+      --orange: #f4af85;
+      --text:   #0b1220;
+      --hd:     #0a1628;
+      --gm:     #64748b;
+      --muted:  #94a3b8;
+      --w:      #fff;
+      --f:      'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: var(--f); color: var(--text); background: var(--w); overflow-x: hidden; }
+    img  { display: block; max-width: 100%; }
+    a    { text-decoration: none; color: inherit; }
+    button { border: none; background: none; font: inherit; cursor: pointer; }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--orange);
+      height: 36px;
+      display: flex;
+      align-items: center;
+      z-index: 101;
+    }
+
+    .topbar__in {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .topbar__contact {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .topbar__contact a {
+      color: rgba(255,255,255,.8);
+      font-size: 12.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s;
+    }
+
+    .topbar__contact a:hover {
+      color: #fff;
+    }
+
+    .topbar__socials {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .topbar__socials a {
+      color: rgba(255,255,255,.7);
+      display: inline-flex;
+      align-items: center;
+      transition: color .2s;
+    }
+
+    .topbar__socials a:hover {
+      color: #fff;
+    }
+
+    /* ══════════════════ HEADER ══════════════════ */
+    .header { background: var(--navy); height: 80px; position: sticky; top: 0; z-index: 100; }
+    .header__in {
+      max-width: 1440px; margin: 0 auto; padding: 0 80px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .header__left { display: flex; align-items: center; gap: 48px; }
+    .logo img { height: 129px; width: auto; }
+    .nav { display: flex; align-items: center; gap: 28px; }
+    .nav a { color: rgba(255,255,255,.82); font-size: 15px; font-weight: 500; transition: color .2s; }
+    .nav a:hover { color: #fff; }
+    .nav a.active { color: #fff; font-weight: 700; }
+
+    .btn-pill {
+      background: var(--orange); color: #fff; font-size: 15px; font-weight: 600;
+      padding: 13px 26px; border-radius: 100px;
+      display: inline-flex; align-items: center; gap: 8px; transition: background .2s;
+    }
+    .btn-pill:hover { background: #e89b6d; }
+
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; width: 40px; height: 40px; padding: 6px; cursor: pointer; border-radius: 8px;
+    }
+    .hamburger span { display: block; width: 22px; height: 2.5px; background: #fff; border-radius: 3px; transition: transform .3s, opacity .3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    .mob-nav {
+      display: none; position: fixed; top: 80px; left: 0; right: 0;
+      background: var(--navy); padding: 8px 0 20px; z-index: 98;
+      border-top: 1px solid rgba(255,255,255,.1); flex-direction: column;
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+    }
+    .mob-nav.open { display: flex; }
+    .mob-nav a.mob-link {
+      color: rgba(255,255,255,.82); font-size: 16px; font-weight: 500;
+      padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,.07);
+      display: block; transition: color .2s, background .2s;
+    }
+    .mob-nav a.mob-link:hover, .mob-nav a.mob-link.active { color: #fff; background: rgba(255,255,255,.06); }
+    .mob-nav .mob-cta {
+      margin: 16px 24px 0; background: var(--orange); color: #fff;
+      font-size: 15px; font-weight: 700; padding: 14px 24px;
+      border-radius: 100px; text-align: center; display: block;
+    }
+
+    /* ══════════════════ DOT LABEL ══════════════════ */
+    .dot-label { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+    .dot-label .dot { width: 6px; height: 6px; border-radius: 3px; flex-shrink: 0; }
+    .dot-label .dot--blue   { background: var(--blue); }
+    .dot-label .dot--orange { background: var(--orange); }
+    .dot-label .lbl { font-size: 14px; font-weight: 600; }
+    .dot-label .lbl--blue   { color: var(--blue); }
+    .dot-label .lbl--orange { color: var(--orange); }
+
+    /* ══════════════════ HERO ══════════════════ */
+    .ct-hero {
+      background: linear-gradient(to bottom, rgba(20,61,130,.45) 0%, rgba(255,255,255,.45) 100%);
+      padding: 80px 60px 70px; text-align: center;
+    }
+    .ct-breadcrumb {
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      font-size: 13px; color: var(--gm); margin-bottom: 20px;
+    }
+    .ct-breadcrumb a { color: var(--gm); transition: color .2s; }
+    .ct-breadcrumb a:hover { color: var(--hd); }
+    .ct-breadcrumb .sep { opacity: .5; }
+    .ct-breadcrumb .cur { color: var(--hd); font-weight: 500; }
+    .ct-hero .dot-label { justify-content: center; margin-bottom: 14px; }
+    .ct-hero h1 {
+      font-size: 52px; font-weight: 800; color: var(--hd);
+      line-height: 62px; letter-spacing: -1px; max-width: 700px; margin: 0 auto;
+    }
+
+    /* ══════════════════ CONTACT INFO + MAP ══════════════════ */
+    .ct-info { background: #fff; padding: 80px 0; }
+    .ct-info__in {
+      max-width: 1200px; margin: 0 auto; padding: 0 60px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+    }
+
+    /* Left — contact details */
+    .ct-left__intro {
+      font-size: 16px; color: var(--gm); line-height: 27px; margin-bottom: 40px;
+    }
+    .ct-items { display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px; }
+    .ct-item { display: flex; gap: 16px; align-items: flex-start; }
+    .ct-item__icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: #fff7ed; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .ct-item__icon svg { width: 20px; height: 20px; color: var(--orange); }
+    .ct-item__body { display: flex; flex-direction: column; gap: 3px; }
+    .ct-item__lbl { font-size: 11px; font-weight: 700; color: var(--orange); letter-spacing: .8px; }
+    .ct-item__val-row { display: flex; align-items: center; gap: 10px; flex-wrap: nowrap; }
+    .ct-item__val { font-size: 15px; font-weight: 600; color: var(--hd); white-space: nowrap; }
+    .ct-item__badge {
+      display: inline-flex; align-items: center; gap: 4px; flex-shrink: 0;
+      font-size: 11px; font-weight: 700; color: #16a34a; white-space: nowrap;
+      background: #f0fdf4; border-radius: 100px; padding: 3px 10px;
+    }
+
+    .ct-socials { margin-bottom: 32px; }
+    .ct-socials__lbl { font-size: 13px; font-weight: 600; color: var(--gm); margin-bottom: 12px; }
+    .ct-soc-row { display: flex; gap: 10px; }
+    .ct-soc {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--hd); display: flex; align-items: center; justify-content: center;
+      transition: opacity .2s;
+    }
+    .ct-soc:hover { opacity: .8; }
+    .ct-soc svg { display: block; }
+
+    .ct-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--hd); color: #fff; font-size: 15px; font-weight: 600;
+      padding: 14px 32px; border-radius: 100px; transition: opacity .2s;
+    }
+    .ct-cta:hover { opacity: .85; }
+
+    /* Right — map placeholder */
+    .ct-map {
+      border-radius: 20px; overflow: hidden;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 24px rgba(0,0,0,.07);
+    }
+    #ct-leaflet-map { height: 340px; width: 100%; border: none; display: block; }
+    .ct-map__footer {
+      background: #fff; padding: 20px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .ct-map__footer-left h4 { font-size: 15px; font-weight: 700; color: var(--hd); margin-bottom: 2px; }
+    .ct-map__footer-left p { font-size: 13px; color: var(--gm); }
+    .ct-map__footer-right {
+      font-size: 12px; font-weight: 600; color: var(--orange);
+      display: flex; align-items: center; gap: 5px;
+    }
+
+    /* ══════════════════ CONTACT FORM ══════════════════ */
+    .ct-form { background: #f8fafc; padding: 80px 0; }
+    .ct-form__in { max-width: 760px; margin: 0 auto; padding: 0 40px; }
+    .ct-form__hdr { text-align: center; margin-bottom: 12px; }
+    .ct-form__hdr h2 { font-size: 42px; font-weight: 800; color: var(--hd); line-height: 52px; letter-spacing: -.8px; }
+    .ct-form__note { font-size: 14px; color: var(--gm); text-align: center; margin-bottom: 48px; }
+    .ct-form__note span { color: var(--orange); }
+
+    .cf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; margin-bottom: 20px; }
+    .cf-full { grid-column: 1/-1; }
+    .cf-field { display: flex; flex-direction: column; gap: 6px; }
+    .cf-field label { font-size: 12px; font-weight: 700; color: var(--hd); letter-spacing: .3px; }
+    .cf-field label span { color: var(--orange); }
+    .cf-field input,
+    .cf-field select,
+    .cf-field textarea {
+      width: 100%; border: 1.5px solid #e2e8f0; border-radius: 10px;
+      padding: 14px 16px; font: inherit; font-size: 15px; color: var(--hd);
+      background: #fff; outline: none; transition: border-color .2s;
+      -webkit-appearance: none;
+    }
+    .cf-field input::placeholder,
+    .cf-field textarea::placeholder { color: #b0bec5; }
+    .cf-field select { color: #b0bec5; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 38px; }
+    .cf-field select.filled { color: var(--hd); }
+    .cf-field input:focus,
+    .cf-field select:focus,
+    .cf-field textarea:focus { border-color: var(--blue); }
+    .cf-field textarea { resize: vertical; min-height: 130px; }
+    .cf-submit {
+      width: 100%; background: var(--hd); color: #fff;
+      font-size: 16px; font-weight: 600; padding: 18px 32px;
+      border-radius: 100px; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      transition: opacity .2s; margin-top: 8px;
+    }
+    .cf-submit:hover { opacity: .86; }
+
+    /* ══════════════════ JOIN OUR TEAM ══════════════════ */
+    .ct-team { background: var(--dark); padding: 80px 0; }
+    .ct-team__in {
+      max-width: 1200px; margin: 0 auto; padding: 0 60px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+    }
+
+    /* Left copy */
+    .ct-team__left .dot-label { margin-bottom: 20px; }
+    .ct-team__left h2 {
+      font-size: 40px; font-weight: 800; color: #fff;
+      line-height: 50px; letter-spacing: -.7px; margin-bottom: 20px;
+    }
+    .ct-team__left > p { font-size: 15px; color: var(--muted); line-height: 26px; margin-bottom: 28px; }
+    .ct-team__bullets { display: flex; flex-direction: column; gap: 12px; }
+    .ct-team__bullet {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 14px; color: var(--muted); line-height: 22px;
+    }
+    .ct-team__bullet .chk {
+      width: 20px; height: 20px; border-radius: 50%; background: rgba(244,175,133,.18);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+    }
+    .ct-team__bullet .chk svg { width: 10px; height: 10px; color: var(--orange); }
+
+    /* Right form card */
+    .ct-team__card {
+      background: rgba(23,39,70,.85); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 20px; padding: 36px 32px;
+    }
+    .ct-team__card h3 { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 28px; }
+    .tf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; }
+    .tf-field { display: flex; flex-direction: column; gap: 6px; }
+    .tf-field label { font-size: 11px; font-weight: 600; color: var(--muted); letter-spacing: .5px; }
+    .tf-field label span { color: var(--orange); }
+    .tf-field input,
+    .tf-field select {
+      width: 100%; border: 1.5px solid rgba(255,255,255,.12); border-radius: 8px;
+      padding: 11px 14px; font: inherit; font-size: 14px; color: rgba(255,255,255,.7);
+      background: rgba(255,255,255,.06); outline: none; transition: border-color .2s;
+      -webkit-appearance: none;
+    }
+    .tf-field input::placeholder { color: #4a6080; }
+    .tf-field select { color: #4a6080; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%2364748b' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; }
+    .tf-field input:focus,
+    .tf-field select:focus { border-color: rgba(244,175,133,.5); }
+    .tf-submit {
+      width: 100%; background: var(--orange); color: #fff;
+      font-size: 15px; font-weight: 600; padding: 16px 24px;
+      border-radius: 100px; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      transition: opacity .2s; margin-top: 24px;
+    }
+    .tf-submit:hover { opacity: .88; }
+
+    /* ══════════════════ TICKER ══════════════════ */
+    @keyframes mar { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .ticker { overflow: hidden; background: #fff; padding: 40px 0; }
+    .ticker__track {
+      display: flex; gap: 48px; align-items: center;
+      animation: mar 35s linear infinite; width: max-content;
+    }
+    .ticker__track span {
+      font-size: 72px; font-weight: 700; white-space: nowrap;
+      background: linear-gradient(180deg, #143d82 0%, #f4af85 100%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .ticker__dot { font-size: 48px; font-weight: 400; opacity: .35; }
+
+    /* ══════════════════ FOOTER ══════════════════ */
+    footer { background: var(--navy); padding: 60px 0 0; }
+    .footer__grid {
+      max-width: 1440px; margin: 0 auto; padding: 0 80px 48px;
+      display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 160px; gap: 40px;
+    }
+    .fc h4 { font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 24px; }
+    .fc a, .fc p { font-size: 14px; color: #9ca3af; display: block; line-height: 2.2; transition: color .2s; }
+    .fc a:hover { color: #fff; }
+    .fc .w { color: #fff; }
+    .nl-row {
+      display: flex; align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,.2); padding-bottom: 8px; margin-bottom: 12px;
+    }
+    .nl-row input { background: none; border: none; outline: none; color: #fff; font: inherit; font-size: 13px; flex: 1; }
+    .nl-row input::placeholder { color: #757575; }
+    .nl-row button { color: rgba(255,255,255,.5); font-size: 16px; }
+    .socials { display: flex; gap: 12px; }
+    .fc a.soc {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.2);
+      display: flex; align-items: center; justify-content: center; line-height: 1;
+      transition: border-color .2s, background .2s;
+    }
+    .fc a.soc:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+    .fc a.soc svg { display: block; }
+    .fc.logo-col img { width: 180px; height: auto; }
+    .footer__btm {
+      border-top: 1px solid rgba(255,255,255,.1);
+      max-width: 1440px; margin: 0 auto; padding: 18px 80px;
+      display: flex; justify-content: center;
+    }
+    .footer__btm p { font-size: 14px; color: #6b7280; }
+
+    /* ══════════════════ MOBILE ══════════════════ */
+    @media (max-width: 767px) {
+      /* TOP BAR */
+      .topbar__in {
+        padding: 0 20px;
+      }
+
+      .topbar__contact {
+        gap: 16px;
+      }
+
+      .topbar__contact a span {
+        display: none;
+      }
+
+      .topbar__contact a svg,
+      .topbar__socials a svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .header__in { padding: 0 20px; }
+      .nav { display: none; }
+      .hamburger { display: flex; }
+      .header .btn-pill { display: none; }
+
+      .ct-hero { padding: 48px 20px 56px; }
+      .ct-hero h1 { font-size: 32px; line-height: 42px; }
+
+      .ct-info { padding: 48px 0; }
+      .ct-info__in { padding: 0 20px; grid-template-columns: 1fr; gap: 48px; }
+
+      .ct-form { padding: 48px 0; }
+      .ct-form__in { padding: 0 20px; }
+      .ct-form__hdr h2 { font-size: 30px; line-height: 40px; }
+      .cf-grid { grid-template-columns: 1fr; }
+
+      .ct-team { padding: 48px 0; }
+      .ct-team__in { padding: 0 20px; grid-template-columns: 1fr; gap: 48px; }
+      .ct-team__left h2 { font-size: 28px; line-height: 38px; }
+      .tf-grid { grid-template-columns: 1fr; }
+
+      .footer__grid { padding: 0 20px 36px; grid-template-columns: 1fr 1fr; gap: 32px; }
+      .fc.logo-col { grid-column: 1/-1; display: flex; justify-content: center; }
+      .footer__btm { padding: 16px 20px; }
+      .footer__btm p { font-size: 12px; text-align: center; }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .topbar__in {
+        padding: 0 32px;
+      }
+
+      .header__in { padding: 0 32px; }
+      .ct-info__in, .ct-team__in { padding: 0 32px; grid-template-columns: 1fr; gap: 48px; }
+      .ct-form__in { padding: 0 32px; }
+      .footer__grid { padding: 0 32px 36px; grid-template-columns: repeat(2,1fr); }
+      .fc.logo-col { grid-column: 1/-1; display: flex; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════ TOP BAR ════════ -->
+  <div class="topbar">
+    <div class="topbar__in">
+      <div class="topbar__contact">
+        <a href="mailto:info@lahjaro.com">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>info@lahjaro.com</span>
+        </a>
+        <a href="tel:+971505325083">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+971 50 532 5083</span>
+        </a>
+      </div>
+      <div class="topbar__socials">
+        <a href="#" aria-label="Facebook">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" aria-label="X / Twitter">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L2.25 2.25h6.918l4.243 5.622 5.833-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#143d82"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ HEADER ════ -->
+  <header class="header">
+    <div class="header__in">
+      <div class="header__left">
+        <a href="index.html" class="logo">
+          <img src="images/logo-new.svg" alt="Lahjaro">
+        </a>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="courses.html">Courses</a>
+          <a href="articles.html">Articles</a>
+        </nav>
+      </div>
+      <a href="#ct-form-section" class="btn-pill">
+        Contact Us
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mob-nav" id="mob-nav" aria-hidden="true">
+    <a href="index.html" class="mob-link">Home</a>
+    <a href="about.html" class="mob-link">About Us</a>
+    <a href="services.html" class="mob-link">Services</a>
+    <a href="courses.html" class="mob-link">Courses</a>
+    <a href="articles.html" class="mob-link">Articles</a>
+    <a href="#ct-form-section" class="mob-cta">Contact Us &rarr;</a>
+  </div>
+
+  <!-- ════ HERO ════ -->
+  <section class="ct-hero">
+    <div class="ct-breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">›</span>
+      <span class="cur">Contacts</span>
+    </div>
+    <div style="justify-content:center;margin-bottom:14px;display:flex;">
+      <span style="font-size:18px;font-weight:700;color:var(--orange);letter-spacing:.5px;">contact us</span>
+    </div>
+    <h1>Start Your Language<br>Journey with Us</h1>
+  </section>
+
+  <!-- ════ CONTACT INFO + MAP ════ -->
+  <section class="ct-info">
+    <div class="ct-info__in">
+
+      <!-- Left: contact details -->
+      <div class="ct-left">
+        <p class="ct-left__intro">Get in touch to discuss your learning goals today. Please give us a call, drop us an email, or fill out the form.</p>
+
+        <div class="ct-items">
+
+          <div class="ct-item">
+            <div class="ct-item__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div class="ct-item__body">
+              <span class="ct-item__lbl">ADDRESS</span>
+              <span class="ct-item__val">Dubai, UAE</span>
+            </div>
+          </div>
+
+          <div class="ct-item">
+            <div class="ct-item__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.08 4.18 2 2 0 0 1 5.06 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 23 16.92z"/>
+              </svg>
+            </div>
+            <div class="ct-item__body">
+              <span class="ct-item__lbl">PHONE / WHATSAPP</span>
+              <div class="ct-item__val-row">
+              <span class="ct-item__val">+971 50 532 5083</span>
+              <span class="ct-item__badge">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="#16a34a"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+                WhatsApp
+              </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ct-item">
+            <div class="ct-item__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="ct-item__body">
+              <span class="ct-item__lbl">MAIL US</span>
+              <span class="ct-item__val">info@lahjaro.com</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="ct-socials">
+          <p class="ct-socials__lbl">In Socials</p>
+          <div class="ct-soc-row">
+            <a href="#" class="ct-soc" aria-label="Facebook">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="#" class="ct-soc" aria-label="LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a href="#" class="ct-soc" aria-label="Instagram">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.9)" stroke="none"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <a href="#ct-form-section" class="ct-cta">
+          Get in Touch
+          <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+            <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Right: interactive map -->
+      <div class="ct-map">
+        <iframe id="ct-leaflet-map"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=55.1708%2C25.1548%2C55.3708%2C25.2548&layer=mapnik&marker=25.2048%2C55.2708"
+          allowfullscreen loading="lazy"
+          title="Lahjaro Location – Dubai, UAE"></iframe>
+        <div class="ct-map__footer">
+          <div class="ct-map__footer-left">
+            <h4>Our Location</h4>
+            <p>Dubai, UAE</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════ CONTACT FORM ════ -->
+  <section class="ct-form" id="ct-form-section">
+    <div class="ct-form__in">
+      <div class="ct-form__hdr">
+        <h2>Drop Us a Line</h2>
+      </div>
+      <p class="ct-form__note">Your email address will not be published. Required fields are marked <span>*</span></p>
+
+      <form onsubmit="return false;">
+        <div class="cf-grid">
+
+          <div class="cf-field">
+            <label>Full Name <span>*</span></label>
+            <input type="text" placeholder="Your full name" required>
+          </div>
+
+          <div class="cf-field">
+            <label>Email Address <span>*</span></label>
+            <input type="email" placeholder="your@email.com" required>
+          </div>
+
+          <div class="cf-field">
+            <label>Phone / WhatsApp</label>
+            <input type="tel" placeholder="+971 50 532 5083">
+          </div>
+
+          <div class="cf-field">
+            <label>Language of Interest</label>
+            <select>
+              <option value="" disabled selected>Select a language</option>
+              <option>Arabic</option>
+              <option>English</option>
+              <option>Spanish</option>
+              <option>French</option>
+              <option>German</option>
+              <option>Italian</option>
+              <option>Mandarin Chinese</option>
+              <option>Japanese</option>
+              <option>Korean</option>
+              <option>Portuguese</option>
+              <option>Russian</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="cf-field">
+            <label>Preferred Learning Model</label>
+            <select>
+              <option value="" disabled selected>Select a model</option>
+              <option>Private One-to-One</option>
+              <option>Small Group Classes</option>
+              <option>Online Live Sessions</option>
+              <option>Corporate / Custom</option>
+            </select>
+          </div>
+
+          <div class="cf-field cf-full">
+            <label>Message / Questions</label>
+            <textarea placeholder="Tell us about your learning goals…"></textarea>
+          </div>
+
+        </div>
+
+        <button type="submit" class="cf-submit">
+          Get in Touch
+          <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+            <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ════ JOIN OUR TEAM ════ -->
+  <section class="ct-team">
+    <div class="ct-team__in">
+
+      <!-- Left -->
+      <div class="ct-team__left">
+        <div class="dot-label">
+          <span class="dot dot--orange"></span>
+          <span class="lbl lbl--orange">join our team</span>
+        </div>
+        <h2>Join Our Team of Expert Educators</h2>
+        <p>We're looking for passionate language instructors to join Lahjaro. If you're qualified, experienced, and love instructing — we want to hear from you.</p>
+        <div class="ct-team__bullets">
+          <div class="ct-team__bullet">
+            <span class="chk">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg>
+            </span>
+            Flexible instructing hours to fit your schedule
+          </div>
+          <div class="ct-team__bullet">
+            <span class="chk">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg>
+            </span>
+            Competitive pay and performance bonuses
+          </div>
+          <div class="ct-team__bullet">
+            <span class="chk">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg>
+            </span>
+            International student community across the UAE
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: educator application form -->
+      <div class="ct-team__card">
+        <h3>Apply as an Educator</h3>
+        <form onsubmit="return false;">
+          <div class="tf-grid">
+
+            <div class="tf-field">
+              <label>Name <span>*</span></label>
+              <input type="text" placeholder="Full name">
+            </div>
+
+            <div class="tf-field">
+              <label>Phone</label>
+              <input type="tel" placeholder="+971 50 532 5083">
+            </div>
+
+            <div class="tf-field">
+              <label>Email <span>*</span></label>
+              <input type="email" placeholder="your@email.com">
+            </div>
+
+            <div class="tf-field">
+              <label>Language You Teach</label>
+              <select>
+                <option value="" disabled selected>Select</option>
+                <option>Arabic</option>
+                <option>English</option>
+                <option>Spanish</option>
+                <option>French</option>
+                <option>German</option>
+                <option>Mandarin</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="tf-field">
+              <label>Years of Experience</label>
+              <input type="number" placeholder="e.g. 5" min="0">
+            </div>
+
+            <div class="tf-field">
+              <label>Certifications</label>
+              <input type="text" placeholder="e.g. CELTA, DELTA">
+            </div>
+
+            <div class="tf-field">
+              <label>Location / City</label>
+              <input type="text" placeholder="Dubai, UAE">
+            </div>
+
+            <div class="tf-field">
+              <label>Preferred Teaching Hours</label>
+              <select>
+                <option value="" disabled selected>Select</option>
+                <option>Morning (8am–12pm)</option>
+                <option>Afternoon (12pm–5pm)</option>
+                <option>Evening (5pm–10pm)</option>
+                <option>Flexible</option>
+              </select>
+            </div>
+
+          </div>
+          <button type="submit" class="tf-submit">
+            Apply Now
+            <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+              <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════ TICKER ════ -->
+  <div class="ticker">
+    <div class="ticker__track">
+      <span>Spanish</span><span class="ticker__dot">+</span><span>Polish</span><span class="ticker__dot">+</span>
+      <span>English</span><span class="ticker__dot">+</span>
+      <span>Italian</span><span class="ticker__dot">+</span>
+      <span>Arabic</span><span class="ticker__dot">+</span>
+      <span>German</span><span class="ticker__dot">+</span>
+      <span>French</span><span class="ticker__dot">+</span>
+      <!-- duplicate for seamless loop -->
+      <span>Spanish</span><span class="ticker__dot">+</span><span>Polish</span><span class="ticker__dot">+</span>
+      <span>English</span><span class="ticker__dot">+</span>
+      <span>Italian</span><span class="ticker__dot">+</span>
+      <span>Arabic</span><span class="ticker__dot">+</span>
+      <span>German</span><span class="ticker__dot">+</span>
+      <span>French</span><span class="ticker__dot">+</span>
+    </div>
+  </div>
+
+  <!-- ════ FOOTER ════ -->
+  <footer id="footer-contact">
+    <div class="footer__grid">
+      <div class="fc">
+        <h4>Courses</h4>
+        <a href="#">English Courses</a>
+        <a href="#">German Courses</a>
+        <a href="#">Spanish Courses</a>
+        <a href="#">Other Languages</a>
+      </div>
+      <div class="fc">
+        <h4>Contacts</h4>
+        <p class="w">UAE</p>
+        <p>+971 50 532 5083</p>
+        <p><a href="https://wa.me/971505325083" target="_blank" style="color:inherit;text-decoration:none;">WhatsApp: +971 50 532 5083</a></p>
+        <p>info@lahjaro.com</p>
+      </div>
+      <div class="fc">
+        <h4>Subscribe</h4>
+        <div class="nl-row">
+          <input type="email" placeholder="Get news &amp; updates">
+          <button>&#10148;</button>
+        </div>
+        <p>Subscribe to our newsletter. Be in trends.</p>
+      </div>
+      <div class="fc">
+        <h4>In Socials</h4>
+        <div class="socials">
+          <a href="#" class="soc" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="#" class="soc" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="#" class="soc" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.9)" stroke="none"/>
+            </svg>
+          </a>
+          <a href="#" class="soc" aria-label="YouTube">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#03143a"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="fc logo-col">
+        <img src="images/logo-new.svg" alt="Lahjaro">
+      </div>
+    </div>
+    <div class="footer__btm">
+      <p>Copyright &copy; 2026 Lahjaro Languages Institute FZ-LLC. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ════ SCRIPTS ════ -->
+  <script>
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const mobNav    = document.getElementById('mob-nav');
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      mobNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+      mobNav.setAttribute('aria-hidden', true);
+      document.body.style.overflow = '';
+    }
+    hamburger.addEventListener('click', () => {
+      const open = hamburger.classList.toggle('open');
+      mobNav.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open);
+      mobNav.setAttribute('aria-hidden', !open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    window.addEventListener('scroll', () => { if (mobNav.classList.contains('open')) closeMenu(); }, { passive: true });
+    document.addEventListener('click', (e) => {
+      if (mobNav.classList.contains('open') && !mobNav.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
+    });
+
+    // Mark selects as filled when a value is chosen
+    // (Leaflet map init is below in separate script tag)
+    document.querySelectorAll('select').forEach(sel => {
+      sel.addEventListener('change', () => sel.classList.toggle('filled', sel.value !== ''));
+    });
+  </script>
+
+</body>
+</html>

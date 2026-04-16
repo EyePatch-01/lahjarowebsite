@@ -1,0 +1,3126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lahjaro Languages Institute FZ-LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Manrope:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy: #03143a;
+      --blue: #143d82;
+      --blue-br: #0976ff;
+      --orange: #f4af85;
+      --peach: #fcecea;
+      --text: #0b1220;
+      --tn: #1a2b49;
+      --hd: #031438;
+      --gr: #25282b;
+      --gm: #6b7280;
+      --gl: #9ca3af;
+      --bd: #e8f1f7;
+      --w: #fff;
+      --f: 'Inter', sans-serif;
+      --fa: 'Manrope', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--f);
+      color: var(--text);
+      background: var(--w);
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      border: none;
+      background: none;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    /* ── HEADER ── */
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--orange);
+      height: 36px;
+      display: flex;
+      align-items: center;
+      z-index: 101;
+    }
+
+    .topbar__in {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .topbar__contact {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .topbar__contact a {
+      color: rgba(255, 255, 255, .8);
+      font-size: 12.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s;
+    }
+
+    .topbar__contact a:hover {
+      color: #fff;
+    }
+
+    .topbar__socials {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .topbar__socials a {
+      color: rgba(255, 255, 255, .7);
+      display: inline-flex;
+      align-items: center;
+      transition: color .2s;
+    }
+
+    .topbar__socials a:hover {
+      color: #fff;
+    }
+
+    .header {
+      background: var(--navy);
+      height: 80px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header__in {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header__left {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .logo img {
+      height: 129px;
+      width: auto;
+      display: block;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav a {
+      color: rgba(255, 255, 255, .82);
+      font-size: 15px;
+      font-weight: 500;
+      transition: color .2s;
+    }
+
+    .nav a:hover {
+      color: #fff;
+    }
+
+    .nav a.active {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .btn-pill {
+      background: var(--navy);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 13px 26px;
+      border-radius: 100px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background .2s;
+    }
+
+    .btn-pill:hover {
+      background: var(--blue);
+    }
+
+    /* Header Contact Us pill is orange */
+    .header .btn-pill {
+      background: var(--orange);
+      color: #fff;
+    }
+
+    .header .btn-pill:hover {
+      background: #e89b6d;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .hero__in {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 20px 0 0 104px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      min-height: 520px;
+      position: relative;
+    }
+
+    .hero__mob-img {
+      display: block;
+      width: 620px;
+      flex-shrink: 0;
+      align-self: flex-end;
+      order: 2;
+    }
+
+    .hero__mob-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .hero__text {
+      order: 1;
+      max-width: 600px;
+      padding-bottom: 40px;
+    }
+
+    .hero__text h1 {
+      font-size: 56px;
+      font-weight: 900;
+      color: var(--tn);
+      line-height: 1.13;
+      margin-bottom: 22px;
+    }
+
+    .hero__text h1 .orange {
+      color: var(--orange);
+    }
+
+    .hero__text .sub {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.65;
+      max-width: 480px;
+      margin-bottom: 32px;
+    }
+
+    .hero__btns {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .btn-explore {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--tn);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1.5px solid #d1d9e6;
+      border-radius: 100px;
+      padding: 11px 22px;
+      transition: border-color .2s;
+    }
+
+    .btn-explore:hover {
+      border-color: var(--navy);
+    }
+
+    .lang-pills {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: nowrap;
+    }
+
+    .lpill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #fdf3ee;
+      border: 1px solid #f0d9cc;
+      border-radius: 100px;
+      padding: 7px 16px 7px 10px;
+      flex-shrink: 0;
+    }
+
+    .lpill.lp-clone {
+      display: none;
+    }
+
+    .lpill img {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .lpill span {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .hero__imgs {
+      display: none;
+    }
+
+    /* ── STATS BAR ── */
+    .statsbar {
+      background: var(--navy);
+      padding: 0;
+      height: 68px;
+    }
+
+    .statsbar__in {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .sbi {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sbi span {
+      font-size: 14px;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    /* ── FEATURES ── */
+    .features {
+      padding: 80px 0 0;
+      position: relative;
+    }
+
+    .features__hdr {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+      margin-bottom: 48px;
+    }
+
+    .features__hdr .slabel,
+    .features__hdr .sh2 {
+      max-width: 500px;
+    }
+
+    .slabel {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+
+    .sh2 {
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--hd);
+      line-height: 1.2;
+    }
+
+    /* light peach background behind cards */
+    .features__bg {
+      background: #fdf3ee;
+      padding: 48px 80px 80px;
+    }
+
+    .feat-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .fcard {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px 24px 28px;
+      border: 1.5px solid #f0d9cc;
+      box-shadow: 0 4px 16px rgba(244, 175, 133, .15);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .fcard__icon {
+      width: 48px;
+      height: 48px;
+      background: #fde7d7;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+    }
+
+    .fcard h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .fcard p {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.65;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    .fcard__arrow {
+      width: 32px;
+      height: 32px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s;
+    }
+
+    .fcard__arrow:hover {
+      background: var(--blue);
+    }
+
+    /* ── SPLIT FEATURE ── */
+    .split {
+      padding: 80px 0;
+      background: #fff;
+    }
+
+    .split__in {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+
+    /* LEFT: image */
+    .split__img {
+      flex-shrink: 0;
+    }
+
+    .split__img img {
+      width: 480px;
+      height: 480px;
+      object-fit: cover;
+      border-radius: 24px;
+      display: block;
+    }
+
+    /* RIGHT: text + orange accent rect */
+    .split__content {
+      flex: 1;
+      position: relative;
+      min-width: 0;
+    }
+
+    .split__orange {
+      position: absolute;
+      bottom: -40px;
+      left: -28px;
+      right: -10px;
+      top: 50%;
+      background: #fdf3ee;
+      border-radius: 22px;
+      z-index: 0;
+    }
+
+    .split__text {
+      position: relative;
+      z-index: 1;
+    }
+
+    .split__content .sh2 {
+      font-size: 39px;
+      margin-bottom: 20px;
+    }
+
+    .split__content>.split__text>p {
+      font-size: 18px;
+      color: var(--text);
+      line-height: 1.65;
+      margin-bottom: 36px;
+    }
+
+    .split__list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .sli {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .sli__dot {
+      width: 22px;
+      height: 22px;
+      background: #7ab8f5;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .sli h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--tn);
+      margin-bottom: 4px;
+    }
+
+    .sli p {
+      font-size: 15.8px;
+      color: var(--gm);
+      line-height: 1.5;
+    }
+
+    /* ── STATS NUMBERS ── */
+    .snums {
+      padding: 60px 0;
+      background: #fff;
+    }
+
+    .snums__in {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+      display: flex;
+      justify-content: center;
+      gap: 140px;
+    }
+
+    .sn {
+      text-align: center;
+    }
+
+    .sn__svg {
+      display: block;
+      margin: 0 auto;
+      overflow: visible;
+    }
+
+    .sn__lbl {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--tn);
+      margin-top: 8px;
+      display: block;
+    }
+
+    /* ── OUR METHOD (dark) ── */
+    .method {
+      background: var(--navy);
+      padding: 80px 0;
+    }
+
+    .method__in {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+      display: flex;
+      gap: 80px;
+      align-items: flex-start;
+    }
+
+    .method__left {
+      max-width: 360px;
+      flex-shrink: 0;
+    }
+
+    .method__left .btn-pill {
+      background: var(--orange);
+    }
+
+    .method__left .btn-pill:hover {
+      background: #e89b6d;
+    }
+
+    .method__left .slabel {
+      color: var(--orange);
+    }
+
+    .method__left h2 {
+      font-family: var(--fa);
+      font-size: 36px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .method__left p {
+      font-family: var(--fa);
+      font-size: 18px;
+      color: rgba(255, 255, 255, .75);
+      line-height: 1.65;
+      margin-bottom: 40px;
+    }
+
+    .method__grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .mcard {
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .mcard__ico {
+      width: 48px;
+      height: 48px;
+      background: rgba(244, 175, 133, .12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .mcard h3 {
+      font-family: var(--fa);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--orange);
+      margin-bottom: 10px;
+    }
+
+    .mcard p {
+      font-family: var(--fa);
+      font-size: 16px;
+      color: rgba(255, 255, 255, .65);
+      line-height: 1.6;
+    }
+
+    /* ── LANG MARQUEE ── */
+    .flg-marquee {
+      overflow: hidden;
+      background: #fff;
+      padding: 14px 0;
+    }
+
+    .flg-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+    }
+
+    @keyframes mar {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @keyframes lpmar {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .flg-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      border-radius: 200px;
+      padding: 10px 20px;
+      margin-right: 20px;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, .07);
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    .flg-pill img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .flg-pill span {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+
+    /* ── MAP SECTION ── */
+    .mapsec {
+      background: linear-gradient(to bottom, #ffffff 0%, #eef4ff 65%, #e4ecf8 100%);
+      padding: 72px 0 80px;
+      text-align: center;
+    }
+
+    .mapsec__in {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 80px;
+    }
+
+    .av-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .av-stack {
+      display: flex;
+    }
+
+    .av-stack img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2.5px solid #fff;
+      margin-left: -12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+    }
+
+    .av-stack img:first-child {
+      margin-left: 0;
+    }
+
+    .av-lbl {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .mapsec h2 {
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--hd);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .mapsec .msub {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.65;
+      max-width: 480px;
+      margin: 0 auto 40px;
+    }
+
+    .mapwrap {
+      position: relative;
+      max-width: 1280px;
+      margin: 0 auto 48px;
+    }
+
+    .mapwrap img.worldmap {
+      width: 100%;
+      display: block;
+    }
+
+    .mpin {
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      transform: translate(-50%, -50%);
+    }
+
+    .btn-jour {
+      background: var(--navy);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 16px 80px;
+      border-radius: 100px;
+      display: inline-flex;
+      align-items: center;
+      transition: background .2s;
+    }
+
+    .btn-jour:hover {
+      background: var(--blue);
+    }
+
+    /* ── COURSES ── */
+    .courses {
+      padding: 80px 0;
+      background: #fff;
+    }
+
+    .courses__hdr {
+      max-width: 1440px;
+      margin: 0 auto 48px;
+      padding: 0 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .courses__hdr .sh2 {
+      font-size: 40px;
+    }
+
+    .btn-all {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      padding: 12px 24px;
+      transition: background .2s;
+      flex-shrink: 0;
+    }
+
+    .btn-all:hover {
+      background: #f5f5f5;
+    }
+
+    .courses__grid {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .ccard {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .06);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .ccard:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .1);
+    }
+
+    .cthumb {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      background: #dde8f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cthumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cbadge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--orange);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 100px;
+    }
+
+    .cbody {
+      padding: 16px 24px 20px;
+    }
+
+    .clang {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1476ff;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .clang svg {
+      flex-shrink: 0;
+    }
+
+    .ctitle {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+
+    .cby {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cby-av {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #dde8f5;
+      flex-shrink: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--blue);
+    }
+
+    .cfoot {
+      border-top: 1px solid var(--bd);
+      padding-top: 14px;
+    }
+
+    .btn-exp {
+      background: var(--blue);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 0;
+      border-radius: 8px;
+      display: block;
+      width: 100%;
+      text-align: center;
+      transition: background .2s;
+    }
+
+    .btn-exp:hover {
+      background: var(--navy);
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testi-hdr {
+      padding: 60px 0 0;
+      text-align: center;
+    }
+
+    .testi-hdr .slabel {
+      color: var(--blue);
+    }
+
+    .testi-hdr h2 {
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--hd);
+      line-height: 1.2;
+    }
+
+    .testimonials {
+      background: var(--peach);
+      padding: 40px 0 80px;
+    }
+
+    .tgrid {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .tgrid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tcard {
+      background: #fff;
+      border-radius: 15px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 calc((100% - 48px) / 4);
+      scroll-snap-align: start;
+    }
+
+    .stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 16px;
+    }
+
+    .star {
+      color: #f59e0b;
+      font-size: 16px;
+    }
+
+    .ttext {
+      font-size: 14.7px;
+      color: #364153;
+      line-height: 1.65;
+      margin-bottom: 0;
+      font-style: italic;
+      flex: 1;
+    }
+
+    .tauth {
+      font-size: 14.7px;
+      color: var(--tn);
+      display: block;
+      padding-top: 20px;
+      border-top: 1px solid var(--bd);
+      margin-top: auto;
+    }
+
+    .tsl-ui {
+      display: none;
+    }
+
+    .tsl-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: none;
+      background: var(--navy);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+
+    .tsl-btn:hover {
+      background: var(--orange);
+    }
+
+    .tsl-dots {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tsl-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(20, 61, 130, 0.2);
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+
+    .tsl-dot.active {
+      background: var(--navy);
+      width: 22px;
+      border-radius: 4px;
+    }
+
+    /* ── LANG TICKER ── */
+    .ticker {
+      overflow: hidden;
+      padding: 20px 0;
+      background: #fff;
+    }
+
+    .ticker__track {
+      display: flex;
+      gap: 48px;
+      align-items: center;
+      animation: mar 35s linear infinite;
+      width: max-content;
+    }
+
+    .ticker__track span {
+      font-size: 72px;
+      font-weight: 700;
+      white-space: nowrap;
+      background: linear-gradient(180deg, #143d82 0%, #f4af85 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .ticker__dot {
+      font-size: 48px;
+      font-weight: 400;
+      opacity: .35;
+    }
+
+    /* ── FAQ ── */
+    .faq {
+      padding: 80px 0;
+      background: #fff;
+    }
+
+    .faq__in {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--bd);
+    }
+
+    .faq-q {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      gap: 16px;
+      text-align: left;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gr);
+    }
+
+    .faq-ico {
+      width: 16px;
+      height: 16px;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .faq-ico::before,
+    .faq-ico::after {
+      content: '';
+      position: absolute;
+      background: var(--gr);
+      border-radius: 2px;
+      transition: .25s;
+    }
+
+    .faq-ico::before {
+      width: 16px;
+      height: 2px;
+      top: 7px;
+      left: 0;
+    }
+
+    .faq-ico::after {
+      width: 2px;
+      height: 16px;
+      top: 0;
+      left: 7px;
+    }
+
+    .faq-item.open .faq-ico::after {
+      transform: rotate(90deg);
+      opacity: 0;
+    }
+
+    .faq-a {
+      font-size: 16px;
+      color: var(--gm);
+      line-height: 1.75;
+      padding-bottom: 24px;
+      display: none;
+    }
+
+    .faq-item.open .faq-a {
+      display: block;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      padding: 60px 0 0;
+    }
+
+    .footer__grid {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 160px;
+      gap: 40px;
+    }
+
+    .fc h4 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+
+    .fc a,
+    .fc p {
+      font-size: 14px;
+      color: var(--gl);
+      display: block;
+      line-height: 2.2;
+      transition: color .2s;
+    }
+
+    .fc a:hover {
+      color: #fff;
+    }
+
+    .fc .w {
+      color: #fff;
+    }
+
+    .nl-row {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, .2);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .nl-row input {
+      background: none;
+      border: none;
+      outline: none;
+      color: #fff;
+      font: inherit;
+      font-size: 13px;
+      flex: 1;
+    }
+
+    .nl-row input::placeholder {
+      color: #757575;
+    }
+
+    .nl-row button {
+      color: rgba(255, 255, 255, .5);
+      font-size: 16px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 12px;
+    }
+
+    /* use .fc a.soc to beat .fc a specificity */
+    .fc a.soc {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, .2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      transition: border-color .2s, background .2s;
+    }
+
+    .fc a.soc:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .fc a.soc svg {
+      display: block;
+    }
+
+    .fc.logo-col img {
+      width: 180px;
+      height: auto;
+    }
+
+    .footer__btm {
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 18px 80px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .footer__btm p {
+      font-size: 14px;
+      color: var(--gm);
+    }
+
+    /* ══════════════════════════════════════
+       HAMBURGER + MOBILE NAV
+    ══════════════════════════════════════ */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      padding: 6px;
+      background: none;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2.5px;
+      background: #fff;
+      border-radius: 3px;
+      transition: transform .3s, opacity .3s;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
+    }
+
+    .mob-nav {
+      display: none;
+      position: fixed;
+      top: 116px;
+      left: 0;
+      right: 0;
+      background: var(--navy);
+      padding: 8px 0 20px;
+      z-index: 98;
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      flex-direction: column;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+    }
+
+    .mob-nav.open {
+      display: flex;
+    }
+
+    .mob-nav a.mob-link {
+      color: rgba(255, 255, 255, .82);
+      font-size: 16px;
+      font-weight: 500;
+      padding: 14px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, .07);
+      display: block;
+      transition: color .2s, background .2s;
+    }
+
+    .mob-nav a.mob-link:hover,
+    .mob-nav a.mob-link.active {
+      color: #fff;
+      background: rgba(255, 255, 255, .06);
+    }
+
+    .mob-nav .mob-cta {
+      margin: 16px 24px 0;
+      background: var(--orange);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 24px;
+      border-radius: 100px;
+      text-align: center;
+      display: block;
+    }
+
+    /* prevent any child from blowing out viewport */
+    img {
+      max-width: 100%;
+    }
+
+    /* ══════════════════════════════════════
+       MOBILE  ≤ 767 px
+    ══════════════════════════════════════ */
+    @media (max-width: 767px) {
+
+      /* GLOBAL — hard stop on overflow */
+      *,
+      *::before,
+      *::after {
+        max-width: 100%;
+      }
+
+      section,
+      footer,
+      header,
+      div {
+        box-sizing: border-box;
+      }
+
+      /* TOP BAR */
+      .topbar__in {
+        padding: 0 20px;
+      }
+
+      .topbar {
+        height: 36px;
+      }
+
+      .topbar__in {
+        justify-content: center;
+      }
+
+      .topbar__contact {
+        gap: 18px;
+      }
+
+      .topbar__contact a {
+        font-size: 12.5px;
+      }
+
+      .topbar__socials {
+        display: none;
+      }
+
+      /* HEADER */
+      .header__in {
+        padding: 0 20px;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .header .btn-pill {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      /* HERO */
+      .hero {
+        overflow: hidden;
+      }
+
+      .hero__in {
+        flex-direction: column;
+        padding: 0 20px 0;
+        min-height: unset;
+        gap: 0;
+        align-items: flex-start;
+      }
+
+      .hero__mob-img {
+        display: block;
+        width: 100%;
+        margin: 0 0 8px;
+        text-align: center;
+        order: 1;
+      }
+
+      .hero__mob-img img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+      }
+
+      .hero__text {
+        order: 2;
+        max-width: 100%;
+        padding-bottom: 28px;
+        padding-top: 16px;
+      }
+
+      .hero__text h1 {
+        font-size: 32px;
+        line-height: 1.18;
+      }
+
+      .hero__text .sub {
+        font-size: 15px;
+        max-width: 100%;
+      }
+
+      .hero__imgs {
+        display: none !important;
+      }
+
+      .hero__btns {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+
+      .hero__btns .btn-pill,
+      .hero__btns .btn-explore {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .lang-pills-outer {
+        overflow: hidden;
+        width: 100%;
+        padding: 6px 0;
+        -webkit-mask-image: linear-gradient(to right, transparent 0px, #000 18px, #000 calc(100% - 18px), transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0px, #000 18px, #000 calc(100% - 18px), transparent 100%);
+      }
+
+      .lang-pills {
+        flex-wrap: nowrap;
+        width: max-content;
+        gap: 14px;
+        animation: lpmar 18s linear infinite;
+      }
+
+      .lpill.lp-clone {
+        display: flex;
+      }
+
+      /* STATS BAR */
+      .statsbar {
+        height: auto;
+      }
+
+      .statsbar__in {
+        padding: 0;
+        flex-wrap: wrap;
+        align-items: stretch;
+      }
+
+      .sbi {
+        flex: 0 0 50%;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 13px 16px;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, .12);
+        box-sizing: border-box;
+      }
+
+      .sbi:nth-child(odd) {
+        border-right: 1px solid rgba(255, 255, 255, .12) !important;
+      }
+
+      .sbi:nth-last-child(-n+2) {
+        border-bottom: none;
+      }
+
+      /* FEATURES */
+      .features {
+        padding-top: 16px;
+      }
+
+      .features__hdr {
+        padding: 16px 20px 16px;
+        margin-bottom: 0;
+      }
+
+      .features__hdr .sh2 {
+        font-size: 28px;
+      }
+
+      .features__bg {
+        padding: 20px 20px 28px;
+        overflow: hidden;
+      }
+
+      .feat-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        max-width: none;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .fcard {
+        padding: 20px 16px 18px;
+        text-align: left;
+        align-items: flex-start !important;
+        justify-content: flex-start;
+      }
+
+      .fcard__icon {
+        margin-bottom: 14px;
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+      }
+
+      .fcard h3,
+      .fcard p,
+      .fcard .fcard__arrow {
+        align-self: flex-start;
+      }
+
+      .fcard h3 {
+        font-size: 14px;
+        min-height: unset;
+      }
+
+      .fcard p {
+        font-size: 12px;
+        margin-bottom: 16px;
+      }
+
+      /* SPLIT */
+      .split {
+        padding: 40px 0;
+        overflow: hidden;
+      }
+
+      .split__in {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 32px;
+      }
+
+      .split__img {
+        width: 100%;
+        flex-shrink: 0;
+      }
+
+      .split__img img {
+        width: 100%;
+        height: 210px;
+        object-fit: cover;
+        object-position: 50% 20%;
+        border-radius: 16px;
+        display: block;
+      }
+
+      .split__orange {
+        display: none !important;
+      }
+
+      .split__content .sh2 {
+        font-size: 28px;
+      }
+
+      .split__content .lead {
+        font-size: 15px;
+      }
+
+      /* STATS NUMBERS */
+      .snums {
+        padding: 40px 0;
+      }
+
+      .snums__in {
+        padding: 0 20px;
+        flex-wrap: wrap;
+        gap: 16px 24px;
+        justify-content: center;
+      }
+
+      .snum {
+        flex: 0 0 calc(50% - 12px);
+        text-align: center;
+        padding: 16px 0;
+      }
+
+      .sn__svg {
+        width: 120px;
+        height: 62px;
+      }
+
+      .sn__lbl {
+        font-size: 16px;
+      }
+
+      /* METHOD */
+      .method {
+        padding: 48px 0;
+        overflow: hidden;
+      }
+
+      .method__in {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 28px;
+      }
+
+      .method__left {
+        max-width: 100%;
+      }
+
+      .method__left .sh2 {
+        font-size: 26px;
+      }
+
+      .method__left p {
+        font-size: 14px;
+      }
+
+      .method__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .mcard {
+        padding: 16px 14px;
+      }
+
+      .mcard__ico {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 10px;
+      }
+
+      .mcard h3 {
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+
+      .mcard p {
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      /* MARQUEE */
+      .flg-pill {
+        padding: 8px 14px;
+        gap: 8px;
+        margin-right: 12px;
+      }
+
+      .flg-pill img {
+        width: 22px;
+        height: 22px;
+      }
+
+      .flg-pill span {
+        font-size: 13px;
+      }
+
+      /* MAP */
+      .mapsec {
+        padding: 40px 0 48px;
+        overflow: hidden;
+      }
+
+      .mapsec__in {
+        padding: 0 20px;
+        text-align: center;
+      }
+
+      .mapsec h2 {
+        font-size: 26px;
+      }
+
+      .msub {
+        font-size: 14px;
+        max-width: 100%;
+      }
+
+      .mapwrap {
+        margin: 0 -60px 0;
+        overflow: hidden;
+        border-radius: 0;
+        transform: scale(1.35);
+        transform-origin: center center;
+        margin-bottom: 20px;
+      }
+
+      .mpin {
+        width: 28px !important;
+        height: 28px !important;
+      }
+
+      .btn-jour {
+        padding: 13px 28px;
+        font-size: 14px;
+        margin-top: 24px;
+        display: inline-block;
+      }
+
+      /* COURSES */
+      .courses {
+        padding: 48px 0;
+        overflow: hidden;
+      }
+
+      .courses__hdr {
+        padding: 0 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 24px;
+      }
+
+      .courses__hdr .sh2 {
+        font-size: 26px;
+      }
+
+      .courses__grid {
+        padding: 0 20px;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .cthumb {
+        height: 120px;
+      }
+
+      .cbadge {
+        font-size: 10px;
+        padding: 4px 10px;
+        top: 10px;
+        left: 10px;
+      }
+
+      .cbody {
+        padding: 10px 12px 14px;
+      }
+
+      .clang {
+        font-size: 12px;
+        margin-bottom: 4px;
+      }
+
+      .ccard h3 {
+        font-size: 13px;
+        line-height: 1.35;
+        margin-bottom: 8px;
+      }
+
+      .cinstr {
+        font-size: 12px;
+        margin-bottom: 10px;
+      }
+
+      .cinstr .av {
+        width: 22px;
+        height: 22px;
+        font-size: 9px;
+      }
+
+      .ccard .btn-pill {
+        font-size: 12px;
+        padding: 8px 14px;
+      }
+
+      /* TESTIMONIALS */
+      .testi-hdr {
+        padding: 40px 20px 0;
+      }
+
+      .testi-hdr h2 {
+        font-size: 26px;
+      }
+
+      .testimonials {
+        padding: 24px 0 48px;
+      }
+
+      .testimonials {
+        overflow: hidden;
+      }
+
+      .tgrid {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 4px 20px 4px 20px;
+        gap: 16px;
+        transition: none;
+      }
+
+      .tgrid::-webkit-scrollbar {
+        display: none;
+      }
+
+      .tcard {
+        flex: 0 0 calc(100vw - 40px);
+        flex-shrink: 0;
+        scroll-snap-align: start;
+      }
+
+      .tsl-ui {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        padding: 16px 0 8px;
+      }
+
+      .tsl-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: none;
+        background: var(--navy);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .tsl-dots {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .tsl-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(20, 61, 130, 0.2);
+        transition: all 0.25s;
+        cursor: pointer;
+      }
+
+      .tsl-dot.active {
+        background: var(--navy);
+        width: 22px;
+        border-radius: 4px;
+      }
+
+      /* LANG TICKER */
+      .ticker {
+        padding: 14px 0;
+        overflow: hidden;
+      }
+
+      .ticker__track {
+        gap: 28px;
+        animation: mar 20s linear infinite;
+      }
+
+      .ticker__track span {
+        font-size: 36px;
+      }
+
+      /* FAQ */
+      .faq {
+        padding: 40px 0;
+      }
+
+      .faq__in {
+        padding: 0 20px;
+      }
+
+      .faq-q {
+        font-size: 15px;
+        padding: 16px 0;
+      }
+
+      /* FOOTER */
+      .footer__grid {
+        padding: 0 20px 32px;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 16px;
+      }
+
+      .fc.logo-col {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: center;
+      }
+
+      .footer__btm {
+        padding: 14px 20px;
+      }
+
+      .footer__btm p {
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+
+    /* ── TABLET 768–1023 ── */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .topbar__in {
+        padding: 0 32px;
+      }
+
+      .header__in {
+        padding: 0 32px;
+      }
+
+      .hero__in {
+        padding: 28px 32px 0;
+      }
+
+      .hero__text h1 {
+        font-size: 42px;
+      }
+
+      .hero__mob-img {
+        width: 400px;
+      }
+
+      .features__hdr {
+        padding: 40px 32px 24px;
+      }
+
+      .fcards {
+        padding: 0 32px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .split__in {
+        padding: 0 32px;
+        gap: 32px;
+        flex-direction: column;
+      }
+
+      .split__img img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        object-position: 50% 20%;
+      }
+
+      .split__orange {
+        display: none !important;
+      }
+
+      .snums__in {
+        padding: 0 32px;
+        gap: 60px;
+      }
+
+      .method__in {
+        padding: 0 32px;
+        gap: 40px;
+      }
+
+      .mcards {
+        grid-template-columns: 1fr;
+      }
+
+      .mapsec__in {
+        padding: 0 32px;
+      }
+
+      .courses__hdr,
+      .courses__grid {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+
+      .courses__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .tgrid {
+        padding: 0 32px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer__grid {
+        padding: 0 32px 36px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .fc.logo-col {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ════════ TOP BAR ════════ -->
+  <div class="topbar">
+    <div class="topbar__in">
+      <div class="topbar__contact">
+        <a href="tel:+971505325083">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          <span>+971 50 532 5083</span>
+        </a>
+        <a href="mailto:info@lahjaro.com">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
+          <span style="text-transform:uppercase">info@lahjaro.com</span>
+        </a>
+      </div>
+      <div class="topbar__socials">
+        <a href="#" aria-label="Facebook">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+          </svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+        <a href="#" aria-label="X / Twitter">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L2.25 2.25h6.918l4.243 5.622 5.833-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117Z" />
+          </svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#143d82" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════ HEADER ════════ -->
+  <header class="header">
+    <div class="header__in">
+      <div class="header__left">
+        <a href="index.html" class="logo">
+          <img src="images/logo-new.svg" alt="Lahjaro">
+        </a>
+        <nav class="nav">
+          <a href="index.html" class="active">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="courses.html">Courses</a>
+          <a href="articles.html">Articles</a>
+        </nav>
+      </div>
+      <a href="contact.html" class="btn-pill">
+        Contact Us
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mob-nav" id="mob-nav" aria-hidden="true">
+    <a href="index.html" class="mob-link active">Home</a>
+    <a href="about.html" class="mob-link">About Us</a>
+    <a href="services.html" class="mob-link">Services</a>
+    <a href="courses.html" class="mob-link">Courses</a>
+    <a href="articles.html" class="mob-link">Articles</a>
+    <a href="contact.html" class="mob-cta" id="mob-cta">Contact Us &rarr;</a>
+  </div>
+
+  <!-- ════════ HERO ════════ -->
+  <section class="hero">
+    <div class="hero__in">
+      <!-- Mobile-only hero image -->
+      <div class="hero__mob-img">
+        <img src="images/students.webp" alt="Students" loading="lazy">
+      </div>
+      <div class="hero__text">
+        <h1>Learn Languages <span style="white-space:nowrap">Live Better</span><br><span class="orange">Speak
+            Confidently</span></h1>
+        <p class="sub">Lahjaro is a multilingual language academy offering structured learning with cultural
+          understanding for students worldwide.</p>
+        <div class="hero__btns">
+          <a href="#courses" class="btn-pill">
+            Start Today
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <path d="M1 5h8M5.5 1.5 9 5 5.5 8.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a href="#courses" class="btn-explore">
+            Explore Languages
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M2 7h10M7.5 3 12 7l-4.5 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+        <div class="lang-pills-outer">
+          <div class="lang-pills">
+            <div class="lpill">
+              <img src="https://flagcdn.com/w40/sa.png" alt="">
+              <span>Arabic</span>
+            </div>
+            <div class="lpill">
+              <img src="https://flagcdn.com/w40/gb.png" alt="">
+              <span>English</span>
+            </div>
+            <div class="lpill">
+              <img src="https://flagcdn.com/w40/il.png" alt="">
+              <span>Hebrew</span>
+            </div>
+            <div class="lpill">
+              <img src="https://flagcdn.com/w40/tr.png" alt="">
+              <span>Turkish</span>
+            </div>
+            <div class="lpill">
+              <img src="https://flagcdn.com/w40/ir.png" alt="">
+              <span>Persian</span>
+            </div>
+            <div class="lpill">
+              <img src="https://flagcdn.com/w40/uz.png" alt="">
+              <span>Uzbek</span>
+            </div>
+            <!-- duplicate for seamless mobile marquee loop -->
+            <div class="lpill lp-clone">
+              <img src="https://flagcdn.com/w40/sa.png" alt="">
+              <span>Arabic</span>
+            </div>
+            <div class="lpill lp-clone">
+              <img src="https://flagcdn.com/w40/gb.png" alt="">
+              <span>English</span>
+            </div>
+            <div class="lpill lp-clone">
+              <img src="https://flagcdn.com/w40/il.png" alt="">
+              <span>Hebrew</span>
+            </div>
+            <div class="lpill lp-clone">
+              <img src="https://flagcdn.com/w40/tr.png" alt="">
+              <span>Turkish</span>
+            </div>
+            <div class="lpill lp-clone">
+              <img src="https://flagcdn.com/w40/ir.png" alt="">
+              <span>Persian</span>
+            </div>
+            <div class="lpill lp-clone">
+              <img src="https://flagcdn.com/w40/uz.png" alt="">
+              <span>Uzbek</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__imgs">
+        <img class="main-img" src="images/57f2feaf-40f6-405f-9785-a1bc7aa5002b.png" alt="Student">
+        <img class="float-img" src="images/4eed9279-a552-44ad-a547-ca92167ab737.png" alt="Student learning">
+      </div>
+    </div>
+
+    <!-- Stats Bar inside hero -->
+    <div class="statsbar">
+      <div class="statsbar__in">
+        <div class="sbi">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M10 2 2 6l8 4 8-4-8-4zM2 14l8 4 8-4M2 10l8 4 8-4" stroke="#fff" stroke-width="1.4"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>15+ Languages</span>
+        </div>
+        <div class="sbi">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="6.5" r="3" stroke="#fff" stroke-width="1.4" />
+            <path d="M4 17c0-3 2.7-5.5 6-5.5s6 2.5 6 5.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" />
+          </svg>
+          <span>Top-Tier Instructors</span>
+        </div>
+        <div class="sbi">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect x="2" y="4" width="16" height="12" rx="2" stroke="#fff" stroke-width="1.4" />
+            <path d="M7 9h6M7 12h4" stroke="#fff" stroke-width="1.4" stroke-linecap="round" />
+          </svg>
+          <span>Group &amp; One-to-One Classes</span>
+        </div>
+        <div class="sbi">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="7.5" stroke="#fff" stroke-width="1.4" />
+            <path d="M10 6v4l2.5 2.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>Flexible Schedule</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ FEATURES GRID ════════ -->
+  <section class="features" id="services">
+    <div class="features__hdr">
+      <span class="slabel">What we offer</span>
+      <h2 class="sh2">Unlock the World with<br>Language Learning</h2>
+    </div>
+    <div class="features__bg">
+      <div class="feat-grid">
+        <div class="fcard">
+          <div class="fcard__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="3" width="18" height="14" rx="2" stroke="#143d82" stroke-width="1.5" />
+              <path d="M8 21h8M12 17v4" stroke="#143d82" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3>Live online courses</h3>
+          <p>Study anywhere with our flexible online learning models.</p>
+          <div class="fcard__arrow">
+            <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
+              <path d="M1 4.5h7M4.5 1.5 8 4.5 4.5 7.5" stroke="#fff" stroke-width="1.3" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
+        <div class="fcard">
+          <div class="fcard__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="9" stroke="#143d82" stroke-width="1.5" />
+              <path d="M12 7v5l3 3" stroke="#143d82" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Learn on Your Time</h3>
+          <p>Set your own pace and schedule to fit your lifestyle.</p>
+          <div class="fcard__arrow">
+            <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
+              <path d="M1 4.5h7M4.5 1.5 8 4.5 4.5 7.5" stroke="#fff" stroke-width="1.3" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
+        <div class="fcard">
+          <div class="fcard__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="#143d82" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="12" cy="7" r="4" stroke="#143d82" stroke-width="1.5" />
+            </svg>
+          </div>
+          <h3>One-to-one courses</h3>
+          <p>Personalised sessions tailored to your level, goals, and pace.</p>
+          <div class="fcard__arrow">
+            <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
+              <path d="M1 4.5h7M4.5 1.5 8 4.5 4.5 7.5" stroke="#fff" stroke-width="1.3" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
+        <div class="fcard">
+          <div class="fcard__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#143d82" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Exam Preparation <small style="font-size:14px;font-weight:400;color:#9ca3af;">(Soon)</small></h3>
+          <p>Focused programs designed to help students understand exam formats.</p>
+          <div class="fcard__arrow">
+            <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
+              <path d="M1 4.5h7M4.5 1.5 8 4.5 4.5 7.5" stroke="#fff" stroke-width="1.3" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ SPLIT FEATURE ════════ -->
+  <section class="split" id="about">
+    <div class="split__in">
+      <div class="split__img">
+        <img src="images/watchingcomputer.webp" alt="Learning at home">
+      </div>
+      <div class="split__content">
+        <div class="split__orange"></div>
+        <div class="split__text">
+          <span class="slabel">Specific Learning</span>
+          <h2 class="sh2">Languages from the<br>Comfort of Home</h2>
+          <p>We believe language learning is a journey of intellectual growth. Our environment is designed for serious
+            learners who value quality over speed.</p>
+          <div class="split__list">
+            <div class="sli">
+              <div class="sli__dot">
+                <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                  <path d="M1 4l3 3 5-6" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <h4>Small Class Sizes</h4>
+                <p>Maximum of 6 students per cohort to ensure personal attention.</p>
+              </div>
+            </div>
+            <div class="sli">
+              <div class="sli__dot">
+                <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                  <path d="M1 4l3 3 5-6" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <h4>Flexible Schedules</h4>
+                <p>Morning, evening, and weekend classes tailored for professionals.</p>
+              </div>
+            </div>
+            <div class="sli">
+              <div class="sli__dot">
+                <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                  <path d="M1 4l3 3 5-6" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <h4>One-to-One Courses</h4>
+                <p>Personalised sessions tailored to your level, goals, and pace.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ STATS NUMBERS ════════ -->
+  <section class="snums">
+    <div class="snums__in">
+      <div class="sn">
+        <svg class="sn__svg" width="180" height="90" viewBox="0 0 180 90">
+          <defs>
+            <linearGradient id="ng1" x1="0" y1="0" x2="0" y2="90" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#6a8fc8" />
+              <stop offset="100%" stop-color="#f4af85" />
+            </linearGradient>
+          </defs>
+          <text x="50%" y="82" text-anchor="middle" font-size="82" font-weight="900" font-family="Inter,sans-serif"
+            fill="white" stroke="url(#ng1)" stroke-width="3" paint-order="stroke fill" class="snum-val"
+            data-target="15">0+</text>
+        </svg>
+        <span class="sn__lbl">Language Courses</span>
+      </div>
+      <div class="sn">
+        <svg class="sn__svg" width="180" height="90" viewBox="0 0 180 90">
+          <defs>
+            <linearGradient id="ng2" x1="0" y1="0" x2="0" y2="90" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#6a8fc8" />
+              <stop offset="100%" stop-color="#f4af85" />
+            </linearGradient>
+          </defs>
+          <text x="50%" y="82" text-anchor="middle" font-size="82" font-weight="900" font-family="Inter,sans-serif"
+            fill="white" stroke="url(#ng2)" stroke-width="3" paint-order="stroke fill" class="snum-val"
+            data-target="10">0+</text>
+        </svg>
+        <span class="sn__lbl">Years of Experience</span>
+      </div>
+      <div class="sn">
+        <svg class="sn__svg" width="120" height="90" viewBox="0 0 120 90">
+          <defs>
+            <linearGradient id="ng3" x1="0" y1="0" x2="0" y2="90" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#6a8fc8" />
+              <stop offset="100%" stop-color="#f4af85" />
+            </linearGradient>
+          </defs>
+          <text x="50%" y="82" text-anchor="middle" font-size="82" font-weight="900" font-family="Inter,sans-serif"
+            fill="white" stroke="url(#ng3)" stroke-width="3" paint-order="stroke fill" class="snum-val"
+            data-target="7">0+</text>
+        </svg>
+        <span class="sn__lbl">Covered Countries</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ OUR METHOD ════════ -->
+  <section class="method">
+    <div class="method__in">
+      <div class="method__left">
+        <span class="slabel" style="color:var(--orange)">Our Method</span>
+        <h2>Our Approach</h2>
+        <p>Our methodology combines traditional academic rigger with modern immersion techniques, ensuring you not only
+          speak but understand the cultural context. Start with instructors who speak your language, progress to native
+          speakers, using modern, continuously updated language-instructing methodologies.</p>
+        <a href="#courses" class="btn-pill">
+          Start Today
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path d="M1 5h8M5.5 1.5 9 5 5.5 8.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+      <div class="method__grid">
+        <div class="mcard">
+          <div class="mcard__ico">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h12"
+                stroke="#f4af85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M9 7h6M9 11h4" stroke="#f4af85" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3>Structured Curriculum</h3>
+          <p>Step-by-step grammar and vocabulary mastery tailored to CEFR standards.</p>
+        </div>
+        <div class="mcard">
+          <div class="mcard__ico">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="10" stroke="#f4af85" stroke-width="1.5" />
+              <path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" stroke="#f4af85" stroke-width="1.5" />
+            </svg>
+          </div>
+          <h3>Affordability</h3>
+          <p>We believe providing quality education should feel like an investment in the future — not a financial
+            burden.</p>
+        </div>
+        <div class="mcard">
+          <div class="mcard__ico">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="8" r="3" stroke="#f4af85" stroke-width="1.5" />
+              <path d="M12 11v10M8 15l4 4 4-4" stroke="#f4af85" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Cultural Immersion</h3>
+          <p>Deep dives into history, art, and customs to understand the context behind words.</p>
+        </div>
+        <div class="mcard">
+          <div class="mcard__ico">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#f4af85"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Live Feedback</h3>
+          <p>Real-time correction and guidance during every live session.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ LANGUAGE MARQUEE ════════ -->
+  <div class="flg-marquee">
+    <div class="flg-track" id="flgTrack">
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/sa.png" alt=""><span>Arabic</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/gb.png" alt=""><span>English</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/il.png" alt=""><span>Hebrew</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/tr.png" alt=""><span>Turkish</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/ir.png" alt=""><span>Persian</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/uz.png" alt=""><span>Uzbek</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/kg.png" alt=""><span>Kyrgyz</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/ru.png" alt=""><span>Russian</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/de.png" alt=""><span>German</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/pt.png" alt=""><span>Portuguese</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/fr.png" alt=""><span>French</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/it.png" alt=""><span>Italian</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/nl.png" alt=""><span>Dutch</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/es.png" alt=""><span>Spanish</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/pl.png" alt=""><span>Polish</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/kr.png" alt=""><span>Korean</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/jp.png" alt=""><span>Japanese</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/cn.png" alt=""><span>Chinese</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/in.png" alt=""><span>Hindi</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/pk.png" alt=""><span>Urdu</span></div>
+      <!-- duplicate set for seamless loop -->
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/sa.png" alt=""><span>Arabic</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/gb.png" alt=""><span>English</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/il.png" alt=""><span>Hebrew</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/tr.png" alt=""><span>Turkish</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/ir.png" alt=""><span>Persian</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/uz.png" alt=""><span>Uzbek</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/kg.png" alt=""><span>Kyrgyz</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/ru.png" alt=""><span>Russian</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/de.png" alt=""><span>German</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/pt.png" alt=""><span>Portuguese</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/fr.png" alt=""><span>French</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/it.png" alt=""><span>Italian</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/nl.png" alt=""><span>Dutch</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/es.png" alt=""><span>Spanish</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/pl.png" alt=""><span>Polish</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/kr.png" alt=""><span>Korean</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/jp.png" alt=""><span>Japanese</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/cn.png" alt=""><span>Chinese</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/in.png" alt=""><span>Hindi</span></div>
+      <div class="flg-pill"><img src="https://flagcdn.com/w40/pk.png" alt=""><span>Urdu</span></div>
+    </div>
+  </div>
+
+  <!-- ════════ MAP SECTION ════════ -->
+  <section class="mapsec">
+    <div class="mapsec__in">
+      <div class="av-row">
+        <div class="av-stack">
+          <img src="images/4656c159-2759-40c0-b4ea-b4befd79189f.png" alt="">
+          <img src="images/fa6cbfd6-4d91-4845-99fb-3c9f99d6e226.png" alt="">
+          <img src="images/61210a7c-d2b4-441e-9bab-fe903677950a.png" alt="">
+        </div>
+        <span class="av-lbl">200+ Happy Students</span>
+      </div>
+      <h2>Master Any Language,<br>Anywhere</h2>
+      <p class="msub">We offer a range of language courses carefully curated to suit your needs.</p>
+      <div class="mapwrap">
+        <img class="worldmap" src="images/f524f6f9-1506-4d2f-ab36-4c058b1815e1.png" alt="World Map">
+        <!-- Flag pins: positions calculated from Figma bounding boxes -->
+        <img class="mpin" style="left:47.97%;top:35%;" src="images/6db347fc-55fe-4228-bd2d-8b28dbe59d2d.png" alt="UK">
+        <img class="mpin" style="left:50.89%;top:40%;" src="images/1bf68e6a-afab-4c1b-a944-545edab34d0d.png"
+          alt="France">
+        <img class="mpin" style="left:56.01%;top:38%;" src="images/531da4a0-d7d2-4a12-a07f-31ce11939232.png"
+          alt="Germany">
+        <img class="mpin" style="left:47%;top:45%;" src="images/f6e34284-1a5b-404d-83ee-8f1f942c4a67.png" alt="Spain">
+        <img class="mpin"
+          style="left:58%;top:42%;border-radius:50%;border:2px solid #fff;object-fit:cover;box-sizing:border-box;"
+          src="https://flagcdn.com/w80/sa.png" alt="Arabic">
+        <img class="mpin" style="left:69%;top:77%;" src="images/f7097955-3f51-4ab3-9b4d-663ef2d02f3c.png" alt="China">
+      </div>
+      <a href="#courses" class="btn-jour">Start Your Journey</a>
+    </div>
+  </section>
+
+  <!-- ════════ ARTICLES ════════ -->
+  <section class="courses" id="courses">
+    <div class="courses__hdr">
+      <div>
+        <span class="slabel">Latest Articles</span>
+        <h2 class="sh2">Insights from Our<br>Instructors</h2>
+      </div>
+      <a href="articles.html" class="btn-all">
+        More Articles
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2 7h10M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </a>
+    </div>
+    <div class="courses__grid">
+      <div class="ccard">
+        <div class="cthumb">
+          <img src="images/english-beginner.webp" alt="English Learning">
+          <span class="cbadge">English</span>
+        </div>
+        <div class="cbody">
+          <div class="clang"><svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <circle cx="7" cy="7" r="6" stroke="#1476ff" stroke-width="1.2" />
+              <path d="M7 1c0 0-3 2.5-3 6s3 6 3 6M7 1c0 0 3 2.5 3 6s-3 6-3 6M1 7h12" stroke="#1476ff"
+                stroke-width="1.2" />
+            </svg>Beginner Tips</div>
+          <div class="ctitle">5 Essential Tips for Beginner English Learners</div>
+          <div class="cby"><span class="cby-av">HS</span>By Hafsa Saif</div>
+          <div class="cfoot"><a href="article.html?id=1" class="btn-exp">Read More</a></div>
+        </div>
+      </div>
+      <div class="ccard">
+        <div class="cthumb">
+          <img src="images/chinese-characters.webp" alt="Chinese Characters">
+          <span class="cbadge">Chinese</span>
+        </div>
+        <div class="cbody">
+          <div class="clang"><svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <circle cx="7" cy="7" r="6" stroke="#1476ff" stroke-width="1.2" />
+              <path d="M7 1c0 0-3 2.5-3 6s3 6 3 6M7 1c0 0 3 2.5 3 6s-3 6-3 6M1 7h12" stroke="#1476ff"
+                stroke-width="1.2" />
+            </svg>Characters</div>
+          <div class="ctitle">The Art of Chinese Characters: Understanding Hanzi, Zhuyin, and Pinyin</div>
+          <div class="cby"><span class="cby-av">HK</span>By Halima Khona</div>
+          <div class="cfoot"><a href="article.html?id=5" class="btn-exp">Read More</a></div>
+        </div>
+      </div>
+      <div class="ccard">
+        <div class="cthumb">
+          <img src="images/hebrew-arabic.webp" alt="Hebrew">
+          <span class="cbadge">Hebrew</span>
+        </div>
+        <div class="cbody">
+          <div class="clang"><svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <circle cx="7" cy="7" r="6" stroke="#1476ff" stroke-width="1.2" />
+              <path d="M7 1c0 0-3 2.5-3 6s3 6 3 6M7 1c0 0 3 2.5 3 6s-3 6-3 6M1 7h12" stroke="#1476ff"
+                stroke-width="1.2" />
+            </svg>Arabic Speakers</div>
+          <div class="ctitle">Hebrew Unveiled: The Top 5 Challenges Arabic Speakers Face</div>
+          <div class="cby"><span class="cby-av">SS</span>By Shehab Saber</div>
+          <div class="cfoot"><a href="article.html?id=3" class="btn-exp">Read More</a></div>
+        </div>
+      </div>
+      <div class="ccard">
+        <div class="cthumb">
+          <img src="images/language-mistakes.webp" alt="Language Mistakes">
+          <span class="cbadge">General</span>
+        </div>
+        <div class="cbody">
+          <div class="clang"><svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <circle cx="7" cy="7" r="6" stroke="#1476ff" stroke-width="1.2" />
+              <path d="M7 1c0 0-3 2.5-3 6s3 6 3 6M7 1c0 0 3 2.5 3 6s-3 6-3 6M1 7h12" stroke="#1476ff"
+                stroke-width="1.2" />
+            </svg>Learning Strategies</div>
+          <div class="ctitle">How to Learn a New Language: 5 Common Mistakes to Avoid</div>
+          <div class="cby"><span class="cby-av">JG</span>By Jeremy Gray</div>
+          <div class="cfoot"><a href="article.html?id=7" class="btn-exp">Read More</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ TESTIMONIALS ════════ -->
+  <div class="testi-hdr">
+    <span class="slabel">Review</span>
+    <h2>What Our Students Say</h2>
+  </div>
+  <section class="testimonials">
+    <div class="tgrid" id="tGrid">
+      <div class="tcard">
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+            class="star">★</span><span class="star">★</span></div>
+        <p class="ttext">"The lessons are very clear and structured. I quickly understood the grammar basics and feel
+          real progress after only a short time."</p>
+        <span class="tauth">— Abdullah Al Dhaheri,<br>UAE 🇦🇪 &nbsp;|&nbsp; Hebrew (Shehab)</span>
+      </div>
+      <div class="tcard">
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+            class="star">★</span><span class="star">★</span></div>
+        <p class="ttext">"Teacher Shehab makes Hebrew easy to understand. The step-by-step grammar explanations helped
+          me build confidence in reading and forming sentences."</p>
+        <span class="tauth">— Khadija,<br>Saudi Arabia 🇸🇦 &nbsp;|&nbsp; Hebrew (Shehab)</span>
+      </div>
+      <div class="tcard">
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+            class="star">★</span><span class="star">★</span></div>
+        <p class="ttext">"Halima is an amazing teacher. She explains grammar in a very simple and clear way, and even
+          difficult topics become easy to understand. I improved my speaking a lot with her."</p>
+        <span class="tauth">— Sultan,<br>UAE 🇦🇪 &nbsp;|&nbsp; Uzbek (Halima)</span>
+      </div>
+      <div class="tcard">
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+            class="star">★</span><span class="star">★</span></div>
+        <p class="ttext">"I prepared for the proficiency tests with Lahjaro and Dina is amazing! It was efficient and I
+          received the marks I needed for my immigration file."</p>
+        <span class="tauth">— Ahmad,<br>Egypt &nbsp;|&nbsp; French (Dina)</span>
+      </div>
+      <div class="tcard">
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+            class="star">★</span><span class="star">★</span></div>
+        <p class="ttext">"Learning Hebrew with Teacher Lahjaro has been a smooth experience. I can now understand simple
+          conversations and form basic sentences more confidently."</p>
+        <span class="tauth">— Shamma,<br>UAE 🇦🇪 &nbsp;|&nbsp; Hebrew (Lahjaro)</span>
+      </div>
+      <div class="tcard">
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+            class="star">★</span><span class="star">★</span></div>
+        <p class="ttext">"The lessons are simple and practical, and I can already use basic sentences in daily
+          situations. I started learning Arabic from scratch."</p>
+        <span class="tauth">— Max,<br>France 🇫🇷 &nbsp;|&nbsp; Arabic</span>
+      </div>
+      <div class="tcard">
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+            class="star">★</span><span class="star">★</span></div>
+        <p class="ttext">"I really enjoy learning Uzbek with Halima. She is patient, kind, and always makes sure I
+          understand before moving on. Her lessons are well organized and very effective."</p>
+        <span class="tauth">— Saud,<br>UAE 🇦🇪 &nbsp;|&nbsp; Uzbek (Halima)</span>
+      </div>
+    </div>
+    <!-- Mobile carousel controls -->
+    <div class="tsl-ui">
+      <button class="tsl-btn tsl-prev" aria-label="Previous">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M11 14L6 9l5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+      <div class="tsl-dots">
+        <span class="tsl-dot active"></span>
+        <span class="tsl-dot"></span>
+        <span class="tsl-dot"></span>
+        <span class="tsl-dot"></span>
+        <span class="tsl-dot"></span>
+        <span class="tsl-dot"></span>
+        <span class="tsl-dot"></span>
+      </div>
+      <button class="tsl-btn tsl-next" aria-label="Next">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M7 4l5 5-5 5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ════════ LANG TICKER ════════ -->
+  <div class="ticker">
+    <div class="ticker__track">
+      <span>Arabic</span><span class="ticker__dot">+</span><span>English</span><span
+        class="ticker__dot">+</span><span>Hebrew</span><span class="ticker__dot">+</span><span>Turkish</span><span
+        class="ticker__dot">+</span><span>Persian</span><span class="ticker__dot">+</span><span>Uzbek</span><span
+        class="ticker__dot">+</span><span>Kyrgyz</span><span class="ticker__dot">+</span><span>Russian</span><span
+        class="ticker__dot">+</span><span>German</span><span class="ticker__dot">+</span><span>Portuguese</span><span
+        class="ticker__dot">+</span><span>French</span><span class="ticker__dot">+</span><span>Italian</span><span
+        class="ticker__dot">+</span><span>Dutch</span><span class="ticker__dot">+</span><span>Spanish</span><span
+        class="ticker__dot">+</span><span>Polish</span><span class="ticker__dot">+</span><span>Korean</span><span
+        class="ticker__dot">+</span><span>Japanese</span><span class="ticker__dot">+</span><span>Chinese</span><span
+        class="ticker__dot">+</span><span>Hindi</span><span class="ticker__dot">+</span><span>Urdu</span><span
+        class="ticker__dot">+</span>
+      <span>Arabic</span><span class="ticker__dot">+</span><span>English</span><span
+        class="ticker__dot">+</span><span>Hebrew</span><span class="ticker__dot">+</span><span>Turkish</span><span
+        class="ticker__dot">+</span><span>Persian</span><span class="ticker__dot">+</span><span>Uzbek</span><span
+        class="ticker__dot">+</span><span>Kyrgyz</span><span class="ticker__dot">+</span><span>Russian</span><span
+        class="ticker__dot">+</span><span>German</span><span class="ticker__dot">+</span><span>Portuguese</span><span
+        class="ticker__dot">+</span><span>French</span><span class="ticker__dot">+</span><span>Italian</span><span
+        class="ticker__dot">+</span><span>Dutch</span><span class="ticker__dot">+</span><span>Spanish</span><span
+        class="ticker__dot">+</span><span>Polish</span><span class="ticker__dot">+</span><span>Korean</span><span
+        class="ticker__dot">+</span><span>Japanese</span><span class="ticker__dot">+</span><span>Chinese</span><span
+        class="ticker__dot">+</span><span>Hindi</span><span class="ticker__dot">+</span><span>Urdu</span><span
+        class="ticker__dot">+</span>
+    </div>
+  </div>
+
+  <!-- ════════ FAQ ════════ -->
+  <section class="faq">
+    <div class="faq__in">
+      <div style="text-align:center; margin-bottom:40px;">
+        <span
+          style="font-size:12px; font-weight:600; color:var(--orange); letter-spacing:1px; text-transform:uppercase; display:block; margin-bottom:12px;">why
+          choose us</span>
+        <h2 style="font-size:36px; font-weight:800; color:var(--hd); letter-spacing:-0.8px;">Frequently Asked Questions
+        </h2>
+      </div>
+      <div class="faq-item open">
+        <button class="faq-q">Are your classes online or in person?<span class="faq-ico"></span></button>
+        <div class="faq-a">All our courses are 100% online, allowing you to learn from anywhere with flexible
+          scheduling.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Who are the instructors?<span class="faq-ico"></span></button>
+        <div class="faq-a">We begin with instructors who speak your native language, then transition to native speakers
+          for advanced levels.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How long does it take to learn a language?<span class="faq-ico"></span></button>
+        <div class="faq-a">Most students notice progress within 2–3 months, depending on consistency and level.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Are online courses effective compared to in-person learning?<span
+            class="faq-ico"></span></button>
+        <div class="faq-a">Yes, with live interaction, structured materials, and continuous feedback, online learning is
+          highly effective.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How flexible are the schedules?<span class="faq-ico"></span></button>
+        <div class="faq-a">We offer flexible timings, including evening and weekend classes.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is there a trial class?<span class="faq-ico"></span></button>
+        <div class="faq-a">Yes, you can attend a trial online session before enrolling.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ FOOTER ════════ -->
+  <footer id="contact">
+    <div class="footer__grid">
+      <div class="fc">
+        <h4>Courses</h4>
+        <a href="#">English Courses</a>
+        <a href="#">German Courses</a>
+        <a href="#">Spanish Courses</a>
+        <a href="#">Other Languages</a>
+      </div>
+      <div class="fc">
+        <h4>Contacts</h4>
+        <p class="w">UAE</p>
+        <p>+971 50 532 5083</p>
+        <p><a href="https://wa.me/971505325083" target="_blank" style="color:inherit;text-decoration:none;">WhatsApp:
+            +971 50 532 5083</a></p>
+        <p>info@lahjaro.com</p>
+      </div>
+      <div class="fc">
+        <h4>Subscribe</h4>
+        <div class="nl-row">
+          <input type="email" placeholder="Get news &amp; updates">
+          <button>&#10148;</button>
+        </div>
+        <p>Subscribe to our newsletter. Be in trends.</p>
+      </div>
+      <div class="fc">
+        <h4>In Socials</h4>
+        <div class="socials">
+          <a href="#" class="soc" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
+          <a href="#" class="soc" aria-label="X / Twitter">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L2.25 2.25h6.918l4.243 5.622 5.833-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117Z" />
+            </svg>
+          </a>
+          <a href="#" class="soc" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.9)" stroke="none" />
+            </svg>
+          </a>
+          <a href="#" class="soc" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
+          <a href="#" class="soc" aria-label="YouTube">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#03143a" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="fc logo-col">
+        <img src="images/logo-new.svg" alt="Lahjaro">
+      </div>
+    </div>
+    <div class="footer__btm">
+      <p>Copyright &copy; 2026 Lahjaro Languages Institute FZ-LLC. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    // Counter animation
+    const counters = document.querySelectorAll('.snum-val');
+    const seen = new Set();
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting || seen.has(e.target)) return;
+        seen.add(e.target);
+        const el = e.target;
+        const end = parseInt(el.dataset.target);
+        let n = 0;
+        const step = Math.max(1, Math.ceil(end / 40));
+        const t = setInterval(() => {
+          n = Math.min(n + step, end);
+          el.textContent = n + '+';
+          if (n >= end) clearInterval(t);
+        }, 40);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => io.observe(c));
+
+    // Active nav on scroll
+    const sections = document.querySelectorAll('section[id], footer[id]');
+    const links = document.querySelectorAll('.nav a');
+    window.addEventListener('scroll', () => {
+      let cur = '';
+      sections.forEach(s => { if (scrollY >= s.offsetTop - 100) cur = s.id; });
+      links.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+      });
+    });
+
+
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobNav = document.getElementById('mob-nav');
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      mobNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+      mobNav.setAttribute('aria-hidden', true);
+      document.body.style.overflow = '';
+    }
+    hamburger.addEventListener('click', () => {
+      const open = hamburger.classList.toggle('open');
+      mobNav.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open);
+      mobNav.setAttribute('aria-hidden', !open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    // close on link click
+    mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    // close on scroll
+    window.addEventListener('scroll', () => { if (mobNav.classList.contains('open')) closeMenu(); }, { passive: true });
+    // close on touch/click outside
+    document.addEventListener('click', (e) => {
+      if (mobNav.classList.contains('open') && !mobNav.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
+    });
+  </script>
+
+  <!-- Testimonials carousel — prev/next + touch swipe + dot sync -->
+  <script>
+    (function () {
+      var grid = document.getElementById('tGrid');
+      var dotsContainer = document.querySelector('.tsl-dots');
+      var total = grid ? grid.querySelectorAll('.tcard').length : 0;
+      var current = 0;
+
+      function getStep() {
+        return grid.querySelector('.tcard').offsetWidth + 16;
+      }
+
+      function updateDot() {
+        if (!dotsContainer) return;
+        dotsContainer.querySelectorAll('.tsl-dot').forEach(function (d, i) {
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      function goTo(idx) {
+        if (!grid) return;
+        if (idx < 0) idx = total - 1;
+        if (idx >= total) idx = 0;
+        current = idx;
+        grid.scrollTo({ left: current * getStep(), behavior: 'smooth' });
+        updateDot();
+      }
+
+      var prevBtn = document.querySelector('.tsl-prev');
+      var nextBtn = document.querySelector('.tsl-next');
+      if (prevBtn) prevBtn.addEventListener('click', function () { goTo(current - 1); });
+      if (nextBtn) nextBtn.addEventListener('click', function () { goTo(current + 1); });
+
+      if (dotsContainer) {
+        dotsContainer.querySelectorAll('.tsl-dot').forEach(function (d, i) {
+          d.addEventListener('click', function () { goTo(i); });
+        });
+      }
+
+      if (grid) {
+        grid.addEventListener('scroll', function () {
+          var step = getStep();
+          var idx = Math.round(grid.scrollLeft / step);
+          if (idx !== current) {
+            current = idx;
+            updateDot();
+          }
+        }, { passive: true });
+      }
+
+      // Touch swipe
+      if (grid) {
+        var startX = 0, scrollLeft = 0;
+        grid.addEventListener('touchstart', function (e) {
+          startX = e.touches[0].pageX;
+          scrollLeft = grid.scrollLeft;
+        }, { passive: true });
+        grid.addEventListener('touchmove', function (e) {
+          grid.scrollLeft = scrollLeft - (e.touches[0].pageX - startX);
+        }, { passive: true });
+      }
+    })();
+  </script>
+
+  <!-- Flag marquee: JS measures exact pixel offset for seamless loop -->
+  <script>
+    (function () {
+      function startFlgMarquee() {
+        var track = document.getElementById('flgTrack');
+        if (!track) return;
+        var pills = track.querySelectorAll('.flg-pill');
+        if (pills.length < 34) return;
+        // Distance from pill[0] left to pill[17] left = exact one-set width (17 languages) including gaps
+        var w = pills[17].getBoundingClientRect().left - pills[0].getBoundingClientRect().left;
+        track.animate([
+          { transform: 'translateX(0)' },
+          { transform: 'translateX(-' + w + 'px)' }
+        ], { duration: 25000, iterations: Infinity, easing: 'linear' });
+      }
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(startFlgMarquee);
+      } else {
+        window.addEventListener('load', startFlgMarquee);
+      }
+    })();
+  </script>
+</body>
+
+</html>

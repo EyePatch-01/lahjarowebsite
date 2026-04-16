@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles – Lahjaro Languages Institute FZ-LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:   #03143a;
+      --blue:   #143d82;
+      --dark:   #031436;
+      --hd:     #0a1628;
+      --orange: #f4af85;
+      --gm:     #64748b;
+      --muted:  #94a3b8;
+      --text:   #0b1220;
+      --w:      #fff;
+      --f:      'Inter', sans-serif;
+    }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: var(--f); color: var(--text); background: #fff; overflow-x: hidden; }
+    img  { display: block; max-width: 100%; }
+    a    { text-decoration: none; color: inherit; }
+    button { border: none; background: none; font: inherit; cursor: pointer; }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--orange);
+      height: 36px;
+      display: flex;
+      align-items: center;
+      z-index: 101;
+    }
+
+    .topbar__in {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .topbar__contact {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .topbar__contact a {
+      color: rgba(255,255,255,.8);
+      font-size: 12.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s;
+    }
+
+    .topbar__contact a:hover {
+      color: #fff;
+    }
+
+    .topbar__socials {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .topbar__socials a {
+      color: rgba(255,255,255,.7);
+      display: inline-flex;
+      align-items: center;
+      transition: color .2s;
+    }
+
+    .topbar__socials a:hover {
+      color: #fff;
+    }
+
+    /* ── HEADER ── */
+    .header { background: var(--navy); height: 80px; position: sticky; top: 0; z-index: 100; }
+    .header__in {
+      max-width: 1440px; margin: 0 auto; padding: 0 80px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .header__left { display: flex; align-items: center; gap: 48px; }
+    .logo img { height: 129px; width: auto; }
+    .nav { display: flex; align-items: center; gap: 28px; }
+    .nav a { color: rgba(255,255,255,.82); font-size: 15px; font-weight: 500; transition: color .2s; }
+    .nav a:hover { color: #fff; }
+    .nav a.active { color: #fff; font-weight: 700; }
+    .btn-pill {
+      background: var(--orange); color: #fff; font-size: 15px; font-weight: 600;
+      padding: 13px 26px; border-radius: 100px;
+      display: inline-flex; align-items: center; gap: 8px; transition: background .2s;
+    }
+    .btn-pill:hover { background: #e89b6d; }
+    .hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; width: 40px; height: 40px; padding: 6px; cursor: pointer; border-radius: 8px;
+    }
+    .hamburger span { display: block; width: 22px; height: 2.5px; background: #fff; border-radius: 3px; transition: transform .3s, opacity .3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+    .mob-nav {
+      display: none; position: fixed; top: 80px; left: 0; right: 0;
+      background: var(--navy); padding: 8px 0 20px; z-index: 98;
+      border-top: 1px solid rgba(255,255,255,.1); flex-direction: column;
+      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+    }
+    .mob-nav.open { display: flex; }
+    .mob-nav a.mob-link {
+      color: rgba(255,255,255,.82); font-size: 16px; font-weight: 500;
+      padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,.07);
+      display: block; transition: color .2s, background .2s;
+    }
+    .mob-nav a.mob-link:hover, .mob-nav a.mob-link.active { color: #fff; background: rgba(255,255,255,.06); }
+    .mob-nav .mob-cta {
+      margin: 16px 24px 0; background: var(--orange); color: #fff;
+      font-size: 15px; font-weight: 700; padding: 14px 24px;
+      border-radius: 100px; text-align: center; display: block;
+    }
+
+    /* ── HERO ── */
+    .cr-hero {
+      background: linear-gradient(to bottom, rgba(20,61,130,.45) 0%, rgba(255,255,255,0) 100%);
+      padding: 80px 60px 70px; text-align: center;
+    }
+    .cr-breadcrumb {
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      font-size: 13px; color: var(--gm); margin-bottom: 20px;
+    }
+    .cr-breadcrumb a { color: var(--gm); }
+    .cr-breadcrumb .cur { color: var(--hd); font-weight: 500; }
+    .cr-hero h1 {
+      font-size: 64px; font-weight: 800; color: var(--hd);
+      line-height: 74px; letter-spacing: -1.5px;
+    }
+    .cr-hero__sub {
+      font-size: 17px; color: var(--gm); max-width: 480px;
+      margin: 16px auto 0; line-height: 27px;
+    }
+
+    /* ── ARTICLES SECTION ── */
+    .cr-section { background: #fff; padding: 80px 0 90px; }
+    .cr-section__in { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+
+    .cr-section__hdr { text-align: center; margin-bottom: 36px; }
+    .cr-label {
+      font-size: 12px; font-weight: 600; color: var(--orange);
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; display: block;
+    }
+    .cr-section__hdr h2 {
+      font-size: 40px; font-weight: 800; color: var(--hd);
+      line-height: 50px; letter-spacing: -.8px;
+    }
+
+    /* Filter tabs */
+    .cr-filters { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 48px; flex-wrap: wrap; }
+    .cr-filter {
+      padding: 9px 22px; border-radius: 100px; font-size: 14px; font-weight: 600;
+      border: 1.5px solid #e2e8f0; color: var(--hd); background: #fff;
+      cursor: pointer; transition: all .2s;
+    }
+    .cr-filter:hover { border-color: var(--blue); color: var(--blue); }
+    .cr-filter.active { background: var(--hd); color: #fff; border-color: var(--hd); }
+
+    /* Article grid */
+    .cr-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    /* Article card */
+    .cr-card {
+      background: #fff; border-radius: 14px;
+      border: 1px solid #e8edf5;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      overflow: hidden; position: relative;
+      display: flex; flex-direction: column;
+    }
+
+    /* Card image */
+    .cr-card__img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    /* Card header (blue) */
+    .cr-card__hdr {
+      background: var(--blue); padding: 16px 16px 14px;
+      display: flex; align-items: center; justify-content: space-between; min-height: 72px;
+    }
+    .cr-card__lang { display: flex; align-items: center; gap: 10px; }
+    .cr-card__flag {
+      width: 32px; height: 32px; border-radius: 6px; overflow: hidden; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .cr-card__flag img { width: 100%; height: 100%; object-fit: cover; }
+    .cr-card__lang-name { font-size: 16px; font-weight: 700; color: #fff; }
+    .cr-card__topic {
+      background: rgba(255,255,255,.92); border-radius: 100px;
+      padding: 4px 12px; font-size: 11px; font-weight: 700;
+      color: var(--blue); white-space: nowrap; flex-shrink: 0;
+    }
+
+    /* Card body */
+    .cr-card__body { padding: 16px 16px 0; flex: 1; }
+    .cr-card__title {
+      font-size: 16px; font-weight: 700; color: var(--hd);
+      line-height: 24px; margin-bottom: 10px;
+    }
+    .cr-card__excerpt {
+      font-size: 13px; color: var(--gm); line-height: 21px;
+      margin-bottom: 12px;
+    }
+
+    /* Card footer */
+    .cr-card__ftr { padding: 12px 16px 16px; }
+    .cr-card__author {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
+    }
+    .cr-card__av {
+      width: 32px; height: 32px; border-radius: 50%; background: var(--blue);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0;
+    }
+    .cr-card__author-name { font-size: 13px; font-weight: 500; color: var(--blue); }
+    .cr-card__btn {
+      width: 100%; background: var(--orange); color: #fff; border-radius: 8px;
+      padding: 10px; font-size: 14px; font-weight: 600; text-align: center;
+      display: block; transition: opacity .2s;
+    }
+    .cr-card__btn:hover { opacity: .88; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--navy); padding: 60px 0 0; }
+    .footer__grid {
+      max-width: 1440px; margin: 0 auto; padding: 0 80px 48px;
+      display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 160px; gap: 40px;
+    }
+    .fc h4 { font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 24px; }
+    .fc a, .fc p { font-size: 14px; color: #9ca3af; display: block; line-height: 2.2; transition: color .2s; }
+    .fc a:hover { color: #fff; }
+    .fc .w { color: #fff; }
+    .nl-row {
+      display: flex; align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,.2); padding-bottom: 8px; margin-bottom: 12px;
+    }
+    .nl-row input { background: none; border: none; outline: none; color: #fff; font: inherit; font-size: 13px; flex: 1; }
+    .nl-row input::placeholder { color: #757575; }
+    .nl-row button { color: rgba(255,255,255,.5); font-size: 16px; }
+    .socials { display: flex; gap: 12px; }
+    .fc a.soc {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.2);
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color .2s, background .2s;
+    }
+    .fc a.soc:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+    .fc a.soc svg { display: block; }
+    .fc.logo-col img { width: 180px; height: auto; }
+    .footer__btm {
+      border-top: 1px solid rgba(255,255,255,.1);
+      max-width: 1440px; margin: 0 auto; padding: 18px 80px;
+      display: flex; justify-content: center;
+    }
+    .footer__btm p { font-size: 14px; color: #6b7280; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 767px) {
+      .topbar__in { padding: 0 20px; }
+      .topbar__contact { gap: 16px; }
+      .topbar__contact a span { display: none; }
+      .topbar__contact a svg, .topbar__socials a svg { width: 18px; height: 18px; }
+      .header__in { padding: 0 20px; }
+      .nav { display: none; }
+      .hamburger { display: flex; }
+      .header .btn-pill { display: none; }
+
+      .cr-hero { padding: 48px 20px 56px; }
+      .cr-hero h1 { font-size: 36px; line-height: 46px; }
+
+      .cr-section { padding: 48px 0; }
+      .cr-section__in { padding: 0 16px; }
+      .cr-section__hdr h2 { font-size: 26px; line-height: 36px; }
+      .cr-grid { grid-template-columns: 1fr; gap: 16px; }
+
+      .footer__grid { padding: 0 20px 36px; grid-template-columns: 1fr 1fr; gap: 32px; }
+      .fc.logo-col { grid-column: 1/-1; display: flex; justify-content: center; }
+      .footer__btm { padding: 16px 20px; }
+      .footer__btm p { font-size: 12px; text-align: center; }
+    }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .topbar__in { padding: 0 32px; }
+      .header__in { padding: 0 32px; }
+      .cr-section__in { padding: 0 32px; }
+      .cr-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .footer__grid { padding: 0 32px 36px; grid-template-columns: repeat(2,1fr); }
+      .fc.logo-col { grid-column: 1/-1; display: flex; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════ TOP BAR ════════ -->
+  <div class="topbar">
+    <div class="topbar__in">
+      <div class="topbar__contact">
+        <a href="mailto:info@lahjaro.com">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>info@lahjaro.com</span>
+        </a>
+        <a href="tel:+971505325083">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+971 50 532 5083</span>
+        </a>
+      </div>
+      <div class="topbar__socials">
+        <a href="#" aria-label="Facebook">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" aria-label="X / Twitter">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L2.25 2.25h6.918l4.243 5.622 5.833-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#143d82"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__in">
+      <div class="header__left">
+        <a href="index.html" class="logo">
+          <img src="images/logo-new.svg" alt="Lahjaro">
+        </a>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="courses.html">Courses</a>
+          <a href="articles.html" class="active">Articles</a>
+        </nav>
+      </div>
+      <a href="contact.html" class="btn-pill">
+        Contact Us
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mob-nav" id="mob-nav" aria-hidden="true">
+    <a href="index.html" class="mob-link">Home</a>
+    <a href="about.html" class="mob-link">About Us</a>
+    <a href="services.html" class="mob-link">Services</a>
+    <a href="courses.html" class="mob-link">Courses</a>
+    <a href="articles.html" class="mob-link active">Articles</a>
+    <a href="contact.html" class="mob-cta">Contact Us &rarr;</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="cr-hero">
+    <div class="cr-breadcrumb">
+      <a href="index.html">Home</a>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="cur">Articles</span>
+    </div>
+    <h1>Language Insights</h1>
+    <p class="cr-hero__sub">Expert advice, learning strategies, and personal stories from our instructors.</p>
+  </section>
+
+  <!-- ARTICLES -->
+  <section class="cr-section">
+    <div class="cr-section__in">
+
+      <div class="cr-section__hdr">
+        <span class="cr-label">all articles</span>
+        <h2>Insights from Our Instructors</h2>
+      </div>
+
+      <!-- Filters -->
+      <div class="cr-filters">
+        <button class="cr-filter active" data-filter="all">All</button>
+        <button class="cr-filter" data-filter="english">English</button>
+        <button class="cr-filter" data-filter="german">German</button>
+        <button class="cr-filter" data-filter="hebrew">Hebrew</button>
+        <button class="cr-filter" data-filter="korean">Korean</button>
+        <button class="cr-filter" data-filter="chinese">Chinese</button>
+        <button class="cr-filter" data-filter="arabic">Arabic</button>
+        <button class="cr-filter" data-filter="general">General</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="cr-grid" id="crGrid">
+
+        <!-- 1 — English Beginner Tips -->
+        <div class="cr-card" data-cat="english" data-id="1">
+          <img class="cr-card__img" src="images/english-beginner.webp" alt="English Learning">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/gb.png" alt="English"></div>
+              <span class="cr-card__lang-name">English</span>
+            </div>
+            <span class="cr-card__topic">Beginner Tips</span>
+          </div>
+          <div class="cr-card__body">
+            <div class="cr-card__title">5 Essential Tips for Beginner English Learners</div>
+            <p class="cr-card__excerpt">Starting your English journey? Here are 5 proven strategies that will accelerate your learning from day one.</p>
+          </div>
+          <div class="cr-card__ftr">
+            <div class="cr-card__author">
+              <div class="cr-card__av">HS</div>
+              <span class="cr-card__author-name">Hafsa Saif</span>
+            </div>
+            <a href="article.html?id=1" class="cr-card__btn">Read Article</a>
+          </div>
+        </div>
+
+        <!-- 2 — German Learning Journey -->
+        <div class="cr-card" data-cat="german" data-id="2">
+          <img class="cr-card__img" src="images/german-journey.webp" alt="Language Barriers">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/de.png" alt="German"></div>
+              <span class="cr-card__lang-name">German</span>
+            </div>
+            <span class="cr-card__topic">Learning Journey</span>
+          </div>
+          <div class="cr-card__body">
+            <div class="cr-card__title">Breaking Language Barriers: My Journey from Germany to Fluency</div>
+            <p class="cr-card__excerpt">A personal account of overcoming the challenges of learning a new language and achieving fluency.</p>
+          </div>
+          <div class="cr-card__ftr">
+            <div class="cr-card__author">
+              <div class="cr-card__av">EH</div>
+              <span class="cr-card__author-name">Elena Hoffman</span>
+            </div>
+            <a href="article.html?id=2" class="cr-card__btn">Read Article</a>
+          </div>
+        </div>
+
+        <!-- 3 — Hebrew for Arabic Speakers -->
+        <div class="cr-card" data-cat="hebrew" data-id="3">
+          <img class="cr-card__img" src="images/hebrew-arabic.webp" alt="Hebrew">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/il.png" alt="Hebrew"></div>
+              <span class="cr-card__lang-name">Hebrew</span>
+            </div>
+            <span class="cr-card__topic">Arabic Speakers</span>
+          </div>
+          <div class="cr-card__body">
+            <div class="cr-card__title">Hebrew Unveiled: The Top 5 Challenges Arabic Speakers Face</div>
+            <p class="cr-card__excerpt">Arabic speakers have unique advantages and challenges when learning Hebrew. Discover what they are.</p>
+          </div>
+          <div class="cr-card__ftr">
+            <div class="cr-card__author">
+              <div class="cr-card__av">SS</div>
+              <span class="cr-card__author-name">Shehab Saber</span>
+            </div>
+            <a href="article.html?id=3" class="cr-card__btn">Read Article</a>
+          </div>
+        </div>
+
+        <!-- 4 — Korean Grammar -->
+        <div class="cr-card" data-cat="korean" data-id="4">
+          <img class="cr-card__img" src="images/korean-grammar.webp" alt="Korean">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/kr.png" alt="Korean"></div>
+              <span class="cr-card__lang-name">Korean</span>
+            </div>
+            <span class="cr-card__topic">Grammar</span>
+          </div>
+          <div class="cr-card__body">
+            <div class="cr-card__title">Korean Grammar: The Key to Unlock Your Language Learning Potential</div>
+            <p class="cr-card__excerpt">Understanding Korean grammar structure is essential for fluency. Learn the fundamentals that make all the difference.</p>
+          </div>
+          <div class="cr-card__ftr">
+            <div class="cr-card__author">
+              <div class="cr-card__av">FA</div>
+              <span class="cr-card__author-name">Fida Abo Hasson</span>
+            </div>
+            <a href="article.html?id=4" class="cr-card__btn">Read Article</a>
+          </div>
+        </div>
+
+        <!-- 5 — Chinese Characters -->
+        <div class="cr-card" data-cat="chinese" data-id="5">
+          <img class="cr-card__img" src="images/chinese-characters.webp" alt="Chinese">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/cn.png" alt="Chinese"></div>
+              <span class="cr-card__lang-name">Chinese</span>
+            </div>
+            <span class="cr-card__topic">Characters</span>
+          </div>
+          <div class="cr-card__body">
+            <div class="cr-card__title">The Art of Chinese Characters: Understanding Hanzi, Zhuyin, and Pinyin</div>
+            <p class="cr-card__excerpt">Master the writing systems of Chinese with this comprehensive guide to Hanzi, Zhuyin, and Pinyin.</p>
+          </div>
+          <div class="cr-card__ftr">
+            <div class="cr-card__author">
+              <div class="cr-card__av">HK</div>
+              <span class="cr-card__author-name">Halima Khona</span>
+            </div>
+            <a href="article.html?id=5" class="cr-card__btn">Read Article</a>
+          </div>
+        </div>
+
+        <!-- 6 — English for IT Professionals -->
+        <div class="cr-card" data-cat="english" data-id="6">
+          <img class="cr-card__img" src="images/english-it.webp" alt="English IT">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/gb.png" alt="English"></div>
+              <span class="cr-card__lang-name">English</span>
+            </div>
+            <span class="cr-card__topic">Professional</span>
+          </div>
+          <div class="cr-card__body">
+            <div class="cr-card__title">English Language for IT Professionals: The Key to Global Success</div>
+            <p class="cr-card__excerpt">Technical English skills are essential for IT professionals in today's global workplace. Here's how to excel.</p>
+          </div>
+          <div class="cr-card__ftr">
+            <div class="cr-card__author">
+              <div class="cr-card__av">HS</div>
+              <span class="cr-card__author-name">Hafsa Saif</span>
+            </div>
+            <a href="article.html?id=6" class="cr-card__btn">Read Article</a>
+          </div>
+        </div>
+
+        <!-- 7 — Common Mistakes -->
+        <div class="cr-card" data-cat="general" data-id="7">
+          <img class="cr-card__img" src="images/language-mistakes.webp" alt="Language Mistakes">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/gb.png" alt="General"></div>
+              <span class="cr-card__lang-name">General</span>
+            </div>
+            <span class="cr-card__topic">Strategies</span>
+          </div>
+          <div class="cr-card__body">
+            <div class="cr-card__title">How to Learn a New Language: 5 Common Mistakes to Avoid</div>
+            <p class="cr-card__excerpt">Don't let these common pitfalls slow down your language learning journey. Learn what to avoid.</p>
+          </div>
+          <div class="cr-card__ftr">
+            <div class="cr-card__author">
+              <div class="cr-card__av">JG</div>
+              <span class="cr-card__author-name">Jeremy Gray</span>
+            </div>
+            <a href="article.html?id=7" class="cr-card__btn">Read Article</a>
+          </div>
+        </div>
+
+        <!-- 8 — UAE Language Schools -->
+        <div class="cr-card" data-cat="general" data-id="8">
+          <img class="cr-card__img" src="images/uae-schools.webp" alt="UAE">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/ae.png" alt="UAE"></div>
+              <span class="cr-card__lang-name">General</span>
+            </div>
+            <span class="cr-card__topic">Education</span>
+          </div>
+          <div class="cr-card__body">
+            <div class="cr-card__title">Exploring Language Schools in the UAE</div>
+            <p class="cr-card__excerpt">A guide to the best language learning institutions and programs available across the UAE.</p>
+          </div>
+          <div class="cr-card__ftr">
+            <div class="cr-card__author">
+              <div class="cr-card__av">FA</div>
+              <span class="cr-card__author-name">Fida Abo Hasson</span>
+            </div>
+            <a href="article.html?id=8" class="cr-card__btn">Read Article</a>
+          </div>
+        </div>
+
+        <!-- 9 — Arabic Learning Guide -->
+        <div class="cr-card" data-cat="arabic" data-id="9">
+          <img class="cr-card__img" src="images/arabic-guide.webp" alt="Arabic">
+          <div class="cr-card__hdr">
+            <div class="cr-card__lang">
+              <div class="cr-card__flag"><img src="https://flagcdn.com/w40/sa.png" alt="Arabic"></div>
+              <span class="cr-card__lang-name">Arabic</span>
+            </div>
+            <span class="cr-card__topic">Beginner Guide</span>
+          </div>
+          <div class="cr-card__body">
+            <div class="cr-card__title">Arabic Language Learning: A Comprehensive Guide for Non-Native Speakers</div>
+            <p class="cr-card__excerpt">Everything you need to know about starting your Arabic learning journey as a non-native speaker.</p>
+          </div>
+          <div class="cr-card__ftr">
+            <div class="cr-card__author">
+              <div class="cr-card__av">KA</div>
+              <span class="cr-card__author-name">Khalid Ali</span>
+            </div>
+            <a href="article.html?id=9" class="cr-card__btn">Read Article</a>
+          </div>
+        </div>
+
+      </div><!-- /grid -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer__grid">
+      <div class="fc">
+        <h4>Courses</h4>
+        <a href="courses.html">English Courses</a>
+        <a href="courses.html">German Courses</a>
+        <a href="courses.html">Spanish Courses</a>
+        <a href="courses.html">Other Languages</a>
+      </div>
+      <div class="fc">
+        <h4>Contacts</h4>
+        <p class="w">UAE</p>
+        <p>+971 50 532 5083</p>
+        <p><a href="https://wa.me/971505325083" target="_blank" style="color:inherit;text-decoration:none;">WhatsApp: +971 50 532 5083</a></p>
+        <p>info@lahjaro.com</p>
+      </div>
+      <div class="fc">
+        <h4>Subscribe</h4>
+        <div class="nl-row">
+          <input type="email" placeholder="Get news &amp; updates">
+          <button>&#10148;</button>
+        </div>
+        <p>Subscribe to our newsletter. Be in trends.</p>
+      </div>
+      <div class="fc">
+        <h4>In Socials</h4>
+        <div class="socials">
+          <a href="#" class="soc" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="soc" aria-label="X / Twitter">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L2.25 2.25h6.918l4.243 5.622 5.833-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg>
+          </a>
+          <a href="#" class="soc" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.9)" stroke="none"/></svg>
+          </a>
+          <a href="#" class="soc" aria-label="LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="#" class="soc" aria-label="YouTube">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#03143a"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="fc logo-col">
+        <img src="images/logo-new.svg" alt="Lahjaro">
+      </div>
+    </div>
+    <div class="footer__btm">
+      <p>Copyright &copy; 2026 Lahjaro Languages Institute FZ-LLC. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const mobNav = document.getElementById('mob-nav');
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      mobNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+      mobNav.setAttribute('aria-hidden', true);
+      document.body.style.overflow = '';
+    }
+    hamburger.addEventListener('click', () => {
+      const open = hamburger.classList.toggle('open');
+      mobNav.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open);
+      mobNav.setAttribute('aria-hidden', !open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    window.addEventListener('scroll', () => { if (mobNav.classList.contains('open')) closeMenu(); }, { passive: true });
+    document.addEventListener('click', (e) => {
+      if (mobNav.classList.contains('open') && !mobNav.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
+    });
+
+    // Filter
+    document.querySelectorAll('.cr-filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.cr-filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        document.querySelectorAll('.cr-card').forEach(card => {
+          card.style.display = (f === 'all' || card.dataset.cat === f) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
