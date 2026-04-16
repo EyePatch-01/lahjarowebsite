@@ -1915,7 +1915,7 @@
       .tcard {
         flex: 0 0 calc(100vw - 40px);
         flex-shrink: 0;
-        scroll-snap-align: start;
+        scroll-snap-align: center;
       }
 
       .tsl-ui {
@@ -3055,17 +3055,7 @@
         }, { passive: true });
       }
 
-      // Touch swipe
-      if (grid) {
-        var startX = 0, scrollLeft = 0;
-        grid.addEventListener('touchstart', function (e) {
-          startX = e.touches[0].pageX;
-          scrollLeft = grid.scrollLeft;
-        }, { passive: true });
-        grid.addEventListener('touchmove', function (e) {
-          grid.scrollLeft = scrollLeft - (e.touches[0].pageX - startX);
-        }, { passive: true });
-      }
+      // Touch swipe removed to allow native CSS scroll snapping to function smoothly without glitches
     })();
   </script>
 
