@@ -1,33 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Master Your Color Season – Lahjaro Languages Institute FZ-LLC</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy:   #03143a;
-      --blue:   #143d82;
-      --dark:   #031436;
-      --hd:     #0a1628;
-      --orange: #f4af85;
-      --peach:  #fff1e8;
-      --gm:     #64748b;
-      --muted:  #94a3b8;
-      --text:   #0b1220;
-      --w:      #fff;
-      --f:      'Inter', sans-serif;
-      --serif:  'Playfair Display', serif;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    body { font-family: var(--f); color: var(--text); background: #fff; overflow-x: hidden; }
-    img  { display: block; max-width: 100%; }
-    a    { text-decoration: none; color: inherit; }
-    button { border: none; background: none; font: inherit; cursor: pointer; }
+
+    :root {
+      --navy: #03143a;
+      --blue: #143d82;
+      --dark: #031436;
+      --hd: #0a1628;
+      --orange: #f4af85;
+      --peach: #fff1e8;
+      --gm: #64748b;
+      --muted: #94a3b8;
+      --text: #0b1220;
+      --w: #fff;
+      --f: 'Inter', sans-serif;
+      --serif: 'Playfair Display', serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--f);
+      color: var(--text);
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      border: none;
+      background: none;
+      font: inherit;
+      cursor: pointer;
+    }
 
     /* ── TOP BAR ── */
     .topbar {
@@ -37,6 +71,7 @@
       align-items: center;
       z-index: 101;
     }
+
     .topbar__in {
       max-width: 1440px;
       margin: 0 auto;
@@ -46,13 +81,15 @@
       align-items: center;
       justify-content: space-between;
     }
+
     .topbar__contact {
       display: flex;
       align-items: center;
       gap: 24px;
     }
+
     .topbar__contact a {
-      color: rgba(255,255,255,.8);
+      color: rgba(255, 255, 255, .8);
       font-size: 12.5px;
       font-weight: 600;
       display: inline-flex;
@@ -60,72 +97,205 @@
       gap: 6px;
       transition: color .2s;
     }
-    .topbar__contact a:hover { color: #fff; }
+
+    .topbar__contact a:hover {
+      color: #fff;
+    }
+
     .topbar__socials {
       display: flex;
       align-items: center;
       gap: 14px;
     }
+
     .topbar__socials a {
-      color: rgba(255,255,255,.7);
+      color: rgba(255, 255, 255, .7);
       display: inline-flex;
       align-items: center;
       transition: color .2s;
     }
-    .topbar__socials a:hover { color: #fff; }
+
+    .topbar__socials a:hover {
+      color: #fff;
+    }
 
     /* ── HEADER ── */
-    .header { background: var(--navy); height: 80px; position: sticky; top: 0; z-index: 100; }
+    .header {
+      background: var(--navy);
+      height: 80px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
     .header__in {
-      max-width: 1440px; margin: 0 auto; padding: 0 80px;
-      height: 100%; display: flex; align-items: center; justify-content: space-between;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    .header__left { display: flex; align-items: center; gap: 48px; }
-    .logo img { height: 129px; width: auto; }
-    .nav { display: flex; align-items: center; gap: 28px; }
-    .nav a { color: rgba(255,255,255,.82); font-size: 15px; font-weight: 500; transition: color .2s; }
-    .nav a:hover { color: #fff; }
-    .nav a.active { color: #fff; font-weight: 700; }
-    .header__right { display: flex; align-items: center; gap: 16px; }
+
+    .header__left {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .logo img {
+      height: 129px;
+      width: auto;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav a {
+      color: rgba(255, 255, 255, .82);
+      font-size: 15px;
+      font-weight: 500;
+      transition: color .2s;
+    }
+
+    .nav a:hover {
+      color: #fff;
+    }
+
+    .nav a.active {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .header__right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
     .lang-select {
-      display: flex; align-items: center; gap: 6px;
-      color: rgba(255,255,255,.82); font-size: 14px; font-weight: 500;
-      cursor: pointer; padding: 6px 12px; border-radius: 8px;
-      border: 1px solid rgba(255,255,255,.15); transition: background .2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255, 255, 255, .82);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, .15);
+      transition: background .2s;
     }
-    .lang-select:hover { background: rgba(255,255,255,.08); color: #fff; }
-    .lang-select svg { width: 14px; height: 14px; }
+
+    .lang-select:hover {
+      background: rgba(255, 255, 255, .08);
+      color: #fff;
+    }
+
+    .lang-select svg {
+      width: 14px;
+      height: 14px;
+    }
+
     .btn-pill {
-      background: var(--orange); color: #fff; font-size: 15px; font-weight: 600;
-      padding: 13px 26px; border-radius: 100px;
-      display: inline-flex; align-items: center; gap: 8px; transition: background .2s;
+      background: var(--orange);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 13px 26px;
+      border-radius: 100px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background .2s;
     }
-    .btn-pill:hover { background: #e89b6d; }
+
+    .btn-pill:hover {
+      background: #e89b6d;
+    }
+
     .hamburger {
-      display: none; flex-direction: column; justify-content: center;
-      gap: 5px; width: 40px; height: 40px; padding: 6px; cursor: pointer; border-radius: 8px;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      padding: 6px;
+      cursor: pointer;
+      border-radius: 8px;
     }
-    .hamburger span { display: block; width: 22px; height: 2.5px; background: #fff; border-radius: 3px; transition: transform .3s, opacity .3s; }
-    .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2.5px;
+      background: #fff;
+      border-radius: 3px;
+      transition: transform .3s, opacity .3s;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
+    }
+
     .mob-nav {
-      display: none; position: fixed; top: 80px; left: 0; right: 0;
-      background: var(--navy); padding: 8px 0 20px; z-index: 98;
-      border-top: 1px solid rgba(255,255,255,.1); flex-direction: column;
-      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+      display: none;
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      background: var(--navy);
+      padding: 8px 0 20px;
+      z-index: 98;
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      flex-direction: column;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
     }
-    .mob-nav.open { display: flex; }
+
+    .mob-nav.open {
+      display: flex;
+    }
+
     .mob-nav a.mob-link {
-      color: rgba(255,255,255,.82); font-size: 16px; font-weight: 500;
-      padding: 14px 24px; border-bottom: 1px solid rgba(255,255,255,.07);
-      display: block; transition: color .2s, background .2s;
+      color: rgba(255, 255, 255, .82);
+      font-size: 16px;
+      font-weight: 500;
+      padding: 14px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, .07);
+      display: block;
+      transition: color .2s, background .2s;
     }
-    .mob-nav a.mob-link:hover, .mob-nav a.mob-link.active { color: #fff; background: rgba(255,255,255,.06); }
+
+    .mob-nav a.mob-link:hover,
+    .mob-nav a.mob-link.active {
+      color: #fff;
+      background: rgba(255, 255, 255, .06);
+    }
+
     .mob-nav .mob-cta {
-      margin: 16px 24px 0; background: var(--orange); color: #fff;
-      font-size: 15px; font-weight: 700; padding: 14px 24px;
-      border-radius: 100px; text-align: center; display: block;
+      margin: 16px 24px 0;
+      background: var(--orange);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 24px;
+      border-radius: 100px;
+      text-align: center;
+      display: block;
     }
 
     /* ── ARTICLE WRAP ── */
@@ -142,6 +312,7 @@
       justify-content: space-between;
       padding: 28px 0 20px;
     }
+
     .back-link {
       display: flex;
       align-items: center;
@@ -151,13 +322,22 @@
       color: var(--gm);
       transition: color .2s;
     }
-    .back-link:hover { color: var(--blue); }
-    .back-link svg { width: 16px; height: 16px; }
+
+    .back-link:hover {
+      color: var(--blue);
+    }
+
+    .back-link svg {
+      width: 16px;
+      height: 16px;
+    }
+
     .art-socials {
       display: flex;
       align-items: center;
       gap: 12px;
     }
+
     .art-socials button {
       width: 36px;
       height: 36px;
@@ -169,15 +349,23 @@
       color: var(--gm);
       transition: all .2s;
     }
+
     .art-socials button:hover {
       border-color: var(--blue);
       color: var(--blue);
-      background: rgba(20,61,130,.06);
+      background: rgba(20, 61, 130, .06);
     }
-    .art-socials button svg { width: 16px; height: 16px; }
+
+    .art-socials button svg {
+      width: 16px;
+      height: 16px;
+    }
 
     /* ── ARTICLE HEADER ── */
-    .art-header { padding-bottom: 32px; }
+    .art-header {
+      padding-bottom: 32px;
+    }
+
     .art-tag {
       display: inline-block;
       background: var(--navy);
@@ -190,6 +378,7 @@
       border-radius: 100px;
       margin-bottom: 20px;
     }
+
     .art-title {
       font-family: var(--serif);
       font-size: 48px;
@@ -199,6 +388,7 @@
       letter-spacing: -.5px;
       margin-bottom: 16px;
     }
+
     .art-subtitle {
       font-size: 18px;
       color: var(--gm);
@@ -206,6 +396,7 @@
       margin-bottom: 28px;
       font-weight: 400;
     }
+
     .art-author-row {
       display: flex;
       align-items: center;
@@ -213,6 +404,7 @@
       padding-bottom: 28px;
       border-bottom: 1px solid #e5e7eb;
     }
+
     .art-author-av {
       width: 48px;
       height: 48px;
@@ -226,23 +418,32 @@
       color: #fff;
       flex-shrink: 0;
     }
-    .art-author-info { flex: 1; }
+
+    .art-author-info {
+      flex: 1;
+    }
+
     .art-author-name {
       font-size: 15px;
       font-weight: 700;
       color: var(--hd);
       margin-bottom: 2px;
     }
+
     .art-author-title {
       font-size: 13px;
       color: var(--gm);
       margin-bottom: 2px;
     }
+
     .art-date-read {
       font-size: 13px;
       color: var(--muted);
     }
-    .art-date-read span { margin-left: 6px; }
+
+    .art-date-read span {
+      margin-left: 6px;
+    }
 
     /* ── FEATURED IMAGE ── */
     .art-featured-img {
@@ -254,8 +455,16 @@
     }
 
     /* ── ARTICLE BODY ── */
-    .art-body { font-size: 17px; line-height: 30px; color: #374151; }
-    .art-body p { margin-bottom: 24px; }
+    .art-body {
+      font-size: 17px;
+      line-height: 30px;
+      color: #374151;
+    }
+
+    .art-body p {
+      margin-bottom: 24px;
+    }
+
     .art-body h2 {
       font-family: var(--serif);
       font-size: 30px;
@@ -264,14 +473,19 @@
       margin: 40px 0 18px;
       line-height: 40px;
     }
+
     .art-body ul {
       margin: 0 0 24px 20px;
     }
+
     .art-body ul li {
       margin-bottom: 10px;
       line-height: 28px;
     }
-    .art-body ul li::marker { color: var(--orange); }
+
+    .art-body ul li::marker {
+      color: var(--orange);
+    }
 
     /* Tip callout box */
     .art-tip-box {
@@ -284,6 +498,7 @@
       gap: 14px;
       align-items: flex-start;
     }
+
     .art-tip-box__icon {
       width: 36px;
       height: 36px;
@@ -294,7 +509,13 @@
       justify-content: center;
       flex-shrink: 0;
     }
-    .art-tip-box__icon svg { width: 18px; height: 18px; color: #fff; }
+
+    .art-tip-box__icon svg {
+      width: 18px;
+      height: 18px;
+      color: #fff;
+    }
+
     .art-tip-box__label {
       font-size: 11px;
       font-weight: 800;
@@ -303,6 +524,7 @@
       color: var(--orange);
       margin-bottom: 6px;
     }
+
     .art-tip-box p {
       font-size: 15px;
       line-height: 25px;
@@ -322,6 +544,7 @@
       align-items: center;
       gap: 24px;
     }
+
     .cta-banner h2 {
       font-family: var(--serif);
       font-size: 36px;
@@ -329,6 +552,7 @@
       color: var(--navy);
       line-height: 46px;
     }
+
     .cta-banner .btn-white {
       background: #fff;
       color: var(--navy);
@@ -341,10 +565,17 @@
       gap: 8px;
       transition: opacity .2s;
     }
-    .cta-banner .btn-white:hover { opacity: .9; }
+
+    .cta-banner .btn-white:hover {
+      opacity: .9;
+    }
 
     /* ── OTHER BLOGS ── */
-    .other-blogs { padding: 56px 0; border-top: 1px solid #e5e7eb; }
+    .other-blogs {
+      padding: 56px 0;
+      border-top: 1px solid #e5e7eb;
+    }
+
     .other-blogs__hdr {
       font-size: 12px;
       font-weight: 700;
@@ -353,38 +584,49 @@
       color: var(--gm);
       margin-bottom: 24px;
     }
+
     .other-blogs__grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
+
     .ob-card {
       border-radius: 12px;
       overflow: hidden;
       border: 1px solid #e8edf5;
-      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
       cursor: pointer;
       transition: box-shadow .2s;
     }
-    .ob-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,.1); }
+
+    .ob-card:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, .1);
+    }
+
     .ob-card__img {
       width: 100%;
       height: 140px;
       object-fit: cover;
     }
-    .ob-card__body { padding: 14px; }
+
+    .ob-card__body {
+      padding: 14px;
+    }
+
     .ob-card__tag {
       font-size: 10px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: .5px;
       color: var(--blue);
-      background: rgba(20,61,130,.08);
+      background: rgba(20, 61, 130, .08);
       padding: 3px 10px;
       border-radius: 100px;
       display: inline-block;
       margin-bottom: 8px;
     }
+
     .ob-card__title {
       font-size: 14px;
       font-weight: 700;
@@ -394,75 +636,252 @@
 
 
     /* ── FOOTER ── */
-    footer { background: var(--navy); padding: 60px 0 0; }
+    footer {
+      background: var(--navy);
+      padding: 60px 0 0;
+    }
+
     .footer__grid {
-      max-width: 1440px; margin: 0 auto; padding: 0 80px 48px;
-      display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 160px; gap: 40px;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 160px;
+      gap: 40px;
     }
-    .fc h4 { font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 24px; }
-    .fc a, .fc p { font-size: 14px; color: #9ca3af; display: block; line-height: 2.2; transition: color .2s; }
-    .fc a:hover { color: #fff; }
-    .fc .w { color: #fff; }
+
+    .fc h4 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+
+    .fc a,
+    .fc p {
+      font-size: 14px;
+      color: #9ca3af;
+      display: block;
+      line-height: 2.2;
+      transition: color .2s;
+    }
+
+    .fc a:hover {
+      color: #fff;
+    }
+
+    .fc .w {
+      color: #fff;
+    }
+
     .nl-row {
-      display: flex; align-items: center;
-      border-bottom: 1px solid rgba(255,255,255,.2); padding-bottom: 8px; margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, .2);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
     }
-    .nl-row input { background: none; border: none; outline: none; color: #fff; font: inherit; font-size: 13px; flex: 1; }
-    .nl-row input::placeholder { color: #757575; }
-    .nl-row button { color: rgba(255,255,255,.5); font-size: 16px; }
-    .socials { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .nl-row input {
+      background: none;
+      border: none;
+      outline: none;
+      color: #fff;
+      font: inherit;
+      font-size: 13px;
+      flex: 1;
+    }
+
+    .nl-row input::placeholder {
+      color: #757575;
+    }
+
+    .nl-row button {
+      color: rgba(255, 255, 255, .5);
+      font-size: 16px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
     .fc a.soc {
-      width: 36px; height: 36px; border-radius: 50%;
-      border: 1px solid rgba(255,255,255,.2);
-      display: flex; align-items: center; justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, .2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       transition: border-color .2s, background .2s;
     }
-    .fc a.soc:hover { border-color: #fff; background: rgba(255,255,255,.1); }
-    .fc a.soc svg { display: block; }
-    .fc.logo-col img { width: 180px; height: auto; }
-    .footer__btm {
-      border-top: 1px solid rgba(255,255,255,.1);
-      max-width: 1440px; margin: 0 auto; padding: 18px 80px;
-      display: flex; justify-content: center;
+
+    .fc a.soc:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, .1);
     }
-    .footer__btm p { font-size: 14px; color: #6b7280; }
+
+    .fc a.soc svg {
+      display: block;
+    }
+
+    .fc.logo-col img {
+      width: 180px;
+      height: auto;
+    }
+
+    .footer__btm {
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 18px 80px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .footer__btm p {
+      font-size: 14px;
+      color: #6b7280;
+    }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 767px) {
-      .topbar__in { padding: 0 20px; }
-      .topbar__contact { gap: 16px; }
-      .topbar__contact a span { display: none; }
-      .topbar__contact a svg, .topbar__socials a svg { width: 18px; height: 18px; }
-      .header__in { padding: 0 20px; }
-      .nav { display: none; }
-      .header__right .lang-select { display: none; }
-      .hamburger { display: flex; }
-      .header .btn-pill { display: none; }
+      .topbar__in {
+        padding: 0 20px;
+      }
 
-      .article-wrap { padding: 0 20px; }
-      .art-title { font-size: 30px; line-height: 40px; }
-      .art-subtitle { font-size: 16px; }
-      .art-featured-img { height: 240px; border-radius: 12px; }
-      .art-body h2 { font-size: 24px; line-height: 32px; }
-      .art-body { font-size: 16px; line-height: 27px; }
-      .cta-banner { padding: 36px 24px; }
-      .cta-banner h2 { font-size: 26px; line-height: 36px; }
-      .other-blogs__grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-      .ob-card__img { height: 100px; }
-      .footer__grid { padding: 0 20px 36px; grid-template-columns: 1fr 1fr; gap: 32px; }
-      .fc.logo-col { grid-column: 1/-1; display: flex; justify-content: center; }
-      .footer__btm { padding: 16px 20px; }
-      .footer__btm p { font-size: 12px; text-align: center; }
+      .topbar__contact {
+        gap: 16px;
+      }
+
+      .topbar__contact a span {
+        display: none;
+      }
+
+      .topbar__contact a svg,
+      .topbar__socials a svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .header__in {
+        padding: 0 20px;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .header__right .lang-select {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .header .btn-pill {
+        display: none;
+      }
+
+      .article-wrap {
+        padding: 0 20px;
+      }
+
+      .art-title {
+        font-size: 30px;
+        line-height: 40px;
+      }
+
+      .art-subtitle {
+        font-size: 16px;
+      }
+
+      .art-featured-img {
+        height: 240px;
+        border-radius: 12px;
+      }
+
+      .art-body h2 {
+        font-size: 24px;
+        line-height: 32px;
+      }
+
+      .art-body {
+        font-size: 16px;
+        line-height: 27px;
+      }
+
+      .cta-banner {
+        padding: 36px 24px;
+      }
+
+      .cta-banner h2 {
+        font-size: 26px;
+        line-height: 36px;
+      }
+
+      .other-blogs__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .ob-card__img {
+        height: 100px;
+      }
+
+      .footer__grid {
+        padding: 0 20px 36px;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+
+      .fc.logo-col {
+        grid-column: 1/-1;
+        display: flex;
+        justify-content: center;
+      }
+
+      .footer__btm {
+        padding: 16px 20px;
+      }
+
+      .footer__btm p {
+        font-size: 12px;
+        text-align: center;
+      }
     }
+
     @media (min-width: 768px) and (max-width: 1023px) {
-      .topbar__in { padding: 0 32px; }
-      .header__in { padding: 0 32px; }
-      .other-blogs__grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-      .footer__grid { padding: 0 32px 36px; grid-template-columns: repeat(2,1fr); }
-      .fc.logo-col { grid-column: 1/-1; display: flex; justify-content: center; }
+      .topbar__in {
+        padding: 0 32px;
+      }
+
+      .header__in {
+        padding: 0 32px;
+      }
+
+      .other-blogs__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .footer__grid {
+        padding: 0 32px 36px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .fc.logo-col {
+        grid-column: 1/-1;
+        display: flex;
+        justify-content: center;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- ════════ TOP BAR ════════ -->
@@ -470,29 +889,54 @@
     <div class="topbar__in">
       <div class="topbar__contact">
         <a href="mailto:info@lahjaro.com">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
           <span>info@lahjaro.com</span>
         </a>
         <a href="tel:+971505325083">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
           <span>+971 50 532 5083</span>
         </a>
       </div>
       <div class="topbar__socials">
         <a href="#" aria-label="Facebook">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+          </svg>
         </a>
         <a href="#" aria-label="Instagram">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+          </svg>
         </a>
         <a href="#" aria-label="X / Twitter">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L2.25 2.25h6.918l4.243 5.622 5.833-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L2.25 2.25h6.918l4.243 5.622 5.833-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117Z" />
+          </svg>
         </a>
         <a href="#" aria-label="LinkedIn">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
         </a>
         <a href="#" aria-label="YouTube">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#143d82"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#143d82" />
+          </svg>
         </a>
       </div>
     </div>
@@ -515,14 +959,22 @@
       </div>
       <div class="header__right">
         <div class="lang-select">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path
+              d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
           <span>English</span>
-          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 5l3 3 3-3"/></svg>
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <path d="M3 5l3 3 3-3" />
+          </svg>
         </div>
         <a href="contact.html" class="btn-pill">
           Contact Us
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
           </svg>
         </a>
         <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -548,18 +1000,35 @@
     <!-- Meta bar -->
     <div class="art-meta-bar">
       <a href="articles.html" class="back-link">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M10 3L5 8l5 5" />
+        </svg>
         Back to Blog
       </a>
       <div class="art-socials">
         <button aria-label="Like">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
         </button>
         <button aria-label="Save">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+          </svg>
         </button>
         <button aria-label="Share">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3" />
+            <circle cx="6" cy="12" r="3" />
+            <circle cx="18" cy="19" r="3" />
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+          </svg>
         </button>
       </div>
     </div>
@@ -595,7 +1064,10 @@
       <h2>Ready to Start Learning?</h2>
       <a href="contact.html" class="btn-white">
         Book a Free Trial
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M8 4l4 4-4 4"/></svg>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 8h10M8 4l4 4-4 4" />
+        </svg>
       </a>
     </div>
 
@@ -621,8 +1093,9 @@
         <h4>Contacts</h4>
         <p class="w">UAE</p>
         <p>+971 50 532 5083</p>
-        <p><a href="https://wa.me/971505325083" target="_blank" style="color:inherit;text-decoration:none;">WhatsApp: +971 50 532 5083</a></p>
-        <p>info@lahjaro.com</p>
+        <p><a href="https://wa.me/971505325083" target="_blank"
+            style="color:inherit;text-decoration:none;white-space:nowrap;">WhatsApp: +971 50 532 5083</a></p>
+        <p><a href="mailto:info@lahjaro.com" style="color:inherit;text-decoration:none;">info@lahjaro.com</a></p>
       </div>
       <div class="fc">
         <h4>Subscribe</h4>
@@ -636,22 +1109,35 @@
         <h4>In Socials</h4>
         <div class="socials">
           <a href="#" class="soc" aria-label="Facebook">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
           </a>
           <a href="#" class="soc" aria-label="X / Twitter">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L2.25 2.25h6.918l4.243 5.622 5.833-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L2.25 2.25h6.918l4.243 5.622 5.833-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117Z" />
+            </svg>
           </a>
           <a href="#" class="soc" aria-label="Instagram">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.9)" stroke="none"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.9)" stroke="none" />
+            </svg>
           </a>
           <a href="#" class="soc" aria-label="LinkedIn">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+              <circle cx="4" cy="4" r="2" />
             </svg>
           </a>
           <a href="#" class="soc" aria-label="YouTube">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,.9)">
-              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#03143a"/>
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#03143a" />
             </svg>
           </a>
         </div>
@@ -890,7 +1376,7 @@
         title: 'The Art of Chinese Characters: Understanding Hanzi, Zhuyin, and Pinyin',
         subtitle: 'Master the writing systems of Chinese with this comprehensive guide to Hanzi, Zhuyin, and Pinyin.',
         authorInitials: 'HK',
-        authorName: 'Halima Khona',
+        authorName: 'Halima',
         authorTitle: 'Chinese Language Instructor',
         date: 'March 29, 2024',
         readTime: '7 min read',
@@ -1139,7 +1625,7 @@
     const grid = document.getElementById('other-blogs-grid');
     grid.innerHTML = related.map(a => `
       <div class="ob-card" onclick="location.href='article.html?id=${a.id}'" style="cursor:pointer;">
-        <img class="ob-card__img" src="${a.image.replace('w=1200','w=400')}" alt="${a.tag}">
+        <img class="ob-card__img" src="${a.image.replace('w=1200', 'w=400')}" alt="${a.tag}">
         <div class="ob-card__body">
           <span class="ob-card__tag">${a.tag}</span>
           <div class="ob-card__title">${a.title}</div>
@@ -1149,4 +1635,5 @@
   </script>
 
 </body>
+
 </html>
