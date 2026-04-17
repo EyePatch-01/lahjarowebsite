@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Manrope:wght@400;500;600;700&display=swap"
     rel="stylesheet">
   <style>
     * {
@@ -26,16 +26,19 @@
     :root {
       --navy: #03143a;
       --blue: #143d82;
-      --dark: #031436;
-      --hd: #0a1628;
+      --blue-br: #0976ff;
       --orange: #f4af85;
-      --peach: #fff1e8;
-      --gm: #64748b;
-      --muted: #94a3b8;
+      --peach: #fcecea;
       --text: #0b1220;
+      --tn: #1a2b49;
+      --hd: #031438;
+      --gr: #25282b;
+      --gm: #6b7280;
+      --gl: #9ca3af;
+      --bd: #e8f1f7;
       --w: #fff;
       --f: 'Inter', sans-serif;
-      --serif: 'Playfair Display', serif;
+      --fa: 'Manrope', sans-serif;
     }
 
     html {
@@ -384,13 +387,12 @@
     }
 
     .art-title {
-      font-family: var(--serif);
-      font-size: 48px;
-      font-weight: 700;
-      color: var(--hd);
-      line-height: 60px;
-      letter-spacing: -.5px;
-      margin-bottom: 16px;
+      font-family: var(--fa);
+      font-size: 56px;
+      font-weight: 900;
+      color: var(--tn);
+      line-height: 1.13;
+      margin-bottom: 22px;
     }
 
     .art-subtitle {
@@ -442,7 +444,7 @@
 
     .art-date-read {
       font-size: 13px;
-      color: var(--muted);
+      color: var(--gl);
     }
 
     .art-date-read span {
@@ -460,9 +462,9 @@
 
     /* ── ARTICLE BODY ── */
     .art-body {
-      font-size: 17px;
-      line-height: 30px;
-      color: #374151;
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--text);
     }
 
     .art-body p {
@@ -470,12 +472,12 @@
     }
 
     .art-body h2 {
-      font-family: var(--serif);
-      font-size: 30px;
+      font-family: var(--fa);
+      font-size: 36px;
       font-weight: 700;
       color: var(--hd);
-      margin: 40px 0 18px;
-      line-height: 40px;
+      margin: 40px 0 20px;
+      line-height: 1.2;
     }
 
     .art-body ul {
@@ -550,7 +552,7 @@
     }
 
     .cta-banner h2 {
-      font-family: var(--serif);
+      font-family: var(--fa);
       font-size: 36px;
       font-weight: 700;
       color: var(--navy);
