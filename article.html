@@ -1058,7 +1058,7 @@
 
   <!-- Featured image (full width) -->
   <div class="article-wrap">
-    <img class="art-featured-img" id="art-featured-img" src="" alt="">
+    <img class="art-featured-img" id="art-featured-img" src="" alt="" loading="lazy">
   </div>
 
   <!-- Article body -->
@@ -1969,7 +1969,7 @@
     const grid = document.getElementById('other-blogs-grid');
     grid.innerHTML = related.map(a => `
       <div class="ob-card" onclick="location.href='article.html?id=${a.id}'" style="cursor:pointer;">
-        <img class="ob-card__img" src="${a.image.replace('w=1200', 'w=400')}" alt="${a.tag}">
+        <img class="ob-card__img" src="${a.image.replace('w=1200', 'w=400')}" alt="${a.tag}" loading="lazy">
         <div class="ob-card__body">
           <span class="ob-card__tag">${a.tag}</span>
           <div class="ob-card__title">${a.title}</div>
