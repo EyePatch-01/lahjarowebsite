@@ -2108,6 +2108,177 @@
         justify-content: center;
       }
     }
+    /* ── PROMO POPUP ── */
+    .popup-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .popup-overlay.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    .popup-box {
+      background: #fff;
+      border-radius: 20px;
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      position: relative;
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+      max-height: 90vh;
+    }
+    .popup-overlay.show .popup-box {
+      transform: scale(1);
+    }
+    .popup-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(0,0,0,0.06);
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: background 0.2s;
+    }
+    .popup-close:hover {
+      background: rgba(0,0,0,0.15);
+    }
+    .popup-close svg {
+      width: 14px;
+      height: 14px;
+      stroke: #333;
+    }
+    .popup-content {
+      flex: 1;
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      overflow-y: auto;
+    }
+    .popup-logo {
+      width: 140px;
+      margin-bottom: 24px;
+    }
+    .popup-title {
+      color: var(--blue);
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .popup-desc {
+      color: #364153;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .popup-offer {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+    .popup-limit {
+      font-size: 13px;
+      color: var(--gm);
+      margin-bottom: 24px;
+    }
+    .popup-btn {
+      background: var(--blue);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      padding: 14px 24px;
+      border-radius: 100px;
+      display: block;
+      width: 100%;
+      margin-bottom: 24px;
+      transition: background 0.2s;
+    }
+    .popup-btn:hover {
+      background: var(--navy);
+    }
+    .popup-contact {
+      text-align: center;
+      font-size: 14px;
+      color: #364153;
+      line-height: 1.6;
+    }
+    .popup-img {
+      width: 400px;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .popup-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .popup-overlay {
+        padding: 16px;
+      }
+      .popup-box {
+        flex-direction: column-reverse;
+        max-height: 95vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+      .popup-img {
+        width: 100%;
+        height: 280px;
+        display: block;
+      }
+      .popup-content {
+        padding: 32px 20px;
+        overflow-y: visible;
+      }
+      .popup-title {
+        font-size: 21px;
+      }
+      .popup-logo {
+        width: 110px;
+        margin-bottom: 16px;
+      }
+      .popup-desc {
+        font-size: 15px;
+        margin-bottom: 20px;
+      }
+      .popup-offer {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      .popup-limit {
+        margin-bottom: 20px;
+      }
+      .popup-btn {
+        padding: 12px 20px;
+        font-size: 15px;
+        margin-bottom: 20px;
+      }
+    }
   </style>
 </head>
 
@@ -3110,6 +3281,62 @@
         window.addEventListener('load', startFlgMarquee);
       }
     })();
+  </script>
+  <!-- Promotion Popup -->
+  <div class="popup-overlay" id="promoPopup">
+    <div class="popup-box">
+      <button class="popup-close" id="popupClose" aria-label="Close popup">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="popup-content">
+        <img src="images/logo-banner.svg" alt="Lahjaro Logo" class="popup-logo">
+        <h2 class="popup-title">Exclusive Launch Offer : Get 50% OFF your monthly subscription</h2>
+        <p class="popup-desc">Be among the first to start your language journey with Lahjaro Languages Institute:</p>
+        <div class="popup-offer">
+          Get 50% OFF on your monthly subscription when you book between the 1st - 3rd of each month
+        </div>
+        <p class="popup-limit">*Limited to the FIRST 10 customers only</p>
+        <a href="#courses" class="popup-btn" id="popupBtn">Book Now</a>
+        <div class="popup-contact">
+          info@lahjaro.com<br>
+          Call / WhatsApp: +971 50 532 5083
+        </div>
+      </div>
+      <div class="popup-img">
+        <img src="images/popup-lady.png" alt="Happy student">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (!sessionStorage.getItem("promoClosed")) {
+        const popup = document.getElementById("promoPopup");
+        const closeBtn = document.getElementById("popupClose");
+        const bookBtn = document.getElementById("popupBtn");
+
+        setTimeout(() => {
+          popup.classList.add("show");
+        }, 1000);
+
+        function closePopup() {
+          popup.classList.remove("show");
+          sessionStorage.setItem("promoClosed", "true");
+        }
+
+        closeBtn.addEventListener("click", closePopup);
+        bookBtn.addEventListener("click", closePopup);
+        
+        popup.addEventListener("click", function(e) {
+          if (e.target === popup) {
+            closePopup();
+          }
+        });
+      }
+    });
   </script>
 </body>
 
